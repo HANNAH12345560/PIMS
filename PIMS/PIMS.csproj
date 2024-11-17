@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C69E2514-B513-4DB5-8A66-09CB6033150E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PIMS</RootNamespace>
+    <AssemblyName>PIMS</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Npgsql, Version=8.0.5.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.8.0.5\lib\netstandard2.0\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="ReaLTaiizor, Version=3.8.0.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReaLTaiizor.3.8.0.7\lib\net48\ReaLTaiizor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.8.0.0\lib\net462\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.0\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.8.0.5\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Channels.8.0.0\lib\net462\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PatientListEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientListEdit.Designer.cs">
+      <DependentUpon>PatientListEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewPatient.Designer.cs">
+      <DependentUpon>AddNewPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientListScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientListScreen.Designer.cs">
+      <DependentUpon>PatientListScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmissionRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmissionRecord.Designer.cs">
+      <DependentUpon>AdmissionRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmissionRecordViewContinuation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmissionRecordViewContinuation.Designer.cs">
+      <DependentUpon>AdmissionRecordViewContinuation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmissionRecordView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmissionRecordView.Designer.cs">
+      <DependentUpon>AdmissionRecordView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationRecordViewSOA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultationRecordViewSOA.Designer.cs">
+      <DependentUpon>ConsultationRecordViewSOA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationRecordViewEvaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultationRecordViewEvaluation.Designer.cs">
+      <DependentUpon>ConsultationRecordViewEvaluation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationRecordViewHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultationRecordViewHistory.Designer.cs">
+      <DependentUpon>ConsultationRecordViewHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RJButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\RJTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RJTextBox.Designer.cs">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultationRecord.Designer.cs">
+      <DependentUpon>ConsultationRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultationRecordView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultationRecordView.Designer.cs">
+      <DependentUpon>ConsultationRecordView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRecordScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRecordScreen.Designer.cs">
+      <DependentUpon>AddRecordScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MedicalRecordScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedicalRecordScreen.Designer.cs">
+      <DependentUpon>MedicalRecordScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashboardScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashboardScreen.Designer.cs">
+      <DependentUpon>DashboardScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dbConnection.cs" />
+    <Compile Include="LoginScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginScreen.Designer.cs">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StartScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartScreen.Designer.cs">
+      <DependentUpon>StartScreen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="PatientListEdit.resx">
+      <DependentUpon>PatientListEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewPatient.resx">
+      <DependentUpon>AddNewPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientListScreen.resx">
+      <DependentUpon>PatientListScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmissionRecord.resx">
+      <DependentUpon>AdmissionRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmissionRecordViewContinuation.resx">
+      <DependentUpon>AdmissionRecordViewContinuation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmissionRecordView.resx">
+      <DependentUpon>AdmissionRecordView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultationRecordViewSOA.resx">
+      <DependentUpon>ConsultationRecordViewSOA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultationRecordViewEvaluation.resx">
+      <DependentUpon>ConsultationRecordViewEvaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultationRecordViewHistory.resx">
+      <DependentUpon>ConsultationRecordViewHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RJTextBox.resx">
+      <DependentUpon>RJTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultationRecord.resx">
+      <DependentUpon>ConsultationRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultationRecordView.resx">
+      <DependentUpon>ConsultationRecordView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRecordScreen.resx">
+      <DependentUpon>AddRecordScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedicalRecordScreen.resx">
+      <DependentUpon>MedicalRecordScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashboardScreen.resx">
+      <DependentUpon>DashboardScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginScreen.resx">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartScreen.resx">
+      <DependentUpon>StartScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Resources\Poppins-Black.ttf" />
+    <EmbeddedResource Include="Resources\Poppins-BlackItalic.ttf" />
+    <EmbeddedResource Include="Resources\Poppins-Bold.ttf" />
+    <EmbeddedResource Include="Resources\Poppins-BoldItalic.ttf" />
+    <EmbeddedResource Include="Resources\Poppins-ExtraBold.ttf" />
+    <EmbeddedResource Include="Resources\Poppins-ExtraBoldItalic.ttf" />
+    <EmbeddedResource Include="Resources\Poppins-ExtraLight.ttf" />
+    <EmbeddedResource Include="Resources\Poppins-ExtraLightItalic.ttf" />
+    <EmbeddedResource Include="Resources\Poppins-Italic.ttf" />
+    <EmbeddedResource Include="Resources\Poppins-Light.ttf" />
+    <EmbeddedResource Include="Resources\Poppins-LightItalic.ttf" />
+    <EmbeddedResource Include="Resources\Poppins-Medium.ttf" />
+    <EmbeddedResource Include="Resources\Poppins-MediumItalic.ttf" />
+    <None Include="Resources\Poppins-Regular.ttf" />
+    <None Include="Resources\Poppins-SemiBold.ttf" />
+    <None Include="Resources\Poppins-SemiBoldItalic.ttf" />
+    <None Include="Resources\Poppins-Thin.ttf" />
+    <None Include="Resources\Poppins-ThinItalic.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\AddRecIcon.ico" />
+    <Content Include="Assets\Dashboard.ico" />
+    <Content Include="Assets\DashboardPanel.png" />
+    <Content Include="Assets\DashboardReportsPanel.png" />
+    <Content Include="Assets\DashboardSvg.png" />
+    <Content Include="Assets\EvaluationPanel.png" />
+    <Content Include="Assets\EvaluationPanelPink.png" />
+    <Content Include="Assets\Icon\Logo.ico" />
+    <Content Include="Assets\LOG IN.png" />
+    <Content Include="Assets\LoginLbl.png" />
+    <Content Include="Assets\LogInPanel.png" />
+    <Content Include="Assets\LogInSvg.png" />
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\LogoPanel.png" />
+    <Content Include="Assets\LogoutIcon.ico" />
+    <Content Include="Assets\MedRecIcon.ico" />
+    <Content Include="Assets\NavBarPanel.png" />
+    <Content Include="Assets\PanelPink.png" />
+    <Content Include="Assets\PanelWhite.png" />
+    <Content Include="Assets\PatientListIcon.ico" />
+    <Content Include="Assets\PhysicalExamPanel.png" />
+    <Content Include="Assets\PhysicalExamPanelPink.png" />
+    <Content Include="Assets\SearchIcon.ico" />
+    <Content Include="Assets\SOAPanel.png" />
+    <Content Include="Assets\SOAPanelPink.png" />
+    <Content Include="Assets\TotalAppt.ico" />
+    <Content Include="Assets\TotalPatient.ico" />
+    <Content Include="Assets\TotalPresc.ico" />
+    <Content Include="Assets\TotalRev.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
