@@ -178,7 +178,7 @@ namespace PIMS
             txtLastName.Text = string.Empty;
             txtFirstName.Text = string.Empty;
             txtMiddleName.Text = string.Empty;
-            txtAddress.Text = string.Empty;
+            txtAddressS.Text = string.Empty;
             txtAge.Text = string.Empty;
             dtpBirthdate.Text = string.Empty;
             txtBirthPlace.Text = string.Empty;
@@ -208,6 +208,11 @@ namespace PIMS
             PatientListScreen pl = new PatientListScreen();
             pl.ShowDialog();
             this.Close();
+        }
+
+        private void txtAddressS_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

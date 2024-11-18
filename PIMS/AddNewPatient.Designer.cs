@@ -30,9 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewPatient));
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.lblDashboard = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnBack = new CustomControls.Controls.RJButton();
             this.btnContinue = new CustomControls.Controls.RJButton();
@@ -58,7 +55,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtAge = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtAddressS = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMiddleName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
@@ -68,6 +65,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPhilHealthNo = new System.Windows.Forms.TextBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.lblDashboard = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnLogout = new CustomControls.Controls.RJButton();
@@ -79,10 +79,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -101,36 +101,6 @@
             this.panel6.Size = new System.Drawing.Size(1144, 749);
             this.panel6.TabIndex = 1;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.lblDashboard);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 21);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1144, 84);
-            this.panel8.TabIndex = 1;
-            // 
-            // lblDashboard
-            // 
-            this.lblDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDashboard.Font = new System.Drawing.Font("Poppins SemiBold", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDashboard.Location = new System.Drawing.Point(0, 0);
-            this.lblDashboard.Name = "lblDashboard";
-            this.lblDashboard.Size = new System.Drawing.Size(1144, 84);
-            this.lblDashboard.TabIndex = 0;
-            this.lblDashboard.Text = "ADD NEW PATIENT";
-            this.lblDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblDashboard.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // panel7
-            // 
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1144, 21);
-            this.panel7.TabIndex = 0;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // panel9
             // 
@@ -271,7 +241,7 @@
             this.panel12.Controls.Add(this.label10);
             this.panel12.Controls.Add(this.txtAge);
             this.panel12.Controls.Add(this.label9);
-            this.panel12.Controls.Add(this.txtAddress);
+            this.panel12.Controls.Add(this.txtAddressS);
             this.panel12.Controls.Add(this.label4);
             this.panel12.Controls.Add(this.txtMiddleName);
             this.panel12.Controls.Add(this.txtFirstName);
@@ -451,13 +421,14 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "Age:";
             // 
-            // txtAddress
+            // txtAddressS
             // 
-            this.txtAddress.Location = new System.Drawing.Point(20, 140);
-            this.txtAddress.Multiline = true;
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(1004, 77);
-            this.txtAddress.TabIndex = 19;
+            this.txtAddressS.Location = new System.Drawing.Point(20, 140);
+            this.txtAddressS.Multiline = true;
+            this.txtAddressS.Name = "txtAddressS";
+            this.txtAddressS.Size = new System.Drawing.Size(1004, 77);
+            this.txtAddressS.TabIndex = 19;
+            this.txtAddressS.TextChanged += new System.EventHandler(this.txtAddressS_TextChanged);
             // 
             // label4
             // 
@@ -547,6 +518,36 @@
             this.txtPhilHealthNo.Name = "txtPhilHealthNo";
             this.txtPhilHealthNo.Size = new System.Drawing.Size(240, 20);
             this.txtPhilHealthNo.TabIndex = 0;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.lblDashboard);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 21);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1144, 84);
+            this.panel8.TabIndex = 1;
+            // 
+            // lblDashboard
+            // 
+            this.lblDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDashboard.Font = new System.Drawing.Font("Poppins SemiBold", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDashboard.Location = new System.Drawing.Point(0, 0);
+            this.lblDashboard.Name = "lblDashboard";
+            this.lblDashboard.Size = new System.Drawing.Size(1144, 84);
+            this.lblDashboard.TabIndex = 0;
+            this.lblDashboard.Text = "ADD NEW PATIENT";
+            this.lblDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDashboard.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1144, 21);
+            this.panel7.TabIndex = 0;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // panel1
             // 
@@ -745,12 +746,12 @@
             this.Text = "Add New Patient";
             this.Load += new System.EventHandler(this.DashboardScreen_Load);
             this.panel6.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            this.panel8.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -789,7 +790,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtPhilHealthNo;
-        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtAddressS;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
