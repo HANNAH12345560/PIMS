@@ -31,9 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientListScreen));
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.lblDashboard = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.CaseNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +48,9 @@
             this.btnSearch = new CustomControls.Controls.RJButton();
             this.txtSearchName = new CustomControls.RJControls.RJTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.lblDashboard = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnLogout = new CustomControls.Controls.RJButton();
@@ -62,11 +62,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -85,36 +85,6 @@
             this.panel6.Size = new System.Drawing.Size(1144, 749);
             this.panel6.TabIndex = 1;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.lblDashboard);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 21);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1144, 84);
-            this.panel8.TabIndex = 1;
-            // 
-            // lblDashboard
-            // 
-            this.lblDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDashboard.Font = new System.Drawing.Font("Poppins SemiBold", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDashboard.Location = new System.Drawing.Point(0, 0);
-            this.lblDashboard.Name = "lblDashboard";
-            this.lblDashboard.Size = new System.Drawing.Size(1144, 84);
-            this.lblDashboard.TabIndex = 0;
-            this.lblDashboard.Text = "PATIENT LIST";
-            this.lblDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblDashboard.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // panel7
-            // 
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1144, 21);
-            this.panel7.TabIndex = 0;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // panel9
             // 
@@ -360,6 +330,36 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Search:";
             // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.lblDashboard);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 21);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1144, 84);
+            this.panel8.TabIndex = 1;
+            // 
+            // lblDashboard
+            // 
+            this.lblDashboard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDashboard.Font = new System.Drawing.Font("Poppins SemiBold", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDashboard.Location = new System.Drawing.Point(0, 0);
+            this.lblDashboard.Name = "lblDashboard";
+            this.lblDashboard.Size = new System.Drawing.Size(1144, 84);
+            this.lblDashboard.TabIndex = 0;
+            this.lblDashboard.Text = "PATIENT LIST";
+            this.lblDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDashboard.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1144, 21);
+            this.panel7.TabIndex = 0;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::PIMS.Properties.Resources.NavBarPanel1;
@@ -554,16 +554,17 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PatientListScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Patient List";
             this.Load += new System.EventHandler(this.DashboardScreen_Load);
             this.panel6.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            this.panel8.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

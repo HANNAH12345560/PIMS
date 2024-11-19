@@ -196,10 +196,10 @@ namespace PIMS
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //PhysicalExam pe = new PhysicalExam();
-            //pe.ShowDialog();
-            //this.Close();
+            this.Hide();
+            AddRecordInitialAss pe = new AddRecordInitialAss();
+            pe.ShowDialog();
+            this.Close();
         }
     }
 }

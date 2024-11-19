@@ -199,13 +199,21 @@ namespace PIMS
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridView1.Columns[Action.Name].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dataGridView1.Columns["View"].Index && e.RowIndex >= 0)
             {
-                string selectedConsultationRecord = dataGridView1.Rows[e.RowIndex].Cells[AdmissionID.Name].Value.ToString();
+                string selectedConsultationRecord = dataGridView1.Rows[e.RowIndex].Cells["AdmissionID"].Value.ToString();
 
                 this.Hide();
                 AdmissionRecordView consultationRecordView = new AdmissionRecordView();
                 consultationRecordView.ShowDialog();
+            }
+            else if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
+            {
+                string selectedConsultationRecord = dataGridView1.Rows[e.RowIndex].Cells["AdmissionID"].Value.ToString();
+
+                this.Hide();
+                AdmissionRecordEdit editAdmissionRecord = new AdmissionRecordEdit();
+                editAdmissionRecord.ShowDialog();
             }
         }
 

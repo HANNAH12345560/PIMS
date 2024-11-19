@@ -31,9 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientListEdit));
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.btnUpdate = new CustomControls.Controls.RJButton();
             this.btnCancel = new CustomControls.Controls.RJButton();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -76,10 +75,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnUpdate = new CustomControls.Controls.RJButton();
+            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             this.panel6.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -105,9 +103,9 @@
             // 
             this.panel9.BackgroundImage = global::PIMS.Properties.Resources.PanelWhite;
             this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel9.Controls.Add(this.comboBoxStatus);
             this.panel9.Controls.Add(this.btnUpdate);
             this.panel9.Controls.Add(this.btnCancel);
-            this.panel9.Controls.Add(this.panel13);
             this.panel9.Controls.Add(this.label3);
             this.panel9.Controls.Add(this.label2);
             this.panel9.Controls.Add(this.panel12);
@@ -116,6 +114,26 @@
             this.panel9.Size = new System.Drawing.Size(1113, 627);
             this.panel9.TabIndex = 2;
             this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint_1);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
+            this.btnUpdate.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
+            this.btnUpdate.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnUpdate.BorderRadius = 7;
+            this.btnUpdate.BorderSize = 0;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(542, 519);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(246, 40);
+            this.btnUpdate.TabIndex = 41;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.TextColor = System.Drawing.Color.White;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnContinue_Click);
             // 
             // btnCancel
             // 
@@ -136,28 +154,6 @@
             this.btnCancel.TextColor = System.Drawing.Color.White;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(211)))));
-            this.panel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel13.Controls.Add(this.lblStatus);
-            this.panel13.Location = new System.Drawing.Point(912, 27);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(149, 31);
-            this.panel13.TabIndex = 6;
-            this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel13_Paint);
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblStatus.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(0, 0);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(149, 31);
-            this.lblStatus.TabIndex = 7;
-            this.lblStatus.Text = "Alive";
-            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -689,25 +685,18 @@
             this.panel4.Size = new System.Drawing.Size(199, 105);
             this.panel4.TabIndex = 1;
             // 
-            // btnUpdate
+            // comboBoxStatus
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnUpdate.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnUpdate.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnUpdate.BorderRadius = 7;
-            this.btnUpdate.BorderSize = 0;
-            this.btnUpdate.FlatAppearance.BorderSize = 0;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(542, 519);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(246, 40);
-            this.btnUpdate.TabIndex = 41;
-            this.btnUpdate.Text = "UPDATE";
-            this.btnUpdate.TextColor = System.Drawing.Color.White;
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnContinue_Click);
+            this.comboBoxStatus.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxStatus.FormattingEnabled = true;
+            this.comboBoxStatus.Items.AddRange(new object[] {
+            "Alive",
+            "Deceased"});
+            this.comboBoxStatus.Location = new System.Drawing.Point(903, 27);
+            this.comboBoxStatus.Name = "comboBoxStatus";
+            this.comboBoxStatus.Size = new System.Drawing.Size(158, 30);
+            this.comboBoxStatus.TabIndex = 40;
+            this.comboBoxStatus.Text = "Alive";
             // 
             // PatientListEdit
             // 
@@ -720,12 +709,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PatientListEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Patient List";
             this.Load += new System.EventHandler(this.DashboardScreen_Load);
             this.panel6.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel13.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -757,8 +746,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.TextBox txtMiddleName;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtLastName;
@@ -787,5 +774,6 @@
         private System.Windows.Forms.TextBox txtBirthPlace;
         private System.Windows.Forms.ComboBox comboBoxCivilStatus;
         private CustomControls.Controls.RJButton btnUpdate;
+        private System.Windows.Forms.ComboBox comboBoxStatus;
     }
 }

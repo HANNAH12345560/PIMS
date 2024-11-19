@@ -100,6 +100,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddRecordEvaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRecordEvaluation.Designer.cs">
+      <DependentUpon>AddRecordEvaluation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRecordHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRecordHistory.Designer.cs">
+      <DependentUpon>AddRecordHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRecordInitialAss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRecordInitialAss.Designer.cs">
+      <DependentUpon>AddRecordInitialAss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRecordInsurance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRecordInsurance.Designer.cs">
+      <DependentUpon>AddRecordInsurance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRecordPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRecordPayment.Designer.cs">
+      <DependentUpon>AddRecordPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmissionRecordEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmissionRecordEdit.Designer.cs">
+      <DependentUpon>AdmissionRecordEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdmissionRecordEditContinuation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdmissionRecordEditContinuation.Designer.cs">
+      <DependentUpon>AdmissionRecordEditContinuation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Insurance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Insurance.Designer.cs">
+      <DependentUpon>Insurance.cs</DependentUpon>
+    </Compile>
     <Compile Include="PatientListEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +159,24 @@
     </Compile>
     <Compile Include="AddNewPatient.Designer.cs">
       <DependentUpon>AddNewPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientListEvaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientListEvaluation.Designer.cs">
+      <DependentUpon>PatientListEvaluation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientListHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientListHistory.Designer.cs">
+      <DependentUpon>PatientListHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientListInitialAss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientListInitialAss.Designer.cs">
+      <DependentUpon>PatientListInitialAss.cs</DependentUpon>
     </Compile>
     <Compile Include="PatientListScreen.cs">
       <SubType>Form</SubType>
@@ -200,6 +266,36 @@
     <Compile Include="LoginScreen.Designer.cs">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddRecordSOA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRecordSOA.Designer.cs">
+      <DependentUpon>AddRecordSOA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientListSOA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientListSOA.Designer.cs">
+      <DependentUpon>PatientListSOA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRecordPrescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRecordPrescription.Designer.cs">
+      <DependentUpon>AddRecordPrescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prescription.Designer.cs">
+      <DependentUpon>Prescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -213,11 +309,44 @@
     <Compile Include="StartScreen.Designer.cs">
       <DependentUpon>StartScreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddRecordEvaluation.resx">
+      <DependentUpon>AddRecordEvaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRecordHistory.resx">
+      <DependentUpon>AddRecordHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRecordInitialAss.resx">
+      <DependentUpon>AddRecordInitialAss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRecordInsurance.resx">
+      <DependentUpon>AddRecordInsurance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRecordPayment.resx">
+      <DependentUpon>AddRecordPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmissionRecordEdit.resx">
+      <DependentUpon>AdmissionRecordEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdmissionRecordEditContinuation.resx">
+      <DependentUpon>AdmissionRecordEditContinuation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Insurance.resx">
+      <DependentUpon>Insurance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PatientListEdit.resx">
       <DependentUpon>PatientListEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddNewPatient.resx">
       <DependentUpon>AddNewPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientListEvaluation.resx">
+      <DependentUpon>PatientListEvaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientListHistory.resx">
+      <DependentUpon>PatientListHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientListInitialAss.resx">
+      <DependentUpon>PatientListInitialAss.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientListScreen.resx">
       <DependentUpon>PatientListScreen.cs</DependentUpon>
@@ -260,6 +389,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRecordSOA.resx">
+      <DependentUpon>AddRecordSOA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientListSOA.resx">
+      <DependentUpon>PatientListSOA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRecordPrescription.resx">
+      <DependentUpon>AddRecordPrescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prescription.resx">
+      <DependentUpon>Prescription.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -328,6 +472,7 @@
     <Content Include="Assets\PatientListIcon.ico" />
     <Content Include="Assets\PhysicalExamPanel.png" />
     <Content Include="Assets\PhysicalExamPanelPink.png" />
+    <EmbeddedResource Include="Assets\PRESCRIPTION.png" />
     <Content Include="Assets\SearchIcon.ico" />
     <Content Include="Assets\SOAPanel.png" />
     <Content Include="Assets\SOAPanelPink.png" />

@@ -187,7 +187,14 @@ namespace PIMS
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            //UPDATE INFO
+            MessageBox.Show("Patient record has been updated.");
+
+            this.Hide();
+            PatientListScreen pl = new PatientListScreen();
+            pl.ShowDialog();
+            this.Close();
+
+            
         }
 
         

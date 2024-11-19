@@ -58,7 +58,8 @@
             this.Nurse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdmissionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DischargeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.VIEW = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel6.SuspendLayout();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -120,7 +121,8 @@
             this.Nurse,
             this.AdmissionDate,
             this.DischargeDate,
-            this.Action});
+            this.VIEW,
+            this.Edit});
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(16, 166);
             this.dataGridView1.MultiSelect = false;
@@ -525,15 +527,23 @@
             this.DischargeDate.ReadOnly = true;
             this.DischargeDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // Action
+            // VIEW
             // 
-            this.Action.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Action.FillWeight = 150F;
-            this.Action.HeaderText = "Action";
-            this.Action.Name = "Action";
-            this.Action.ReadOnly = true;
-            this.Action.Text = "View";
-            this.Action.UseColumnTextForButtonValue = true;
+            this.VIEW.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.VIEW.FillWeight = 150F;
+            this.VIEW.HeaderText = "View";
+            this.VIEW.Name = "VIEW";
+            this.VIEW.ReadOnly = true;
+            this.VIEW.Text = "V";
+            this.VIEW.UseColumnTextForButtonValue = true;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "E";
+            this.Edit.UseColumnTextForButtonValue = true;
             // 
             // AdmissionRecord
             // 
@@ -593,6 +603,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nurse;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdmissionDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn DischargeDate;
-        private System.Windows.Forms.DataGridViewButtonColumn Action;
+        private System.Windows.Forms.DataGridViewButtonColumn VIEW;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
     }
 }
