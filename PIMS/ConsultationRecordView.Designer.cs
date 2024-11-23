@@ -57,7 +57,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtPhysician = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -175,7 +175,7 @@
             this.panelPhysicalExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelPhysicalExam.Controls.Add(this.panel1);
             this.panelPhysicalExam.Controls.Add(this.label1);
-            this.panelPhysicalExam.Controls.Add(this.txtLastName);
+            this.panelPhysicalExam.Controls.Add(this.txtPhysician);
             this.panelPhysicalExam.Controls.Add(this.label6);
             this.panelPhysicalExam.Location = new System.Drawing.Point(0, 0);
             this.panelPhysicalExam.Name = "panelPhysicalExam";
@@ -394,13 +394,13 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Physical Examination:";
             // 
-            // txtLastName
+            // txtPhysician
             // 
-            this.txtLastName.Location = new System.Drawing.Point(209, 17);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.ReadOnly = true;
-            this.txtLastName.Size = new System.Drawing.Size(379, 20);
-            this.txtLastName.TabIndex = 17;
+            this.txtPhysician.Location = new System.Drawing.Point(209, 17);
+            this.txtPhysician.Name = "txtPhysician";
+            this.txtPhysician.ReadOnly = true;
+            this.txtPhysician.Size = new System.Drawing.Size(379, 20);
+            this.txtPhysician.TabIndex = 17;
             // 
             // label6
             // 
@@ -446,7 +446,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panelScroll;
         private System.Windows.Forms.Panel panelPhysicalExam;
-        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtPhysician;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;

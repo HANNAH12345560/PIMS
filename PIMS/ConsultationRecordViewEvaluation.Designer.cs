@@ -36,21 +36,17 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelScroll = new System.Windows.Forms.Panel();
             this.panelPhysicalExam = new System.Windows.Forms.Panel();
-            this.btnContinue = new CustomControls.Controls.RJButton();
-            this.btnBack = new CustomControls.Controls.RJButton();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.txtMedName = new System.Windows.Forms.TextBox();
-            this.txtDosage = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtComplaint = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnBack = new CustomControls.Controls.RJButton();
+            this.btnContinue = new CustomControls.Controls.RJButton();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panelScroll.SuspendLayout();
@@ -134,51 +130,10 @@
             this.panelPhysicalExam.TabIndex = 0;
             this.panelPhysicalExam.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPhysicalExam_Paint);
             // 
-            // btnContinue
-            // 
-            this.btnContinue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnContinue.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnContinue.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnContinue.BorderRadius = 7;
-            this.btnContinue.BorderSize = 0;
-            this.btnContinue.FlatAppearance.BorderSize = 0;
-            this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContinue.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Location = new System.Drawing.Point(593, 706);
-            this.btnContinue.Name = "btnContinue";
-            this.btnContinue.Size = new System.Drawing.Size(246, 40);
-            this.btnContinue.TabIndex = 39;
-            this.btnContinue.Text = "CONTINUE";
-            this.btnContinue.TextColor = System.Drawing.Color.White;
-            this.btnContinue.UseVisualStyleBackColor = false;
-            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnBack.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnBack.BorderRadius = 7;
-            this.btnBack.BorderSize = 0;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(332, 706);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(246, 40);
-            this.btnBack.TabIndex = 38;
-            this.btnBack.Text = "BACK";
-            this.btnBack.TextColor = System.Drawing.Color.White;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // panel15
             // 
             this.panel15.BackgroundImage = global::PIMS.Properties.Resources.EvaluationPanelPink;
             this.panel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel15.Controls.Add(this.vScrollBar1);
             this.panel15.Controls.Add(this.label2);
             this.panel15.Controls.Add(this.panel1);
             this.panel15.Controls.Add(this.txtComplaint);
@@ -187,14 +142,6 @@
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(1293, 581);
             this.panel15.TabIndex = 20;
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(1048, 271);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 235);
-            this.vScrollBar1.TabIndex = 42;
-            this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
             // 
             // label2
             // 
@@ -210,41 +157,14 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtPrice);
-            this.panel1.Controls.Add(this.txtMedName);
-            this.panel1.Controls.Add(this.txtDosage);
+            this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Location = new System.Drawing.Point(48, 271);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(987, 235);
+            this.panel1.Size = new System.Drawing.Size(1040, 235);
             this.panel1.TabIndex = 40;
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Location = new System.Drawing.Point(725, 33);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.ReadOnly = true;
-            this.txtPrice.Size = new System.Drawing.Size(282, 20);
-            this.txtPrice.TabIndex = 46;
-            // 
-            // txtMedName
-            // 
-            this.txtMedName.Location = new System.Drawing.Point(3, 33);
-            this.txtMedName.Name = "txtMedName";
-            this.txtMedName.ReadOnly = true;
-            this.txtMedName.Size = new System.Drawing.Size(282, 20);
-            this.txtMedName.TabIndex = 44;
-            // 
-            // txtDosage
-            // 
-            this.txtDosage.Location = new System.Drawing.Point(367, 33);
-            this.txtDosage.Name = "txtDosage";
-            this.txtDosage.ReadOnly = true;
-            this.txtDosage.Size = new System.Drawing.Size(282, 20);
-            this.txtDosage.TabIndex = 45;
-            this.txtDosage.TextChanged += new System.EventHandler(this.txtRR_TextChanged);
             // 
             // label3
             // 
@@ -316,6 +236,46 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Evaluation:";
             // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
+            this.btnBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
+            this.btnBack.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnBack.BorderRadius = 7;
+            this.btnBack.BorderSize = 0;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(332, 706);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(246, 40);
+            this.btnBack.TabIndex = 38;
+            this.btnBack.Text = "BACK";
+            this.btnBack.TextColor = System.Drawing.Color.White;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnContinue
+            // 
+            this.btnContinue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
+            this.btnContinue.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
+            this.btnContinue.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnContinue.BorderRadius = 7;
+            this.btnContinue.BorderSize = 0;
+            this.btnContinue.FlatAppearance.BorderSize = 0;
+            this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContinue.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContinue.ForeColor = System.Drawing.Color.White;
+            this.btnContinue.Location = new System.Drawing.Point(593, 706);
+            this.btnContinue.Name = "btnContinue";
+            this.btnContinue.Size = new System.Drawing.Size(246, 40);
+            this.btnContinue.TabIndex = 39;
+            this.btnContinue.Text = "CONTINUE";
+            this.btnContinue.TextColor = System.Drawing.Color.White;
+            this.btnContinue.UseVisualStyleBackColor = false;
+            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
+            // 
             // ConsultationRecordViewEvaluation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -358,12 +318,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtComplaint;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.TextBox txtMedName;
-        private System.Windows.Forms.TextBox txtDosage;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
     }
 }

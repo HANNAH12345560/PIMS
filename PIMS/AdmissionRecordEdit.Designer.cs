@@ -36,10 +36,9 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelScroll = new System.Windows.Forms.Panel();
             this.btnContinue = new CustomControls.Controls.RJButton();
-            this.btnBack = new CustomControls.Controls.RJButton();
+            this.btnCancel = new CustomControls.Controls.RJButton();
             this.panelPhysicalExam = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtPhysician = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTelNo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -47,11 +46,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtPatientID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtDischarge = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtWard = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtAdd = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -65,6 +62,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtBP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.cbWard = new System.Windows.Forms.ComboBox();
+            this.cbPhysician = new System.Windows.Forms.ComboBox();
+            this.dtDischarge = new System.Windows.Forms.DateTimePicker();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panelScroll.SuspendLayout();
@@ -128,7 +128,7 @@
             // panelScroll
             // 
             this.panelScroll.Controls.Add(this.btnContinue);
-            this.panelScroll.Controls.Add(this.btnBack);
+            this.panelScroll.Controls.Add(this.btnCancel);
             this.panelScroll.Controls.Add(this.panelPhysicalExam);
             this.panelScroll.Location = new System.Drawing.Point(12, 134);
             this.panelScroll.Name = "panelScroll";
@@ -155,25 +155,25 @@
             this.btnContinue.UseVisualStyleBackColor = false;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             // 
-            // btnBack
+            // btnCancel
             // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnBack.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnBack.BorderRadius = 7;
-            this.btnBack.BorderSize = 0;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(342, 622);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(246, 40);
-            this.btnBack.TabIndex = 38;
-            this.btnBack.Text = "BACK";
-            this.btnBack.TextColor = System.Drawing.Color.White;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
+            this.btnCancel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
+            this.btnCancel.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCancel.BorderRadius = 7;
+            this.btnCancel.BorderSize = 0;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(342, 622);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(246, 40);
+            this.btnCancel.TabIndex = 38;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.TextColor = System.Drawing.Color.White;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // panelPhysicalExam
             // 
@@ -190,7 +190,9 @@
             // 
             this.panel1.BackgroundImage = global::PIMS.Properties.Resources.EvaluationPanelPink;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.txtPhysician);
+            this.panel1.Controls.Add(this.dtDischarge);
+            this.panel1.Controls.Add(this.cbPhysician);
+            this.panel1.Controls.Add(this.cbWard);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtTelNo);
             this.panel1.Controls.Add(this.label8);
@@ -198,11 +200,9 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.txtPatientID);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.txtDischarge);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.textBox11);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.txtWard);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtAdd);
             this.panel1.Controls.Add(this.label6);
@@ -221,14 +221,6 @@
             this.panel1.Size = new System.Drawing.Size(1293, 541);
             this.panel1.TabIndex = 18;
             // 
-            // txtPhysician
-            // 
-            this.txtPhysician.Location = new System.Drawing.Point(726, 207);
-            this.txtPhysician.Name = "txtPhysician";
-            this.txtPhysician.Size = new System.Drawing.Size(282, 20);
-            this.txtPhysician.TabIndex = 59;
-            this.txtPhysician.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -245,6 +237,7 @@
             // 
             this.txtTelNo.Location = new System.Drawing.Point(726, 167);
             this.txtTelNo.Name = "txtTelNo";
+            this.txtTelNo.ReadOnly = true;
             this.txtTelNo.Size = new System.Drawing.Size(282, 20);
             this.txtTelNo.TabIndex = 57;
             // 
@@ -283,6 +276,7 @@
             // 
             this.txtPatientID.Location = new System.Drawing.Point(726, 91);
             this.txtPatientID.Name = "txtPatientID";
+            this.txtPatientID.ReadOnly = true;
             this.txtPatientID.Size = new System.Drawing.Size(282, 20);
             this.txtPatientID.TabIndex = 53;
             // 
@@ -297,13 +291,6 @@
             this.label10.Size = new System.Drawing.Size(71, 22);
             this.label10.TabIndex = 52;
             this.label10.Text = "Patient ID:";
-            // 
-            // txtDischarge
-            // 
-            this.txtDischarge.Location = new System.Drawing.Point(726, 55);
-            this.txtDischarge.Name = "txtDischarge";
-            this.txtDischarge.Size = new System.Drawing.Size(282, 20);
-            this.txtDischarge.TabIndex = 51;
             // 
             // label12
             // 
@@ -321,6 +308,7 @@
             // 
             this.textBox11.Location = new System.Drawing.Point(726, 20);
             this.textBox11.Name = "textBox11";
+            this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(282, 20);
             this.textBox11.TabIndex = 49;
             // 
@@ -335,13 +323,6 @@
             this.label13.Size = new System.Drawing.Size(83, 22);
             this.label13.TabIndex = 48;
             this.label13.Text = "Admit Date:";
-            // 
-            // txtWard
-            // 
-            this.txtWard.Location = new System.Drawing.Point(201, 207);
-            this.txtWard.Name = "txtWard";
-            this.txtWard.Size = new System.Drawing.Size(282, 20);
-            this.txtWard.TabIndex = 47;
             // 
             // label7
             // 
@@ -359,6 +340,7 @@
             // 
             this.txtAdd.Location = new System.Drawing.Point(201, 167);
             this.txtAdd.Name = "txtAdd";
+            this.txtAdd.ReadOnly = true;
             this.txtAdd.Size = new System.Drawing.Size(282, 20);
             this.txtAdd.TabIndex = 45;
             // 
@@ -397,6 +379,7 @@
             // 
             this.txtPatientName.Location = new System.Drawing.Point(201, 91);
             this.txtPatientName.Name = "txtPatientName";
+            this.txtPatientName.ReadOnly = true;
             this.txtPatientName.Size = new System.Drawing.Size(282, 20);
             this.txtPatientName.TabIndex = 41;
             // 
@@ -456,6 +439,7 @@
             // 
             this.txtBP.Location = new System.Drawing.Point(201, 20);
             this.txtBP.Name = "txtBP";
+            this.txtBP.ReadOnly = true;
             this.txtBP.Size = new System.Drawing.Size(282, 20);
             this.txtBP.TabIndex = 24;
             // 
@@ -470,6 +454,30 @@
             this.label3.Size = new System.Drawing.Size(97, 22);
             this.label3.TabIndex = 21;
             this.label3.Text = "Case Number:";
+            // 
+            // cbWard
+            // 
+            this.cbWard.FormattingEnabled = true;
+            this.cbWard.Location = new System.Drawing.Point(201, 208);
+            this.cbWard.Name = "cbWard";
+            this.cbWard.Size = new System.Drawing.Size(282, 21);
+            this.cbWard.TabIndex = 60;
+            this.cbWard.SelectedIndexChanged += new System.EventHandler(this.cbWard_SelectedIndexChanged);
+            // 
+            // cbPhysician
+            // 
+            this.cbPhysician.FormattingEnabled = true;
+            this.cbPhysician.Location = new System.Drawing.Point(726, 208);
+            this.cbPhysician.Name = "cbPhysician";
+            this.cbPhysician.Size = new System.Drawing.Size(282, 21);
+            this.cbPhysician.TabIndex = 61;
+            // 
+            // dtDischarge
+            // 
+            this.dtDischarge.Location = new System.Drawing.Point(726, 54);
+            this.dtDischarge.Name = "dtDischarge";
+            this.dtDischarge.Size = new System.Drawing.Size(282, 20);
+            this.dtDischarge.TabIndex = 62;
             // 
             // AdmissionRecordEdit
             // 
@@ -503,9 +511,8 @@
         private System.Windows.Forms.Panel panelScroll;
         private System.Windows.Forms.Panel panelPhysicalExam;
         private CustomControls.Controls.RJButton btnContinue;
-        private CustomControls.Controls.RJButton btnBack;
+        private CustomControls.Controls.RJButton btnCancel;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtWard;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtAdd;
         private System.Windows.Forms.Label label6;
@@ -519,7 +526,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtBP;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtPhysician;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTelNo;
         private System.Windows.Forms.Label label8;
@@ -527,9 +533,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtPatientID;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtDischarge;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cbWard;
+        private System.Windows.Forms.ComboBox cbPhysician;
+        private System.Windows.Forms.DateTimePicker dtDischarge;
     }
 }

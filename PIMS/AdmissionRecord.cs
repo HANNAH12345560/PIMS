@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,17 +13,35 @@ namespace PIMS
 {
     public partial class AdmissionRecord : Form
     {
+        private int patientId;
+
         public AdmissionRecord()
         {
             InitializeComponent();
         }
+        dbConnection functions = new dbConnection();
+        public void FetchId(int id)
+        {
+            patientId = id;
+        }
 
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
-            //Sample data
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
+            string query = "SELECT id, nurse, TO_CHAR(admit_date, 'YYYY-MM-DD') AS admit_date, " +
+                           "TO_CHAR(discharge_date, 'YYYY-MM-DD') AS discharge_date " +
+                           "FROM hospitaladmission WHERE patient_id = @patientId";
+
+            using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+            {
+                conn.Open();
+                NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@patientId", patientId);
+                NpgsqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    dataGridView1.Rows.Add(dr[0], dr[1], dr[2], dr[3]);
+                }
+            }
 
         }
 
@@ -174,6 +193,7 @@ namespace PIMS
         {
             this.Hide();
             ConsultationRecord con = new ConsultationRecord();
+            con.FetchId(patientId);
             con.ShowDialog();
             this.Close();
         }
@@ -182,6 +202,7 @@ namespace PIMS
         {
             this.Hide();
             AdmissionRecord hr = new AdmissionRecord();
+            hr.FetchId(patientId);
             hr.ShowDialog();
             this.Close();
         }
@@ -201,18 +222,20 @@ namespace PIMS
         {
             if (e.ColumnIndex == dataGridView1.Columns["View"].Index && e.RowIndex >= 0)
             {
-                string selectedConsultationRecord = dataGridView1.Rows[e.RowIndex].Cells["AdmissionID"].Value.ToString();
+                int selectedConsultationRecord = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["AdmissionID"].Value.ToString());
 
                 this.Hide();
                 AdmissionRecordView consultationRecordView = new AdmissionRecordView();
+                consultationRecordView.FetchId(patientId, selectedConsultationRecord);
                 consultationRecordView.ShowDialog();
             }
             else if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
             {
-                string selectedConsultationRecord = dataGridView1.Rows[e.RowIndex].Cells["AdmissionID"].Value.ToString();
+                int selectedConsultationRecord = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["AdmissionID"].Value.ToString());
 
                 this.Hide();
                 AdmissionRecordEdit editAdmissionRecord = new AdmissionRecordEdit();
+                editAdmissionRecord.FetchId(patientId, selectedConsultationRecord);
                 editAdmissionRecord.ShowDialog();
             }
         }

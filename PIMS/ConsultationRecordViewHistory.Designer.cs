@@ -32,9 +32,8 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lblDashboard = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panelScroll = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panelPhysicalExam = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -71,15 +70,16 @@
             this.chkStatusNO_OTHER = new System.Windows.Forms.CheckBox();
             this.chkStatusNOTKNOWN_OTHER = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.panelScroll = new System.Windows.Forms.Panel();
             this.btnContinue = new CustomControls.Controls.RJButton();
             this.btnBack = new CustomControls.Controls.RJButton();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panelScroll.SuspendLayout();
             this.panelPhysicalExam.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panelScroll.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel7
@@ -112,6 +112,15 @@
             this.lblDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblDashboard.Click += new System.EventHandler(this.label1_Click);
             // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = global::PIMS.Properties.Resources.LoginLbl;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel4.Location = new System.Drawing.Point(8, -12);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(199, 105);
+            this.panel4.TabIndex = 1;
+            // 
             // panel6
             // 
             this.panel6.AutoScroll = true;
@@ -126,25 +135,6 @@
             this.panel6.Size = new System.Drawing.Size(1370, 749);
             this.panel6.TabIndex = 1;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
-            // 
-            // panelScroll
-            // 
-            this.panelScroll.BackColor = System.Drawing.Color.Transparent;
-            this.panelScroll.Controls.Add(this.btnContinue);
-            this.panelScroll.Controls.Add(this.btnBack);
-            this.panelScroll.Location = new System.Drawing.Point(10, 489);
-            this.panelScroll.Name = "panelScroll";
-            this.panelScroll.Size = new System.Drawing.Size(1346, 428);
-            this.panelScroll.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.BackgroundImage = global::PIMS.Properties.Resources.LoginLbl;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel4.Location = new System.Drawing.Point(8, -12);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(199, 105);
-            this.panel4.TabIndex = 1;
             // 
             // panelPhysicalExam
             // 
@@ -584,6 +574,7 @@
             this.txtDrugDesc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDrugDesc.Size = new System.Drawing.Size(424, 69);
             this.txtDrugDesc.TabIndex = 26;
+            this.txtDrugDesc.TextChanged += new System.EventHandler(this.txtDrugDesc_TextChanged);
             // 
             // chkStatusYES_OTHER
             // 
@@ -635,6 +626,16 @@
             this.label2.Size = new System.Drawing.Size(602, 39);
             this.label2.TabIndex = 20;
             this.label2.Text = "Allergies/ Adverse Reaction/ Suspected Allergies to:";
+            // 
+            // panelScroll
+            // 
+            this.panelScroll.BackColor = System.Drawing.Color.Transparent;
+            this.panelScroll.Controls.Add(this.btnContinue);
+            this.panelScroll.Controls.Add(this.btnBack);
+            this.panelScroll.Location = new System.Drawing.Point(10, 489);
+            this.panelScroll.Name = "panelScroll";
+            this.panelScroll.Size = new System.Drawing.Size(1346, 428);
+            this.panelScroll.TabIndex = 2;
             // 
             // btnContinue
             // 
@@ -690,7 +691,6 @@
             this.Load += new System.EventHandler(this.DashboardScreen_Load);
             this.panel8.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panelScroll.ResumeLayout(false);
             this.panelPhysicalExam.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -698,6 +698,7 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panelScroll.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

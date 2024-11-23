@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,21 +13,35 @@ namespace PIMS
 {
     public partial class ConsultationRecord : Form
     {
+        private int patientId;
+
         public ConsultationRecord()
         {
             InitializeComponent();
         }
+        dbConnection functions = new dbConnection();
+
+        public void FetchId(int id)
+        {
+            patientId = id;
+        }
 
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
-            //Sample data
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
+            string query = "SELECT c.id, c.date, e.physician FROM patientinfo p JOIN consultationassesment c ON p.id = c.patient_id JOIN physicianevaluation e ON c.id = e.consultation_id WHERE p.id = @patientId;";
 
+            using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+            {
+                conn.Open();
+                NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@patientId", patientId);
+                NpgsqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    dataGridView1.Rows.Add(dr["id"], dr["physician"], dr["date"]);
+                }
+            }
         }
-
-
 
         public void HoverBtn(Button btn)
         {
@@ -35,10 +50,9 @@ namespace PIMS
                 btn.BackColor = Color.FromArgb(255, 240, 245);
                 btn.ForeColor = Color.FromArgb(255, 92, 141);
             }
-            
         }
 
-        public void HoverbtnReset (Button btn)
+        public void HoverbtnReset(Button btn)
         {
             btn.BackColor = Color.FromArgb(255, 192, 211);
             btn.ForeColor = Color.FromArgb(82, 74, 78);
@@ -53,7 +67,6 @@ namespace PIMS
         {
             HoverbtnReset(btnDashboard);
         }
-
 
         private void btnMedRec_MouseHover(object sender, EventArgs e)
         {
@@ -167,23 +180,23 @@ namespace PIMS
             this.Hide();
             MedicalRecordScreen medicalRecordScreen = new MedicalRecordScreen();
             medicalRecordScreen.ShowDialog();
-            this.Close();
+
         }
 
         private void btnConsultation_Click(object sender, EventArgs e)
         {
             this.Hide();
             ConsultationRecord con = new ConsultationRecord();
+            con.FetchId(patientId);
             con.ShowDialog();
-            this.Close();
         }
 
         private void btnHospitalAdmission_Click(object sender, EventArgs e)
         {
             this.Hide();
             AdmissionRecord hr = new AdmissionRecord();
+            hr.FetchId(patientId);
             hr.ShowDialog();
-            this.Close();
         }
 
         private void rjButton4_Click(object sender, EventArgs e)
@@ -199,12 +212,12 @@ namespace PIMS
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridView1.Columns[Action.Name].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dataGridView1.Columns["Action"].Index && e.RowIndex >= 0)
             {
-                string selectedConsultationRecord = dataGridView1.Rows[e.RowIndex].Cells[ConsultationID.Name].Value.ToString();
-
+                int selectedConsultationRecord = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ConsultationId"].Value.ToString());
                 this.Hide();
                 ConsultationRecordView consultationRecordView = new ConsultationRecordView();
+                consultationRecordView.FetchId(selectedConsultationRecord, patientId);
                 consultationRecordView.ShowDialog();
             }
         }

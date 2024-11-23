@@ -197,6 +197,7 @@
             // 
             this.txtTotalBill.Location = new System.Drawing.Point(724, 242);
             this.txtTotalBill.Name = "txtTotalBill";
+            this.txtTotalBill.ReadOnly = true;
             this.txtTotalBill.Size = new System.Drawing.Size(282, 20);
             this.txtTotalBill.TabIndex = 63;
             // 
@@ -216,6 +217,7 @@
             // 
             this.txtDiscount.Location = new System.Drawing.Point(724, 188);
             this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.ReadOnly = true;
             this.txtDiscount.Size = new System.Drawing.Size(282, 20);
             this.txtDiscount.TabIndex = 61;
             // 
@@ -275,6 +277,7 @@
             // 
             this.txtMedFee.Location = new System.Drawing.Point(724, 64);
             this.txtMedFee.Name = "txtMedFee";
+            this.txtMedFee.ReadOnly = true;
             this.txtMedFee.Size = new System.Drawing.Size(282, 20);
             this.txtMedFee.TabIndex = 49;
             // 

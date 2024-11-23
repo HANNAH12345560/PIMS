@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,7 +32,7 @@ namespace PIMS
 
         private void label1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -47,6 +48,22 @@ namespace PIMS
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            dbConnection functions = new dbConnection();
+
+            using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+            {
+                conn.Open();
+                try
+                {
+                    MessageBox.Show("Connection successful!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Connection failed!");
+                }
+               
+
+            }
             this.Hide();
             StartScreen startScreen = new StartScreen();
             startScreen.ShowDialog();
@@ -69,5 +86,6 @@ namespace PIMS
                 txtPass.PasswordChar = true;
             }
         }
+
     }
 }

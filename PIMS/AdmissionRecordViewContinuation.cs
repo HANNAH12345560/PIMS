@@ -12,18 +12,51 @@ namespace PIMS
 {
     public partial class AdmissionRecordViewContinuation : Form
     {
+
+        private int patientId;
+        private int admissionId;
+        private string medTreat;
+        private string remarks;
+        private double medFee;
+        private double addFee;
+        private double discount;
+        private double totalBill;
+
         public AdmissionRecordViewContinuation()
         {
             InitializeComponent();
         }
 
-        private void DashboardScreen_Load(object sender, EventArgs e)
+        public void FetchId(int id, int id_2)
         {
-
+            patientId = id;
+            admissionId = id_2;
         }
 
-       
-      
+        public void DisplayConn(string medTreat, double medFee, string remarks, double addFee, double discount, double totalBill)
+        {
+            this.medTreat = medTreat;
+            this.medFee = medFee;
+            this.remarks = remarks;
+            this.addFee = addFee;
+            this.discount = discount;
+            this.totalBill = totalBill;
+        }
+
+
+
+        private void DashboardScreen_Load(object sender, EventArgs e)
+        {
+            txtMedTreatment.Text = medTreat;
+            txtAdmissionFee.Text = addFee.ToString();
+            txtMedFee.Text = medFee.ToString();
+            txtDiscount.Text = discount.ToString();
+            txtTotalBill.Text = totalBill.ToString();
+            txtRemarks.Text = remarks;
+        }
+
+
+
 
 
         private void label1_Click(object sender, EventArgs e)
@@ -36,7 +69,7 @@ namespace PIMS
 
         }
 
-       
+
 
         private void panel7_Paint(object sender, PaintEventArgs e)
         {
@@ -48,7 +81,7 @@ namespace PIMS
 
         }
 
-        
+
 
         private void panel11_Paint(object sender, PaintEventArgs e)
         {
@@ -80,12 +113,13 @@ namespace PIMS
 
         }
 
-       
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
             AdmissionRecordView cr = new AdmissionRecordView();
+            cr.FetchId(patientId, admissionId);
             cr.ShowDialog();
             this.Close();
         }
@@ -94,6 +128,7 @@ namespace PIMS
         {
             this.Hide();
             AdmissionRecord cr = new AdmissionRecord();
+            cr.FetchId(patientId);
             cr.ShowDialog();
             this.Close();
         }
