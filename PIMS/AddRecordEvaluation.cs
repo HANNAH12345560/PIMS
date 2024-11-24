@@ -84,10 +84,10 @@ namespace PIMS
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AddRecordHistory ar = new AddRecordHistory();
-            ar.ShowDialog();
-            this.Close();
+            //this.Hide();
+            //AddRecordHistory ar = new AddRecordHistory();
+            //ar.ShowDialog();
+            //this.Close();
         }
 
         private void btnContinue_Click(object sender, EventArgs e)

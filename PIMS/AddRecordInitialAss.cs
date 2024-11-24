@@ -92,10 +92,10 @@ namespace PIMS
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AddRecordHistory pl = new AddRecordHistory();
-            pl.ShowDialog();
-            this.Close();
+            //this.Hide();
+            //AddRecordHistory pl = new AddRecordHistory();
+            //pl.ShowDialog();
+            //this.Close();
         }
     }
 }
