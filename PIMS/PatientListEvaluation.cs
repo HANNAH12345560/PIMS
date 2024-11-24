@@ -103,11 +103,11 @@ namespace PIMS
 
         }
 
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-            panel1.AutoScroll = false;
-            panel1.VerticalScroll.Value = vScrollBar1.Value;
-        }
+        //private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        //{
+        //    panel1.AutoScroll = false;
+        //    panel1.VerticalScroll.Value = vScrollBar1.Value;
+        //}
 
         private void panel15_Paint(object sender, PaintEventArgs e)
         {

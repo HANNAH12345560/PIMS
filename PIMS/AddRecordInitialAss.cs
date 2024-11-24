@@ -93,7 +93,7 @@ namespace PIMS
         private void btnContinue_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PatientListHistory pl = new PatientListHistory();
+            AddRecordHistory pl = new AddRecordHistory();
             pl.ShowDialog();
             this.Close();
         }

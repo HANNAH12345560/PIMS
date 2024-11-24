@@ -23,7 +23,11 @@ namespace PIMS
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
 
-            string query = "SELECT COUNT(*) FROM patientinfo;";
+            string query = "SELECT (SELECT COUNT(id) FROM patientinfo) AS PatientCount," +
+                "(SELECT COUNT(id) FROM consultationassesment) AS AppointmentCount," +
+                "(SELECT COUNT(id) FROM payment) AS PaymentCount," +
+                "(SELECT SUM(balance_due) FROM payment) + (SELECT SUM(total_bill) FROM hospitaladmission) AS Revenue;";
+
             using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
             {
                 conn.Open();
@@ -31,14 +35,14 @@ namespace PIMS
                 NpgsqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    lblTtlPatients.Text = dr[0].ToString();
-                    
+                    lblTtlPatients.Text = dr["PatientCount"].ToString();
+                    lblTtlAppointment.Text = dr["AppointmentCount"].ToString();
+                    lblTtlPresc.Text = dr["PaymentCount"].ToString();
+                    lblTtlRevenue.Text = string.Format("{0:N2}", dr["Revenue"]);
                 }
             }
 
         }
-
-        
 
         public void HoverBtn(Button btn)
         {
@@ -47,10 +51,10 @@ namespace PIMS
                 btn.BackColor = Color.FromArgb(255, 240, 245);
                 btn.ForeColor = Color.FromArgb(255, 92, 141);
             }
-            
+
         }
 
-        public void HoverbtnReset (Button btn)
+        public void HoverbtnReset(Button btn)
         {
             btn.BackColor = Color.FromArgb(255, 192, 211);
             btn.ForeColor = Color.FromArgb(82, 74, 78);
@@ -65,7 +69,6 @@ namespace PIMS
         {
             HoverbtnReset(btnDashboard);
         }
-
 
         private void btnMedRec_MouseHover(object sender, EventArgs e)
         {

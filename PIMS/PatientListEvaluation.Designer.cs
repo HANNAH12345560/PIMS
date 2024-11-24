@@ -39,10 +39,8 @@
             this.btnContinue = new CustomControls.Controls.RJButton();
             this.panelPhysicalExam = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
             this.comboBoxGender = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btbAdd = new CustomControls.Controls.RJButton();
@@ -54,6 +52,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtComplaint = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -184,7 +183,6 @@
             this.panel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel15.Controls.Add(this.comboBoxGender);
             this.panel15.Controls.Add(this.label4);
-            this.panel15.Controls.Add(this.vScrollBar1);
             this.panel15.Controls.Add(this.label2);
             this.panel15.Controls.Add(this.panel1);
             this.panel15.Controls.Add(this.txtComplaint);
@@ -196,18 +194,6 @@
             this.panel15.Size = new System.Drawing.Size(1293, 581);
             this.panel15.TabIndex = 20;
             this.panel15.Paint += new System.Windows.Forms.PaintEventHandler(this.panel15_Paint);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
-            this.label13.Location = new System.Drawing.Point(53, 448);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(58, 22);
-            this.label13.TabIndex = 45;
-            this.label13.Text = "Remark";
             // 
             // comboBoxGender
             // 
@@ -233,14 +219,6 @@
             this.label4.TabIndex = 43;
             this.label4.Text = "Remarks";
             // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(1048, 271);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 235);
-            this.vScrollBar1.TabIndex = 42;
-            this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -255,6 +233,7 @@
             // 
             // panel1
             // 
+            this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.btbAdd);
             this.panel1.Controls.Add(this.txtPrice);
             this.panel1.Controls.Add(this.txtMedName);
@@ -264,7 +243,7 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Location = new System.Drawing.Point(48, 271);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(987, 117);
+            this.panel1.Size = new System.Drawing.Size(1004, 117);
             this.panel1.TabIndex = 40;
             // 
             // btbAdd
@@ -290,7 +269,7 @@
             // 
             this.txtPrice.Location = new System.Drawing.Point(725, 33);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(282, 25);
+            this.txtPrice.Size = new System.Drawing.Size(276, 25);
             this.txtPrice.TabIndex = 46;
             // 
             // txtMedName
@@ -368,6 +347,18 @@
             this.label14.TabIndex = 20;
             this.label14.Text = "Diagnosis:";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
+            this.label13.Location = new System.Drawing.Point(53, 448);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(58, 22);
+            this.label13.TabIndex = 45;
+            this.label13.Text = "Remark";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -428,7 +419,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.Label label4;
         private CustomControls.Controls.RJButton btbAdd;
         private System.Windows.Forms.Label label13;
