@@ -281,7 +281,7 @@ namespace PIMS
         {
             this.Hide();
             ConsultationRecordView cr = new ConsultationRecordView();
-            cr.FetchId(patientId, consultationId);
+            cr.FetchId(consultationId, patientId);
             cr.ShowDialog();
             this.Close();
         }
@@ -290,7 +290,7 @@ namespace PIMS
         {
             this.Hide();
             ConsultationRecordViewEvaluation cr = new ConsultationRecordViewEvaluation();
-            cr.FetchId(patientId, consultationId);
+            cr.FetchId(consultationId, patientId);
             cr.ShowDialog();
             this.Close();
         }

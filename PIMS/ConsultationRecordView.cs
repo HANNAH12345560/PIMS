@@ -30,7 +30,9 @@ namespace PIMS
 
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
-            string query = "SELECT c.id,e.id, e.physician, c.bp, c.rr, c.pr, c.temp, c.wt, c.ht, c.blood_type, c.complaint FROM consultationassesment c JOIN physicianevaluation e ON c.id = e.consultation_id;";
+            //MessageBox.Show(consultationId.ToString());
+
+            string query = "SELECT c.id,e.id, e.physician, c.bp, c.rr, c.pr, c.temp, c.wt, c.ht, c.blood_type, c.complaint FROM consultationassesment c JOIN physicianevaluation e ON c.id = e.consultation_id WHERE c.id = @consultationId;";
             using(NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
             {
                 conn.Open();
@@ -126,7 +128,7 @@ namespace PIMS
         {
             this.Hide();
             ConsultationRecordViewHistory cr = new ConsultationRecordViewHistory();
-            cr.FetchId(patientId, consultationId);
+            cr.FetchId(consultationId, patientId);
             cr.ShowDialog();
             this.Close();
         }

@@ -234,6 +234,7 @@
             this.lblTtlPatients.TabIndex = 1;
             this.lblTtlPatients.Text = "150";
             this.lblTtlPatients.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTtlPatients.Click += new System.EventHandler(this.lblTtlPatients_Click);
             // 
             // label3
             // 

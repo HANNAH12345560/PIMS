@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Npgsql;
 
 namespace PIMS
 {
@@ -17,8 +18,23 @@ namespace PIMS
             InitializeComponent();
         }
 
+        dbConnection functions = new dbConnection();
+
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
+
+            string query = "SELECT COUNT(*) FROM patientinfo;";
+            using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+            {
+                conn.Open();
+                NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+                NpgsqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    lblTtlPatients.Text = dr[0].ToString();
+                    
+                }
+            }
 
         }
 
@@ -131,6 +147,11 @@ namespace PIMS
         private void rjButton4_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void lblTtlPatients_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

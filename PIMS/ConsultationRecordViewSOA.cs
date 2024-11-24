@@ -30,6 +30,7 @@ namespace PIMS
 
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
+            //MessageBox.Show(consultationId.ToString());
             dataGridView1.Rows.Add("Consultation Fee");
             dataGridView1.Rows.Add("Medical Fee");
             dataGridView1.Rows.Add("Insurance Payment");
@@ -107,7 +108,7 @@ namespace PIMS
         {
             this.Hide();
             ConsultationRecordViewEvaluation ce = new ConsultationRecordViewEvaluation();
-            ce.FetchId(patientId, consultationId);
+            ce.FetchId(consultationId, patientId);
             ce.ShowDialog();
             this.Close();
         }
