@@ -108,7 +108,7 @@ namespace PIMS
 
             DateTime date = DateTime.Now;
 
-            string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=Miyaki_11;Database=PatientManagementSystem;";
+            string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=hannah;Database=PatientManagementSystem;";
             string query = @"
         INSERT INTO ConsultationAssesment (patient_id, bp, rr, pr, temp, wt, ht, complaint, date, blood_type)
         VALUES (@patient_id, @bp, @rr, @pr, @temp, @wt, @ht, @complaint, @date, @blood_type)
@@ -137,7 +137,7 @@ namespace PIMS
                     MessageBox.Show("Consultation details saved successfully!");
 
                     this.Hide();
-                    AddRecordHistory pe = new AddRecordHistory(consultationId);
+                    PatientListHistory pe = new PatientListHistory(consultationId);
                     pe.ShowDialog();
                     this.Close();
                 }

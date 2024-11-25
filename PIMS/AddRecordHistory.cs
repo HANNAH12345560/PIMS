@@ -117,9 +117,8 @@ namespace PIMS
         {
             try
             {
-                string connectionString = "Host=localhost;Username=postgres;Password=Miyaki_11;Database=PatientManagementSystem";
 
-                using (var connection = new NpgsqlConnection(connectionString))
+                using (var connection = new NpgsqlConnection(db.connectDb))
                 {
                     connection.Open();
 

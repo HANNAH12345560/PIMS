@@ -8,12 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PIMS;
 
 namespace LoginScreen
 {
     public partial class Login : Form
     {
-        private string connString = "Host=localhost;Username=user1;Password=Miyaki_11;Database=PatientManagementSystem";
+        public string connectDb = "Server=localhost;Port=5432;User Id = postgres; Password=hannah;Database=PatientManagementSystem;";
 
         public Login()
         {
@@ -26,7 +27,7 @@ namespace LoginScreen
             string password = txtbPassword.Text;
 
             // Validate user login with PostgreSQL
-            using (var conn = new NpgsqlConnection(connString))
+            using (var conn = new NpgsqlConnection(connectDb))
             {
                 try
                 {
@@ -42,12 +43,13 @@ namespace LoginScreen
                             if (reader.HasRows)
                             {
                                 this.Hide();
-                                StartScreen startScreen = new StartScreen();
+                                PIMS.StartScreen startScreen = new PIMS.StartScreen();
                                 startScreen.ShowDialog();
                                 this.Close();
                             }
                             else
                             {
+                                
                                 Error error = new Error();
                                 error.ShowDialog();
                             }

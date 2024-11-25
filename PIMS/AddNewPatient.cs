@@ -17,7 +17,7 @@ namespace PIMS
         {
             InitializeComponent();
         }
-
+        dbConnection functions = new dbConnection();
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
 
@@ -183,9 +183,8 @@ namespace PIMS
             @age, @birthday, @birthplace, @civilStat, @gender, @religion, @occupation, @mobileTelNo
         ) RETURNING id";  
 
-                string connectionString = "Host=localhost;Username=user1;Password=Miyaki_11;Database=PatientManagementSystem";  
 
-                using (var conn = new NpgsqlConnection(connectionString)) 
+                using (var conn = new NpgsqlConnection(functions.connectDb)) 
                 {
                     conn.Open();
 

@@ -64,10 +64,10 @@ namespace PIMS
                
 
             }
-            this.Hide();
-            StartScreen startScreen = new StartScreen();
-            startScreen.ShowDialog();
-            this.Close();
+            //this.Hide();
+            //StartScreen startScreen = new StartScreen();
+            //startScreen.ShowDialog();
+            //this.Close();
         }
 
         private void txtPass__TextChanged(object sender, EventArgs e)

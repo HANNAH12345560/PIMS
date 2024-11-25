@@ -140,7 +140,7 @@ namespace PIMS
         {
             this.Hide();
             ConsultationRecordViewSOA cr = new ConsultationRecordViewSOA();
-            cr.FetchId(patientId, consultationId);
+            cr.FetchId(consultationId, patientId);
             cr.ShowDialog();
             this.Close();
         }

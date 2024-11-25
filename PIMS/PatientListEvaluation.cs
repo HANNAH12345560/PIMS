@@ -12,6 +12,8 @@ namespace PIMS
 {
     public partial class PatientListEvaluation : Form
     {
+        private int consultationId;
+
         public PatientListEvaluation()
         {
             InitializeComponent();
@@ -85,7 +87,7 @@ namespace PIMS
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PatientListHistory pl = new PatientListHistory();
+            PatientListHistory pl = new PatientListHistory(consultationId);
             pl.ShowDialog();
             this.Close();
         }
