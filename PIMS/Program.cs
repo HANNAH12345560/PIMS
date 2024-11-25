@@ -16,7 +16,7 @@ namespace PIMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MedicalRecordScreen());
+            Application.Run(new PatientListScreen());
         }
     }
 }

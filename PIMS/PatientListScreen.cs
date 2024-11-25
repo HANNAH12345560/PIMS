@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Npgsql;
 
 namespace PIMS
 {
@@ -16,35 +17,31 @@ namespace PIMS
         {
             InitializeComponent();
         }
+        string querySearch;
+        dbConnection functions = new dbConnection();
 
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
-            //Sample data
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
-            dataGridView1.Rows.Add("1234", "Hannah", "234");
+            string query = "SELECT * FROM patientinfo;";
+            using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+            {
+                conn.Open();
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                {
+                    NpgsqlDataReader read = cmd.ExecuteReader();
 
+                    while (read.Read())
+                    {
+                        string firstName = read["first_name"].ToString();
+                        string middleName = read["middle_name"].ToString();
+                        string lastName = read["last_name"].ToString();
+                        string fullname = $"{firstName} {middleName} {lastName}";
+                        string dateAdded = Convert.ToDateTime(read["date_added"]).ToString("yyyy-MM-dd");
+                        dataGridView1.Rows.Add(read["id"], fullname, read["gender"], read["age"], dateAdded);
+                    }
+                }
+            }
         }
-
-
 
         public void HoverBtn(Button btn)
         {
@@ -53,10 +50,9 @@ namespace PIMS
                 btn.BackColor = Color.FromArgb(255, 240, 245);
                 btn.ForeColor = Color.FromArgb(255, 92, 141);
             }
-            
         }
 
-        public void HoverbtnReset (Button btn)
+        public void HoverbtnReset(Button btn)
         {
             btn.BackColor = Color.FromArgb(255, 192, 211);
             btn.ForeColor = Color.FromArgb(82, 74, 78);
@@ -71,7 +67,6 @@ namespace PIMS
         {
             HoverbtnReset(btnDashboard);
         }
-
 
         private void btnMedRec_MouseHover(object sender, EventArgs e)
         {
@@ -207,7 +202,6 @@ namespace PIMS
         private void rjButton4_Click(object sender, EventArgs e)
         {
             Application.Exit();
-
         }
 
         private void panel9_Paint_1(object sender, PaintEventArgs e)
@@ -231,5 +225,156 @@ namespace PIMS
         {
 
         }
+
+        private void txtSearchName__TextChanged(object sender, EventArgs e)
+        {
+            querySearch = "SELECT * FROM patientinfo";
+
+            using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+            {
+                conn.Open();
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand(querySearch, conn))
+                {
+                    var source = new AutoCompleteStringCollection();
+
+                    using (NpgsqlDataReader read = cmd.ExecuteReader())
+                    {
+                        while (read.Read())
+                        {
+                            string fullname = read["first_name"].ToString() + " " + read["middle_name"].ToString() + " " + read["last_name"].ToString();
+                            source.Add(fullname);
+                        }
+                    }
+
+                    TextBox innerTextBox = (TextBox)txtSearchName.Controls[0];
+                    innerTextBox.AutoCompleteCustomSource = source;
+                    innerTextBox.AutoCompleteMode = AutoCompleteMode.Suggest;
+                    innerTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                }
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            TextBox innerTextBox = (TextBox)txtSearchName.Controls[0];
+            string search = innerTextBox.Text;
+
+            if (string.IsNullOrWhiteSpace(search))
+            {
+                MessageBox.Show("Please enter a name to search");
+            }
+            else
+            {
+                try
+                {
+                    using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+                    {
+                        conn.Open();
+                        querySearch = "SELECT * FROM patientinfo WHERE first_name || ' ' || middle_name || ' ' || last_name = @search";
+                        using (NpgsqlCommand cmd = new NpgsqlCommand(querySearch, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@search", search);
+                            using (NpgsqlDataReader read = cmd.ExecuteReader())
+                            {
+                                dataGridView1.Rows.Clear();
+                                if (read.Read())
+                                {
+                                    string firstName = read["first_name"].ToString();
+                                    string middleName = read["middle_name"].ToString();
+                                    string lastName = read["last_name"].ToString();
+                                    string fullname = $"{firstName} {middleName} {lastName}";
+                                    string dateAdded = Convert.ToDateTime(read["date_added"]).ToString("yyyy-MM-dd");
+                                    dataGridView1.Rows.Add(read["id"], fullname, read["gender"], read["age"], dateAdded);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Patient not found.");
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                DisplayAllPatientRow();
+            }
+            else if (comboBox1.SelectedIndex == 1)
+            {
+                DisplayPatientRow(5);
+            }
+            else if (comboBox1.SelectedIndex == 2)
+            {
+                DisplayPatientRow(10);
+            }
+            else if (comboBox1.SelectedIndex == 3)
+            {
+                DisplayPatientRow(15);
+            }
+            else if (comboBox1.SelectedIndex == 4)
+            {
+                DisplayPatientRow(20);
+            }
+        }
+
+        public void DisplayPatientRow(int limit)
+        {
+            int limitValue = limit;
+            string query = "SELECT * FROM patientinfo ORDER BY id ASC LIMIT @limitValue;";
+            using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+            {
+                conn.Open();
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@limitValue", limitValue);
+                    NpgsqlDataReader read = cmd.ExecuteReader();
+                    dataGridView1.Rows.Clear();
+                    while (read.Read())
+                    {
+                        string firstName = read["first_name"].ToString();
+                        string middleName = read["middle_name"].ToString();
+                        string lastName = read["last_name"].ToString();
+                        string fullname = $"{firstName} {middleName} {lastName}";
+                        string dateAdded = Convert.ToDateTime(read["date_added"]).ToString("yyyy-MM-dd");
+                        dataGridView1.Rows.Add(read["id"], fullname, read["gender"], read["age"], dateAdded);
+                    }
+                }
+            }
+        }
+
+        public void DisplayAllPatientRow()
+        {
+            string query = "SELECT * FROM patientinfo;";
+            using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+            {
+                conn.Open();
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                {
+                    dataGridView1.Rows.Clear();
+                    NpgsqlDataReader read = cmd.ExecuteReader();
+
+                    while (read.Read())
+                    {
+                        string firstName = read["first_name"].ToString();
+                        string middleName = read["middle_name"].ToString();
+                        string lastName = read["last_name"].ToString();
+                        string fullname = $"{firstName} {middleName} {lastName}";
+                        string dateAdded = Convert.ToDateTime(read["date_added"]).ToString("yyyy-MM-dd");
+                        dataGridView1.Rows.Add(read["id"], fullname, read["gender"], read["age"], dateAdded);
+                    }
+                }
+            }
+        }
     }
 }
+
+      
