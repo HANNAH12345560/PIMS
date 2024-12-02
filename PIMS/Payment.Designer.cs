@@ -36,7 +36,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelScroll = new System.Windows.Forms.Panel();
             this.btnCalculate = new CustomControls.Controls.RJButton();
-            this.btnBack = new CustomControls.Controls.RJButton();
             this.panelPhysicalExam = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtPhilDiscount = new System.Windows.Forms.TextBox();
@@ -60,28 +59,25 @@
             // 
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(2037, 1283);
+            this.panel7.Size = new System.Drawing.Size(1358, 834);
             this.panel7.TabIndex = 0;
             // 
             // panel8
             // 
             this.panel8.Controls.Add(this.lblDashboard);
             this.panel8.Controls.Add(this.panel4);
-            this.panel8.Location = new System.Drawing.Point(0, 32);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel8.Location = new System.Drawing.Point(0, 21);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(2037, 146);
+            this.panel8.Size = new System.Drawing.Size(1358, 95);
             this.panel8.TabIndex = 1;
             // 
             // lblDashboard
             // 
             this.lblDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDashboard.Location = new System.Drawing.Point(320, 0);
-            this.lblDashboard.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDashboard.Location = new System.Drawing.Point(213, 0);
             this.lblDashboard.Name = "lblDashboard";
-            this.lblDashboard.Size = new System.Drawing.Size(1048, 129);
+            this.lblDashboard.Size = new System.Drawing.Size(699, 84);
             this.lblDashboard.TabIndex = 0;
             this.lblDashboard.Text = "PAYMENT";
             this.lblDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -90,10 +86,9 @@
             // 
             this.panel4.BackgroundImage = global::PIMS.Properties.Resources.LoginLbl;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel4.Location = new System.Drawing.Point(12, -18);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel4.Location = new System.Drawing.Point(8, -12);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(298, 162);
+            this.panel4.Size = new System.Drawing.Size(199, 105);
             this.panel4.TabIndex = 1;
             // 
             // panel6
@@ -105,20 +100,17 @@
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1924, 1050);
+            this.panel6.Size = new System.Drawing.Size(1370, 749);
             this.panel6.TabIndex = 1;
             // 
             // panelScroll
             // 
             this.panelScroll.Controls.Add(this.btnCalculate);
-            this.panelScroll.Controls.Add(this.btnBack);
             this.panelScroll.Controls.Add(this.panelPhysicalExam);
-            this.panelScroll.Location = new System.Drawing.Point(18, 206);
-            this.panelScroll.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelScroll.Location = new System.Drawing.Point(12, 134);
             this.panelScroll.Name = "panelScroll";
-            this.panelScroll.Size = new System.Drawing.Size(2019, 1077);
+            this.panelScroll.Size = new System.Drawing.Size(1346, 700);
             this.panelScroll.TabIndex = 2;
             // 
             // btnCalculate
@@ -132,36 +124,14 @@
             this.btnCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalculate.ForeColor = System.Drawing.Color.White;
-            this.btnCalculate.Location = new System.Drawing.Point(916, 957);
-            this.btnCalculate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCalculate.Location = new System.Drawing.Point(507, 630);
             this.btnCalculate.Name = "btnCalculate";
-            this.btnCalculate.Size = new System.Drawing.Size(369, 62);
+            this.btnCalculate.Size = new System.Drawing.Size(246, 40);
             this.btnCalculate.TabIndex = 39;
             this.btnCalculate.Text = "CALCULATE";
             this.btnCalculate.TextColor = System.Drawing.Color.White;
             this.btnCalculate.UseVisualStyleBackColor = false;
             this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnBack.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnBack.BorderRadius = 7;
-            this.btnBack.BorderSize = 0;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(513, 957);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(369, 62);
-            this.btnBack.TabIndex = 38;
-            this.btnBack.Text = "BACK";
-            this.btnBack.TextColor = System.Drawing.Color.White;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // panelPhysicalExam
             // 
@@ -169,9 +139,8 @@
             this.panelPhysicalExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelPhysicalExam.Controls.Add(this.panel1);
             this.panelPhysicalExam.Location = new System.Drawing.Point(0, 0);
-            this.panelPhysicalExam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelPhysicalExam.Name = "panelPhysicalExam";
-            this.panelPhysicalExam.Size = new System.Drawing.Size(2025, 928);
+            this.panelPhysicalExam.Size = new System.Drawing.Size(1350, 603);
             this.panelPhysicalExam.TabIndex = 0;
             // 
             // panel1
@@ -188,18 +157,16 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.txtConsult);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(28, 88);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(19, 57);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1940, 731);
+            this.panel1.Size = new System.Drawing.Size(1293, 475);
             this.panel1.TabIndex = 18;
             // 
             // txtPhilDiscount
             // 
-            this.txtPhilDiscount.Location = new System.Drawing.Point(69, 229);
-            this.txtPhilDiscount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPhilDiscount.Location = new System.Drawing.Point(46, 149);
             this.txtPhilDiscount.Name = "txtPhilDiscount";
-            this.txtPhilDiscount.Size = new System.Drawing.Size(781, 26);
+            this.txtPhilDiscount.Size = new System.Drawing.Size(522, 20);
             this.txtPhilDiscount.TabIndex = 37;
             // 
             // label1
@@ -208,19 +175,17 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
-            this.label1.Location = new System.Drawing.Point(64, 203);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(43, 132);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 22);
+            this.label1.Size = new System.Drawing.Size(76, 15);
             this.label1.TabIndex = 36;
             this.label1.Text = "Philhealth:";
             // 
             // txtOtherDisc
             // 
-            this.txtOtherDisc.Location = new System.Drawing.Point(948, 143);
-            this.txtOtherDisc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtOtherDisc.Location = new System.Drawing.Point(632, 93);
             this.txtOtherDisc.Name = "txtOtherDisc";
-            this.txtOtherDisc.Size = new System.Drawing.Size(781, 26);
+            this.txtOtherDisc.Size = new System.Drawing.Size(522, 20);
             this.txtOtherDisc.TabIndex = 35;
             // 
             // label4
@@ -229,19 +194,17 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
-            this.label4.Location = new System.Drawing.Point(942, 117);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(628, 76);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(150, 22);
+            this.label4.Size = new System.Drawing.Size(106, 15);
             this.label4.TabIndex = 34;
             this.label4.Text = "Other Discount:";
             // 
             // txtInsurPay
             // 
-            this.txtInsurPay.Location = new System.Drawing.Point(948, 60);
-            this.txtInsurPay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtInsurPay.Location = new System.Drawing.Point(632, 39);
             this.txtInsurPay.Name = "txtInsurPay";
-            this.txtInsurPay.Size = new System.Drawing.Size(781, 26);
+            this.txtInsurPay.Size = new System.Drawing.Size(522, 20);
             this.txtInsurPay.TabIndex = 33;
             // 
             // label5
@@ -250,19 +213,17 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
-            this.label5.Location = new System.Drawing.Point(942, 34);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(628, 22);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(180, 22);
+            this.label5.Size = new System.Drawing.Size(129, 15);
             this.label5.TabIndex = 32;
             this.label5.Text = "Insurance Payment";
             // 
             // txtSCPWDiscount
             // 
-            this.txtSCPWDiscount.Location = new System.Drawing.Point(72, 143);
-            this.txtSCPWDiscount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSCPWDiscount.Location = new System.Drawing.Point(48, 93);
             this.txtSCPWDiscount.Name = "txtSCPWDiscount";
-            this.txtSCPWDiscount.Size = new System.Drawing.Size(781, 26);
+            this.txtSCPWDiscount.Size = new System.Drawing.Size(522, 20);
             this.txtSCPWDiscount.TabIndex = 31;
             // 
             // label9
@@ -271,19 +232,17 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
-            this.label9.Location = new System.Drawing.Point(66, 117);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(44, 76);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(190, 22);
+            this.label9.Size = new System.Drawing.Size(132, 15);
             this.label9.TabIndex = 28;
             this.label9.Text = "SC / PWD Discount:";
             // 
             // txtConsult
             // 
-            this.txtConsult.Location = new System.Drawing.Point(72, 60);
-            this.txtConsult.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtConsult.Location = new System.Drawing.Point(48, 39);
             this.txtConsult.Name = "txtConsult";
-            this.txtConsult.Size = new System.Drawing.Size(781, 26);
+            this.txtConsult.Size = new System.Drawing.Size(522, 20);
             this.txtConsult.TabIndex = 24;
             // 
             // label3
@@ -292,23 +251,21 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
-            this.label3.Location = new System.Drawing.Point(66, 34);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(44, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(168, 22);
+            this.label3.Size = new System.Drawing.Size(119, 15);
             this.label3.TabIndex = 21;
             this.label3.Text = "Consultation Fee:";
             // 
             // Payment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(239)))), ((int)(((byte)(244)))));
-            this.ClientSize = new System.Drawing.Size(1924, 1050);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.panel6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Payment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Patient List";
@@ -338,7 +295,6 @@
         private System.Windows.Forms.TextBox txtConsult;
         private System.Windows.Forms.Label label3;
         private CustomControls.Controls.RJButton btnCalculate;
-        private CustomControls.Controls.RJButton btnBack;
         private System.Windows.Forms.TextBox txtOtherDisc;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtInsurPay;

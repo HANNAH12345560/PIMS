@@ -8,21 +8,23 @@ namespace PIMS
     {
         private int consultationId;
         private int patientId;
+        private double totalPrice = 0.0;
         dbConnection functions = new dbConnection();
 
-        public Insurance(int consultationId, int patientId)
+        public Insurance(int consultationId, int patientId, double totalPrice)
         {
             InitializeComponent();
             this.consultationId = consultationId;
             this.patientId = patientId;
+            this.totalPrice = totalPrice;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Prescription p = new Prescription(consultationId, patientId);
-            p.ShowDialog();
-            this.Close();
+            //this.Hide();
+            //Prescription p = new Prescription(consultationId, patientId, physicianEvaluationId);
+            //p.ShowDialog();
+            //this.Close();
         }
 
         private void btnContinue_Click(object sender, EventArgs e)
@@ -61,7 +63,7 @@ namespace PIMS
                         MessageBox.Show($"New insurance record added with ID: {insuranceId}");
 
                         this.Hide();
-                        Payment pl = new Payment(consultationId, patientId);
+                        Payment pl = new Payment(consultationId, patientId, totalPrice);
                         pl.ShowDialog();
                         this.Close();
                     }

@@ -13,18 +13,18 @@ namespace PIMS
 {
     public partial class PatientListEvaluation : Form
     {
-        private int consultationId; 
+        private int consultationId;
         private int physicianEvaluationId;
         private int patientId;
-
+        private double totalPrice = 0.0;
 
         private dbConnection db = new dbConnection();
 
-        public PatientListEvaluation(int physicianEvaluationId, int patientId)
+        public PatientListEvaluation(int consultationId, int physicianEvaluationId, int patientId)
         {
             InitializeComponent();
-           
-            this.consultationId = consultationId; 
+
+            this.consultationId = consultationId;
             this.physicianEvaluationId = physicianEvaluationId;
             this.patientId = patientId;
         }
@@ -57,7 +57,7 @@ namespace PIMS
             }
 
             this.Hide();
-            Prescription pre = new Prescription(physicianEvaluationId, patientId);
+            Prescription pre = new Prescription(consultationId, patientId, physicianEvaluationId, totalPrice);
             pre.ShowDialog();
             this.Close();
         }
@@ -71,9 +71,9 @@ namespace PIMS
             }
 
             string updateQuery = @"
-        UPDATE PhysicianEvaluation
-        SET diagnosis = @diagnosis, remark = @remark
-        WHERE id = @id";
+            UPDATE PhysicianEvaluation
+            SET diagnosis = @diagnosis, remark = @remark
+            WHERE id = @id";
 
             using (var updateCommand = new NpgsqlCommand(updateQuery, connection))
             {
@@ -113,12 +113,12 @@ namespace PIMS
                 }
 
                 string query = @"
-            INSERT INTO MedicalTreatment (
-                physician_eval_id, name, dosage, price
-            )
-            VALUES (
-                @physician_eval_id, @name, @dosage, @price
-            ) RETURNING id";
+                INSERT INTO MedicalTreatment (
+                    physician_eval_id, name, dosage, price
+                )
+                VALUES (
+                    @physician_eval_id, @name, @dosage, @price
+                ) RETURNING id";
 
                 using (var conn = new NpgsqlConnection(db.connectDb))
                 {
@@ -132,6 +132,7 @@ namespace PIMS
                         command.Parameters.AddWithValue("price", double.TryParse(txtPrice.Text, out double price) ? price : 0.0);
                         int medicalTreatmentId = (int)command.ExecuteScalar();
 
+                        totalPrice += price;
 
                         MessageBox.Show($"Medical treatment added successfully with ID: {medicalTreatmentId}");
 

@@ -129,7 +129,7 @@ namespace PIMS
                     MessageBox.Show("Data inserted successfully.");
                 }
                 this.Hide();
-                PatientListEvaluation pl = new PatientListEvaluation(consultationId, physicianEvalId);
+                PatientListEvaluation pl = new PatientListEvaluation(consultationId, physicianEvalId, patientId);
                 pl.ShowDialog();
                 this.Close();
             }
