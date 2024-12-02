@@ -30,56 +30,6 @@ namespace PIMS
         {
 
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel9_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        private void panel11_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel12_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelPhysicalExam_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -108,7 +58,7 @@ namespace PIMS
 
             DateTime date = DateTime.Now;
 
-            string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=hannah;Database=PatientManagementSystem;";
+            string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=Miyaki_11;Database=PatientManagementSystem;";
             string query = @"
         INSERT INTO ConsultationAssesment (patient_id, bp, rr, pr, temp, wt, ht, complaint, date, blood_type)
         VALUES (@patient_id, @bp, @rr, @pr, @temp, @wt, @ht, @complaint, @date, @blood_type)

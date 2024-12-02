@@ -100,7 +100,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1144, 749);
             this.panel6.TabIndex = 1;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // panel9
             // 
@@ -117,7 +116,6 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1113, 627);
             this.panel9.TabIndex = 2;
-            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint_1);
             // 
             // btnBack
             // 
@@ -188,7 +186,6 @@
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(149, 31);
             this.panel13.TabIndex = 6;
-            this.panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.panel13_Paint);
             // 
             // lblStatus
             // 
@@ -255,7 +252,6 @@
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(1041, 374);
             this.panel12.TabIndex = 3;
-            this.panel12.Paint += new System.Windows.Forms.PaintEventHandler(this.panel12_Paint);
             // 
             // comboBoxCivilStatus
             // 
@@ -294,7 +290,6 @@
             this.txtOccupation.Name = "txtOccupation";
             this.txtOccupation.Size = new System.Drawing.Size(228, 20);
             this.txtOccupation.TabIndex = 35;
-            this.txtOccupation.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label16
             // 
@@ -307,7 +302,6 @@
             this.label16.Size = new System.Drawing.Size(84, 22);
             this.label16.TabIndex = 34;
             this.label16.Text = "Occupation:";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // txtReligion
             // 
@@ -455,7 +449,6 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(282, 20);
             this.txtFirstName.TabIndex = 16;
-            this.txtFirstName.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // txtLastName
             // 
@@ -538,7 +531,6 @@
             this.lblDashboard.TabIndex = 0;
             this.lblDashboard.Text = "ADD NEW PATIENT";
             this.lblDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblDashboard.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel7
             // 
@@ -547,7 +539,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1144, 21);
             this.panel7.TabIndex = 0;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // panel1
             // 

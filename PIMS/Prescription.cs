@@ -177,9 +177,9 @@ namespace PIMS
 
         private void btnBack_Click_2(object sender, EventArgs e)
         {
-            this.Hide();
-            PatientListEvaluation pl = new PatientListEvaluation();
-            pl.ShowDialog();
+            //this.Hide();
+            //PatientListEvaluation pl = new PatientListEvaluation();
+            //pl.ShowDialog();
             this.Close();
         }
     }

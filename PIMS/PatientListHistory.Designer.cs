@@ -36,7 +36,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelPhysicalExam = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBoxGender = new System.Windows.Forms.ComboBox();
+            this.comboBoxPhysician = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -92,7 +92,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1383, 21);
             this.panel7.TabIndex = 0;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // panel8
             // 
@@ -114,7 +113,6 @@
             this.lblDashboard.TabIndex = 0;
             this.lblDashboard.Text = "INITIAL ASSESSMENT";
             this.lblDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblDashboard.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel4
             // 
@@ -138,7 +136,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1370, 749);
             this.panel6.TabIndex = 1;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // panelPhysicalExam
             // 
@@ -149,13 +146,12 @@
             this.panelPhysicalExam.Name = "panelPhysicalExam";
             this.panelPhysicalExam.Size = new System.Drawing.Size(1350, 724);
             this.panelPhysicalExam.TabIndex = 0;
-            this.panelPhysicalExam.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPhysicalExam_Paint);
             // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::PIMS.Properties.Resources.EvaluationPanelPink;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.comboBoxGender);
+            this.panel1.Controls.Add(this.comboBoxPhysician);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.tableLayoutPanel2);
@@ -170,14 +166,14 @@
             // 
             // comboBoxGender
             // 
-            this.comboBoxGender.FormattingEnabled = true;
-            this.comboBoxGender.Items.AddRange(new object[] {
+            this.comboBoxPhysician.FormattingEnabled = true;
+            this.comboBoxPhysician.Items.AddRange(new object[] {
             "Dr. Reyes",
             "Dr. Lopez"});
-            this.comboBoxGender.Location = new System.Drawing.Point(48, 596);
-            this.comboBoxGender.Name = "comboBoxGender";
-            this.comboBoxGender.Size = new System.Drawing.Size(236, 30);
-            this.comboBoxGender.TabIndex = 40;
+            this.comboBoxPhysician.Location = new System.Drawing.Point(48, 596);
+            this.comboBoxPhysician.Name = "comboBoxGender";
+            this.comboBoxPhysician.Size = new System.Drawing.Size(236, 30);
+            this.comboBoxPhysician.TabIndex = 40;
             // 
             // label13
             // 
@@ -202,7 +198,6 @@
             this.label9.Size = new System.Drawing.Size(224, 37);
             this.label9.TabIndex = 39;
             this.label9.Text = "Assigned Physician";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -432,7 +427,6 @@
             this.label8.Size = new System.Drawing.Size(187, 37);
             this.label8.TabIndex = 37;
             this.label8.Text = "Medical History:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -549,7 +543,6 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "Food Allergies:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // label6
             // 
@@ -577,7 +570,6 @@
             this.chkStatusYES_FOOD.TabIndex = 40;
             this.chkStatusYES_FOOD.Text = "YES";
             this.chkStatusYES_FOOD.UseVisualStyleBackColor = true;
-            this.chkStatusYES_FOOD.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
             // chkStatusNO_FOOD
             // 
@@ -789,7 +781,7 @@
         private CustomControls.Controls.RJButton btnContinue;
         private CustomControls.Controls.RJButton btnBack;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBoxGender;
+        private System.Windows.Forms.ComboBox comboBoxPhysician;
         private System.Windows.Forms.Label label13;
     }
 }

@@ -49,8 +49,8 @@
       <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Npgsql, Version=8.0.5.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Npgsql.8.0.5\lib\netstandard2.0\Npgsql.dll</HintPath>
+    <Reference Include="Npgsql, Version=7.0.0.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.7.0.0\lib\netstandard2.0\Npgsql.dll</HintPath>
     </Reference>
     <Reference Include="ReaLTaiizor, Version=3.8.0.6, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ReaLTaiizor.3.8.0.6\lib\net48\ReaLTaiizor.dll</HintPath>
@@ -111,10 +111,10 @@
     <Compile Include="AddRecordEvaluation.Designer.cs">
       <DependentUpon>AddRecordEvaluation.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddRecordHistory.cs">
+    <Compile Include="Resources\AddRecordHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddRecordHistory.Designer.cs">
+    <Compile Include="Resources\AddRecordHistory.Designer.cs">
       <DependentUpon>AddRecordHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="AddRecordInitialAss.cs">
@@ -152,6 +152,12 @@
     </Compile>
     <Compile Include="Insurance.Designer.cs">
       <DependentUpon>Insurance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginScreen.Designer.cs">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="PatientListEdit.cs">
       <SubType>Form</SubType>
@@ -265,12 +271,6 @@
       <DependentUpon>DashboardScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="dbConnection.cs" />
-    <Compile Include="LoginScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LoginScreen.Designer.cs">
-      <DependentUpon>LoginScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="AddRecordSOA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,7 +317,7 @@
     <EmbeddedResource Include="AddRecordEvaluation.resx">
       <DependentUpon>AddRecordEvaluation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddRecordHistory.resx">
+    <EmbeddedResource Include="Resources\AddRecordHistory.resx">
       <DependentUpon>AddRecordHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddRecordInitialAss.resx">
@@ -337,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Insurance.resx">
       <DependentUpon>Insurance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginScreen.resx">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientListEdit.resx">
       <DependentUpon>PatientListEdit.cs</DependentUpon>
@@ -391,9 +394,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DashboardScreen.resx">
       <DependentUpon>DashboardScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LoginScreen.resx">
-      <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddRecordSOA.resx">
       <DependentUpon>AddRecordSOA.cs</DependentUpon>

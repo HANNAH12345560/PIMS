@@ -26,8 +26,6 @@ namespace PIMS
         {
             InitializeCheckBoxes();
         }
-
-
         private void InitializeCheckBoxes()
         {
             chkStatusYES_FOOD.Tag = "Row1";
@@ -106,65 +104,6 @@ namespace PIMS
             }
         }
 
-
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel9_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-       
-
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        
-
-        private void panel11_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel12_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelPhysicalExam_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-       
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -177,13 +116,12 @@ namespace PIMS
         {
             try
             {
-
                 using (var connection = new NpgsqlConnection(db.connectDb))
                 {
                     connection.Open();
-
                     InsertAllergyData(connection);
                     InsertMedicalHistoryData(connection);
+                    InsertPhysicianEvaluation(consultationId, connection);
 
                     MessageBox.Show("Data inserted successfully.");
                 }
@@ -193,12 +131,35 @@ namespace PIMS
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
 
-            // Optionally, you can hide the current form and show another one:
-            // this.Hide();
-            // AddRecordEvaluation ar = new AddRecordEvaluation();
-            // ar.ShowDialog();
-            // this.Close();
+            PatientListEvaluation pl = new PatientListEvaluation(consultationId);
+            pl.ShowDialog(); 
+            this.Close();
+
         }
+
+        private void InsertPhysicianEvaluation(int consultationId, NpgsqlConnection connection)
+        {
+            string physician = comboBoxPhysician.SelectedItem?.ToString() ?? string.Empty;
+
+            string query = @"
+    INSERT INTO PhysicianEvaluation (
+        consultation_id, physician
+    )
+    VALUES (
+        @consultation_id, @physician
+    ) RETURNING id";
+
+            using (var command = new NpgsqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@consultation_id", consultationId);
+                command.Parameters.AddWithValue("@physician", physician);
+
+                int physicianEvalId = (int)command.ExecuteScalar();
+
+                MessageBox.Show($"Physician evaluation added successfully with ID: {physicianEvalId}");
+            }
+        }
+
 
         private void InsertMedicalHistoryData(NpgsqlConnection connection)
         {
@@ -304,33 +265,6 @@ namespace PIMS
             if (yesCheckBox.Checked) return "Yes";
             if (notKnownCheckBox.Checked) return "Not Known";
             return "No";
-        }
-
-
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
