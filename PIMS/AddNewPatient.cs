@@ -174,29 +174,28 @@ namespace PIMS
                     return;
                 }
                 string query = @"
-        INSERT INTO PatientInfo (
-            status, philHealthNo, last_name, first_name, middle_name, home_add, 
-            age, birthday, birthplace, civilStat, gender, religion, occupation, mobiletelno
-        )
-        VALUES (
-            @status, @philHealthNo, @last_name, @first_name, @middle_name, @home_add, 
-            @age, @birthday, @birthplace, @civilStat, @gender, @religion, @occupation, @mobileTelNo
-        ) RETURNING id";  
+                INSERT INTO PatientInfo (
+                    status, philHealthNo, last_name, first_name, middle_name, home_add, 
+                    age, birthday, birthplace, civilStat, gender, religion, occupation, mobiletelno, date_added
+                )
+                VALUES (
+                    @status, @philHealthNo, @last_name, @first_name, @middle_name, @home_add, 
+                    @age, @birthday, @birthplace, @civilStat, @gender, @religion, @occupation, @mobileTelNo, @date_added
+                ) RETURNING id";
 
-
-                using (var conn = new NpgsqlConnection(functions.connectDb)) 
+                using (var conn = new NpgsqlConnection(functions.connectDb))
                 {
                     conn.Open();
 
                     using (var command = new NpgsqlCommand(query, conn))
                     {
-                        command.Parameters.AddWithValue("status", comboBoxCivilStatus.SelectedItem?.ToString() ?? string.Empty);
+                        command.Parameters.AddWithValue("status", lblStatus.Text = "Active");
                         command.Parameters.AddWithValue("philHealthNo", txtPhilHealthNo.Text);
                         command.Parameters.AddWithValue("last_name", txtLastName.Text);
                         command.Parameters.AddWithValue("first_name", txtFirstName.Text);
                         command.Parameters.AddWithValue("middle_name", txtMiddleName.Text);
                         command.Parameters.AddWithValue("home_add", txtAddressS.Text);
-                        command.Parameters.AddWithValue("age", int.TryParse(txtAge.Text, out int age) && age > 0 ? age : (object)DBNull.Value);  
+                        command.Parameters.AddWithValue("age", int.TryParse(txtAge.Text, out int age) && age > 0 ? age : (object)DBNull.Value);
                         command.Parameters.AddWithValue("birthday", dtpBirthdate.Value.Date);
                         command.Parameters.AddWithValue("birthplace", txtBirthPlace.Text);
                         command.Parameters.AddWithValue("civilStat", comboBoxCivilStatus.SelectedItem?.ToString() ?? string.Empty);
@@ -204,13 +203,14 @@ namespace PIMS
                         command.Parameters.AddWithValue("religion", txtReligion.Text);
                         command.Parameters.AddWithValue("occupation", txtOccupation.Text);
                         command.Parameters.AddWithValue("mobileTelNo", txtTelNo.Text);
+                        command.Parameters.AddWithValue("date_added", DateTime.Now);
 
-                        int patientId = (int)command.ExecuteScalar();  
+                        int patientId = (int)command.ExecuteScalar();
 
                         MessageBox.Show($"New patient added with ID: {patientId}");
 
                         this.Hide();
-                        PatientListInitialAss pe = new PatientListInitialAss(patientId);  
+                        PatientListInitialAss pe = new PatientListInitialAss(patientId);
                         pe.ShowDialog();
                         this.Close();
                     }

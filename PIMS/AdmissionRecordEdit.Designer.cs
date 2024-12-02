@@ -39,6 +39,9 @@
             this.btnCancel = new CustomControls.Controls.RJButton();
             this.panelPhysicalExam = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtDischarge = new System.Windows.Forms.DateTimePicker();
+            this.cbPhysician = new System.Windows.Forms.ComboBox();
+            this.cbWard = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTelNo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -62,9 +65,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtBP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbWard = new System.Windows.Forms.ComboBox();
-            this.cbPhysician = new System.Windows.Forms.ComboBox();
-            this.dtDischarge = new System.Windows.Forms.DateTimePicker();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panelScroll.SuspendLayout();
@@ -221,6 +221,30 @@
             this.panel1.Size = new System.Drawing.Size(1293, 541);
             this.panel1.TabIndex = 18;
             // 
+            // dtDischarge
+            // 
+            this.dtDischarge.Location = new System.Drawing.Point(726, 54);
+            this.dtDischarge.Name = "dtDischarge";
+            this.dtDischarge.Size = new System.Drawing.Size(282, 20);
+            this.dtDischarge.TabIndex = 62;
+            // 
+            // cbPhysician
+            // 
+            this.cbPhysician.FormattingEnabled = true;
+            this.cbPhysician.Location = new System.Drawing.Point(726, 208);
+            this.cbPhysician.Name = "cbPhysician";
+            this.cbPhysician.Size = new System.Drawing.Size(282, 21);
+            this.cbPhysician.TabIndex = 61;
+            // 
+            // cbWard
+            // 
+            this.cbWard.FormattingEnabled = true;
+            this.cbWard.Location = new System.Drawing.Point(201, 208);
+            this.cbWard.Name = "cbWard";
+            this.cbWard.Size = new System.Drawing.Size(282, 21);
+            this.cbWard.TabIndex = 60;
+            this.cbWard.SelectedIndexChanged += new System.EventHandler(this.cbWard_SelectedIndexChanged);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -268,9 +292,9 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label9.Location = new System.Drawing.Point(554, 127);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(119, 22);
+            this.label9.Size = new System.Drawing.Size(125, 22);
             this.label9.TabIndex = 54;
-            this.label9.Text = "Relation to Parent";
+            this.label9.Text = "Relation to Patient:";
             // 
             // txtPatientID
             // 
@@ -371,9 +395,9 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label5.Location = new System.Drawing.Point(29, 127);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 22);
+            this.label5.Size = new System.Drawing.Size(110, 22);
             this.label5.TabIndex = 42;
-            this.label5.Text = "Guardian:";
+            this.label5.Text = "Guardian Name:";
             // 
             // txtPatientName
             // 
@@ -454,30 +478,6 @@
             this.label3.Size = new System.Drawing.Size(97, 22);
             this.label3.TabIndex = 21;
             this.label3.Text = "Case Number:";
-            // 
-            // cbWard
-            // 
-            this.cbWard.FormattingEnabled = true;
-            this.cbWard.Location = new System.Drawing.Point(201, 208);
-            this.cbWard.Name = "cbWard";
-            this.cbWard.Size = new System.Drawing.Size(282, 21);
-            this.cbWard.TabIndex = 60;
-            this.cbWard.SelectedIndexChanged += new System.EventHandler(this.cbWard_SelectedIndexChanged);
-            // 
-            // cbPhysician
-            // 
-            this.cbPhysician.FormattingEnabled = true;
-            this.cbPhysician.Location = new System.Drawing.Point(726, 208);
-            this.cbPhysician.Name = "cbPhysician";
-            this.cbPhysician.Size = new System.Drawing.Size(282, 21);
-            this.cbPhysician.TabIndex = 61;
-            // 
-            // dtDischarge
-            // 
-            this.dtDischarge.Location = new System.Drawing.Point(726, 54);
-            this.dtDischarge.Name = "dtDischarge";
-            this.dtDischarge.Size = new System.Drawing.Size(282, 20);
-            this.dtDischarge.TabIndex = 62;
             // 
             // AdmissionRecordEdit
             // 

@@ -26,6 +26,10 @@ namespace PIMS
             patientId = id;
         }
 
+        int sortColumnIndex = 0;
+        bool sortAscending = true;
+
+
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
             string query = "SELECT c.id, c.date, e.physician FROM patientinfo p JOIN consultationassesment c ON p.id = c.patient_id JOIN physicianevaluation e ON c.id = e.consultation_id WHERE p.id = @patientId;";
@@ -226,5 +230,139 @@ namespace PIMS
         {
 
         }
+
+        private void txtSearchName__TextChanged(object sender, EventArgs e)
+        {
+            string query = "SELECT c.id, c.date, e.physician FROM patientinfo p JOIN consultationassesment c ON p.id = c.patient_id JOIN physicianevaluation e ON c.id = e.consultation_id WHERE p.id = @patientId;";
+
+            using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+            {
+                conn.Open();
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                {
+
+                    cmd.Parameters.AddWithValue("@patientId", patientId);
+                    var source = new AutoCompleteStringCollection();
+
+                    using (NpgsqlDataReader read = cmd.ExecuteReader())
+                    {
+                        while (read.Read())
+                        {
+                            source.Add(read["physician"].ToString());
+                        }
+                    }
+
+                    TextBox innerTextBox = (TextBox)txtSearchName.Controls[0];
+                    innerTextBox.AutoCompleteCustomSource = source;
+                    innerTextBox.AutoCompleteMode = AutoCompleteMode.Suggest;
+                    innerTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                }
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            TextBox innerTextBox = (TextBox)txtSearchName.Controls[0];
+            string search = innerTextBox.Text;
+
+            if (string.IsNullOrWhiteSpace(search))
+            {
+                MessageBox.Show("Please enter a physician to search");
+            }
+            else
+            {
+                try
+                {
+                    using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+                    {
+                        conn.Open();
+                        string query = "SELECT c.id, c.date, e.physician FROM patientinfo p JOIN consultationassesment c ON p.id = c.patient_id JOIN physicianevaluation e ON c.id = e.consultation_id WHERE p.id = @patientId AND e.physician ILIKE @search;";
+
+                        using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@patientId", patientId);
+                            cmd.Parameters.AddWithValue("@search", "%" + search + "%");
+                            using (NpgsqlDataReader read = cmd.ExecuteReader())
+                            {
+                                dataGridView1.Rows.Clear();
+                                while (read.Read())
+                                {
+                                    dataGridView1.Rows.Add(read["id"], read["physician"], read["date"]);
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (sortColumnIndex == e.ColumnIndex)
+            {
+                sortAscending = !sortAscending;
+            }
+            else
+            {
+                sortColumnIndex = e.ColumnIndex;
+                sortAscending = true;
+            }
+
+            BubbleSort(dataGridView1);
+
+        }
+
+        private void BubbleSort(DataGridView dgv)
+        {
+            int rowCount = dgv.Rows.Count - 1;
+            for (int i = 0; i < rowCount; i++)
+            {
+                for (int j = 0; j < rowCount - i; j++)
+                {
+                    string value1 = dgv.Rows[j].Cells[sortColumnIndex].Value?.ToString() ?? "";
+                    string value2 = dgv.Rows[j + 1].Cells[sortColumnIndex].Value?.ToString() ?? "";
+
+                    int comparison = CompareValues(value1, value2);
+
+                    if ((sortAscending && comparison > 0) || (!sortAscending && comparison < 0))
+                    {
+                        SwapRows(dgv, j, j + 1);
+                    }
+                }
+            }
+        }
+
+        private int CompareValues(string value1, string value2)
+        {
+            if (int.TryParse(value1, out int num1) && int.TryParse(value2, out int num2))
+            {
+                return num1.CompareTo(num2);
+            }
+
+            if (DateTime.TryParse(value1, out DateTime date1) && DateTime.TryParse(value2, out DateTime date2))
+            {
+                return date1.CompareTo(date2);
+            }
+
+            return string.Compare(value1, value2, StringComparison.OrdinalIgnoreCase);
+        }
+
+
+        private void SwapRows(DataGridView dgv, int rowIndex1, int rowIndex2)
+        {
+            for (int i = 0; i < dgv.Columns.Count; i++)
+            {
+                var temp = dgv.Rows[rowIndex1].Cells[i].Value;
+                dgv.Rows[rowIndex1].Cells[i].Value = dgv.Rows[rowIndex2].Cells[i].Value;
+                dgv.Rows[rowIndex2].Cells[i].Value = temp;
+            }
+        }
+
+
     }
 }

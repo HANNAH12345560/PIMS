@@ -17,8 +17,11 @@ namespace PIMS
         {
             InitializeComponent();
         }
+
         string querySearch;
         dbConnection functions = new dbConnection();
+        int sortColumnIndex = 0;
+        bool sortAscending = true;
 
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
@@ -211,12 +214,12 @@ namespace PIMS
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridView1.Columns[Action.Name].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dataGridView1.Columns["Action"].Index && e.RowIndex >= 0)
             {
-                string selectedConsultationRecord = dataGridView1.Rows[e.RowIndex].Cells[CaseNo.Name].Value.ToString();
+                int selectedConsultationRecord = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["CaseNo"].Value.ToString());
 
                 this.Hide();
-                PatientListEdit edit = new PatientListEdit();
+                PatientListEdit edit = new PatientListEdit(selectedConsultationRecord);
                 edit.ShowDialog();
             }
         }
@@ -336,16 +339,18 @@ namespace PIMS
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@limitValue", limitValue);
-                    NpgsqlDataReader read = cmd.ExecuteReader();
-                    dataGridView1.Rows.Clear();
-                    while (read.Read())
+                    using (NpgsqlDataReader read = cmd.ExecuteReader())
                     {
-                        string firstName = read["first_name"].ToString();
-                        string middleName = read["middle_name"].ToString();
-                        string lastName = read["last_name"].ToString();
-                        string fullname = $"{firstName} {middleName} {lastName}";
-                        string dateAdded = Convert.ToDateTime(read["date_added"]).ToString("yyyy-MM-dd");
-                        dataGridView1.Rows.Add(read["id"], fullname, read["gender"], read["age"], dateAdded);
+                        dataGridView1.Rows.Clear();
+                        while (read.Read())
+                        {
+                            string firstName = read["first_name"].ToString();
+                            string middleName = read["middle_name"].ToString();
+                            string lastName = read["last_name"].ToString();
+                            string fullname = $"{firstName} {middleName} {lastName}";
+                            string dateAdded = Convert.ToDateTime(read["date_added"]).ToString("yyyy-MM-dd");
+                            dataGridView1.Rows.Add(read["id"], fullname, read["gender"], read["age"], dateAdded);
+                        }
                     }
                 }
             }
@@ -353,25 +358,86 @@ namespace PIMS
 
         public void DisplayAllPatientRow()
         {
-            string query = "SELECT * FROM patientinfo;";
+            string query = "SELECT * FROM patientinfo ORDER BY id ASC;";
             using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
             {
                 conn.Open();
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
-                    dataGridView1.Rows.Clear();
-                    NpgsqlDataReader read = cmd.ExecuteReader();
-
-                    while (read.Read())
+                    using (NpgsqlDataReader read = cmd.ExecuteReader())
                     {
-                        string firstName = read["first_name"].ToString();
-                        string middleName = read["middle_name"].ToString();
-                        string lastName = read["last_name"].ToString();
-                        string fullname = $"{firstName} {middleName} {lastName}";
-                        string dateAdded = Convert.ToDateTime(read["date_added"]).ToString("yyyy-MM-dd");
-                        dataGridView1.Rows.Add(read["id"], fullname, read["gender"], read["age"], dateAdded);
+                        dataGridView1.Rows.Clear();
+                        while (read.Read())
+                        {
+                            string firstName = read["first_name"].ToString();
+                            string middleName = read["middle_name"].ToString();
+                            string lastName = read["last_name"].ToString();
+                            string fullname = $"{firstName} {middleName} {lastName}";
+                            string dateAdded = Convert.ToDateTime(read["date_added"]).ToString("yyyy-MM-dd");
+                            dataGridView1.Rows.Add(read["id"], fullname, read["gender"], read["age"], dateAdded);
+                        }
                     }
                 }
+            }
+        }
+
+        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == sortColumnIndex)
+            {
+                sortAscending = !sortAscending;
+            }
+            else
+            {
+                sortColumnIndex = e.ColumnIndex;
+                sortAscending = true;
+            }
+
+            BubbleSort(dataGridView1);
+        }
+
+        private void BubbleSort(DataGridView dgv)
+        {
+            for (int i = 0; i < dgv.Rows.Count - 1; i++)
+            {
+                for (int j = 0; j < dgv.Rows.Count - 1 - i; j++)
+                {
+                    string value1 = dgv.Rows[j].Cells[sortColumnIndex].Value.ToString();
+                    string value2 = dgv.Rows[j + 1].Cells[sortColumnIndex].Value.ToString();
+
+                    if (sortAscending)
+                    {
+                        if (CompareValues(value1, value2) > 0)
+                        {
+                            SwapRows(dgv, j, j + 1);
+                        }
+                    }
+                    else
+                    {
+                        if (CompareValues(value1, value2) < 0)
+                        {
+                            SwapRows(dgv, j, j + 1);
+                        }
+                    }
+                }
+            }
+        }
+
+        private int CompareValues(string value1, string value2)
+        {
+            return string.Compare(value1, value2);
+        }
+
+        private void SwapRows(DataGridView dgv, int rowIndex1, int rowIndex2)
+        {
+            DataGridViewRow row1 = dgv.Rows[rowIndex1];
+            DataGridViewRow row2 = dgv.Rows[rowIndex2];
+
+            for (int i = 0; i < row1.Cells.Count; i++)
+            {
+                object temp = row1.Cells[i].Value;
+                row1.Cells[i].Value = row2.Cells[i].Value;
+                row2.Cells[i].Value = temp;
             }
         }
     }

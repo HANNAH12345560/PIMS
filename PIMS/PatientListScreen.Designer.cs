@@ -33,34 +33,34 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.CaseNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PatientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateAdded = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel11 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnAddNewPatient = new CustomControls.Controls.RJButton();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.btnSearch = new CustomControls.Controls.RJButton();
+            this.txtSearchName = new CustomControls.RJControls.RJTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lblDashboard = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnAddNewPatient = new CustomControls.Controls.RJButton();
-            this.btnSearch = new CustomControls.Controls.RJButton();
-            this.txtSearchName = new CustomControls.RJControls.RJTextBox();
             this.btnLogout = new CustomControls.Controls.RJButton();
             this.btnPatientList = new CustomControls.Controls.RJButton();
             this.btnAddRec = new CustomControls.Controls.RJButton();
             this.btnMedRec = new CustomControls.Controls.RJButton();
             this.btnDashboard = new CustomControls.Controls.RJButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.CaseNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PatientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateAdded = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel6.SuspendLayout();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -145,62 +145,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1041, 399);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // CaseNo
-            // 
-            this.CaseNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CaseNo.FillWeight = 150F;
-            this.CaseNo.HeaderText = "Case Number";
-            this.CaseNo.Name = "CaseNo";
-            this.CaseNo.ReadOnly = true;
-            this.CaseNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // PatientName
-            // 
-            this.PatientName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PatientName.FillWeight = 150F;
-            this.PatientName.HeaderText = "Patient Name";
-            this.PatientName.Name = "PatientName";
-            this.PatientName.ReadOnly = true;
-            this.PatientName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Gender
-            // 
-            this.Gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Gender.FillWeight = 150F;
-            this.Gender.HeaderText = "Gender";
-            this.Gender.Name = "Gender";
-            this.Gender.ReadOnly = true;
-            this.Gender.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Age
-            // 
-            this.Age.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Age.FillWeight = 150F;
-            this.Age.HeaderText = "Age";
-            this.Age.Name = "Age";
-            this.Age.ReadOnly = true;
-            this.Age.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // DateAdded
-            // 
-            this.DateAdded.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DateAdded.FillWeight = 150F;
-            this.DateAdded.HeaderText = "Date Added";
-            this.DateAdded.Name = "DateAdded";
-            this.DateAdded.ReadOnly = true;
-            this.DateAdded.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Action
-            // 
-            this.Action.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Action.FillWeight = 150F;
-            this.Action.HeaderText = "Action";
-            this.Action.Name = "Action";
-            this.Action.ReadOnly = true;
-            this.Action.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Action.Text = "Edit";
-            this.Action.UseColumnTextForButtonValue = true;
+            this.dataGridView1.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_ColumnHeaderMouseClick);
             // 
             // panel11
             // 
@@ -249,6 +194,26 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Show";
             // 
+            // btnAddNewPatient
+            // 
+            this.btnAddNewPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
+            this.btnAddNewPatient.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
+            this.btnAddNewPatient.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAddNewPatient.BorderRadius = 7;
+            this.btnAddNewPatient.BorderSize = 0;
+            this.btnAddNewPatient.FlatAppearance.BorderSize = 0;
+            this.btnAddNewPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNewPatient.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewPatient.ForeColor = System.Drawing.Color.White;
+            this.btnAddNewPatient.Location = new System.Drawing.Point(900, 18);
+            this.btnAddNewPatient.Name = "btnAddNewPatient";
+            this.btnAddNewPatient.Size = new System.Drawing.Size(157, 40);
+            this.btnAddNewPatient.TabIndex = 3;
+            this.btnAddNewPatient.Text = "Add Patient";
+            this.btnAddNewPatient.TextColor = System.Drawing.Color.White;
+            this.btnAddNewPatient.UseVisualStyleBackColor = false;
+            this.btnAddNewPatient.Click += new System.EventHandler(this.btnHospitalAdmission_Click);
+            // 
             // panel10
             // 
             this.panel10.Controls.Add(this.btnSearch);
@@ -259,6 +224,49 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(1113, 72);
             this.panel10.TabIndex = 0;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(158)))), ((int)(((byte)(170)))));
+            this.btnSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(158)))), ((int)(((byte)(170)))));
+            this.btnSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(158)))), ((int)(((byte)(170)))));
+            this.btnSearch.BorderRadius = 7;
+            this.btnSearch.BorderSize = 0;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Image = global::PIMS.Properties.Resources.SearchIcon;
+            this.btnSearch.Location = new System.Drawing.Point(965, 28);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(42, 31);
+            this.btnSearch.TabIndex = 3;
+            this.btnSearch.TextColor = System.Drawing.Color.White;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearchName
+            // 
+            this.txtSearchName.BackColor = System.Drawing.SystemColors.Window;
+            this.txtSearchName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.txtSearchName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(158)))), ((int)(((byte)(170)))));
+            this.txtSearchName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(158)))), ((int)(((byte)(170)))));
+            this.txtSearchName.BorderRadius = 7;
+            this.txtSearchName.BorderSize = 2;
+            this.txtSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSearchName.Location = new System.Drawing.Point(112, 28);
+            this.txtSearchName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearchName.Multiline = false;
+            this.txtSearchName.Name = "txtSearchName";
+            this.txtSearchName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtSearchName.PasswordChar = false;
+            this.txtSearchName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtSearchName.PlaceholderText = "";
+            this.txtSearchName.Size = new System.Drawing.Size(846, 31);
+            this.txtSearchName.TabIndex = 2;
+            this.txtSearchName.Texts = "";
+            this.txtSearchName.UnderlinedStyle = false;
+            this.txtSearchName._TextChanged += new System.EventHandler(this.txtSearchName__TextChanged);
             // 
             // label1
             // 
@@ -324,100 +332,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(200, 609);
             this.panel5.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(226, 120);
-            this.panel2.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BackgroundImage = global::PIMS.Properties.Resources.LogoPanel2;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(12, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(199, 105);
-            this.panel3.TabIndex = 1;
-            // 
-            // panel4
-            // 
-            this.panel4.BackgroundImage = global::PIMS.Properties.Resources.LoginLbl;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(199, 105);
-            this.panel4.TabIndex = 1;
-            // 
-            // btnAddNewPatient
-            // 
-            this.btnAddNewPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnAddNewPatient.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnAddNewPatient.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAddNewPatient.BorderRadius = 7;
-            this.btnAddNewPatient.BorderSize = 0;
-            this.btnAddNewPatient.FlatAppearance.BorderSize = 0;
-            this.btnAddNewPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddNewPatient.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNewPatient.ForeColor = System.Drawing.Color.White;
-            this.btnAddNewPatient.Location = new System.Drawing.Point(900, 18);
-            this.btnAddNewPatient.Name = "btnAddNewPatient";
-            this.btnAddNewPatient.Size = new System.Drawing.Size(157, 40);
-            this.btnAddNewPatient.TabIndex = 3;
-            this.btnAddNewPatient.Text = "Add Patient";
-            this.btnAddNewPatient.TextColor = System.Drawing.Color.White;
-            this.btnAddNewPatient.UseVisualStyleBackColor = false;
-            this.btnAddNewPatient.Click += new System.EventHandler(this.btnHospitalAdmission_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(158)))), ((int)(((byte)(170)))));
-            this.btnSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(158)))), ((int)(((byte)(170)))));
-            this.btnSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(158)))), ((int)(((byte)(170)))));
-            this.btnSearch.BorderRadius = 7;
-            this.btnSearch.BorderSize = 0;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Image = global::PIMS.Properties.Resources.SearchIcon;
-            this.btnSearch.Location = new System.Drawing.Point(965, 28);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(42, 31);
-            this.btnSearch.TabIndex = 3;
-            this.btnSearch.TextColor = System.Drawing.Color.White;
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtSearchName
-            // 
-            this.txtSearchName.BackColor = System.Drawing.SystemColors.Window;
-            this.txtSearchName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtSearchName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(158)))), ((int)(((byte)(170)))));
-            this.txtSearchName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(158)))), ((int)(((byte)(170)))));
-            this.txtSearchName.BorderRadius = 7;
-            this.txtSearchName.BorderSize = 2;
-            this.txtSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSearchName.Location = new System.Drawing.Point(112, 28);
-            this.txtSearchName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSearchName.Multiline = false;
-            this.txtSearchName.Name = "txtSearchName";
-            this.txtSearchName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtSearchName.PasswordChar = false;
-            this.txtSearchName.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtSearchName.PlaceholderText = "";
-            this.txtSearchName.Size = new System.Drawing.Size(846, 31);
-            this.txtSearchName.TabIndex = 2;
-            this.txtSearchName.Texts = "";
-            this.txtSearchName.UnderlinedStyle = false;
-            this.txtSearchName._TextChanged += new System.EventHandler(this.txtSearchName__TextChanged);
             // 
             // btnLogout
             // 
@@ -545,6 +459,93 @@
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             this.btnDashboard.MouseLeave += new System.EventHandler(this.btnDashboard_MouseLeave);
             this.btnDashboard.MouseHover += new System.EventHandler(this.btnDashboard_MouseHover);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(226, 120);
+            this.panel2.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BackgroundImage = global::PIMS.Properties.Resources.LogoPanel2;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Location = new System.Drawing.Point(12, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(199, 105);
+            this.panel3.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = global::PIMS.Properties.Resources.LoginLbl;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(199, 105);
+            this.panel4.TabIndex = 1;
+            // 
+            // CaseNo
+            // 
+            this.CaseNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CaseNo.FillWeight = 150F;
+            this.CaseNo.HeaderText = "Case Number";
+            this.CaseNo.Name = "CaseNo";
+            this.CaseNo.ReadOnly = true;
+            this.CaseNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // PatientName
+            // 
+            this.PatientName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PatientName.FillWeight = 150F;
+            this.PatientName.HeaderText = "Patient Name";
+            this.PatientName.Name = "PatientName";
+            this.PatientName.ReadOnly = true;
+            this.PatientName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Gender
+            // 
+            this.Gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Gender.FillWeight = 150F;
+            this.Gender.HeaderText = "Gender";
+            this.Gender.Name = "Gender";
+            this.Gender.ReadOnly = true;
+            this.Gender.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Age
+            // 
+            this.Age.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Age.FillWeight = 150F;
+            this.Age.HeaderText = "Age";
+            this.Age.Name = "Age";
+            this.Age.ReadOnly = true;
+            this.Age.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // DateAdded
+            // 
+            this.DateAdded.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DateAdded.FillWeight = 150F;
+            this.DateAdded.HeaderText = "Date Added";
+            this.DateAdded.Name = "DateAdded";
+            this.DateAdded.ReadOnly = true;
+            this.DateAdded.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Action
+            // 
+            this.Action.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Action.FillWeight = 150F;
+            this.Action.HeaderText = "Action";
+            this.Action.Name = "Action";
+            this.Action.ReadOnly = true;
+            this.Action.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Action.Text = "Edit";
+            this.Action.UseColumnTextForButtonValue = true;
             // 
             // PatientListScreen
             // 

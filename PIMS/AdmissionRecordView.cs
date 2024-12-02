@@ -38,6 +38,7 @@ namespace PIMS
 
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
+            //MessageBox.Show(admissionId.ToString());
             string query =
                 "SELECT " +
                 "a.id AS admission_id, " +
@@ -75,7 +76,7 @@ namespace PIMS
                     {
                         remarks = rd["remarks"].ToString();
                         medFee = Convert.ToDouble(rd["med_fee"]);
-                        addFee = Convert.ToDouble(rd["admission_fee"]);
+                        addFee = rd["admission_fee"] != DBNull.Value ? Convert.ToDouble(rd["admission_fee"]) : 0.0;
                         discount = Convert.ToDouble(rd["discount"]);
                         totalBill = Convert.ToDouble(rd["total_bill"]);
                         medTreat = rd["medical_treatment"].ToString();

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientListEdit));
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             this.btnUpdate = new CustomControls.Controls.RJButton();
             this.btnCancel = new CustomControls.Controls.RJButton();
             this.label3 = new System.Windows.Forms.Label();
@@ -75,7 +76,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             this.panel6.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -114,6 +114,19 @@
             this.panel9.Size = new System.Drawing.Size(1113, 627);
             this.panel9.TabIndex = 2;
             this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint_1);
+            // 
+            // comboBoxStatus
+            // 
+            this.comboBoxStatus.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxStatus.FormattingEnabled = true;
+            this.comboBoxStatus.Items.AddRange(new object[] {
+            "Active",
+            "Inactive"});
+            this.comboBoxStatus.Location = new System.Drawing.Point(903, 27);
+            this.comboBoxStatus.Name = "comboBoxStatus";
+            this.comboBoxStatus.Size = new System.Drawing.Size(158, 30);
+            this.comboBoxStatus.TabIndex = 40;
+            this.comboBoxStatus.Text = "Active";
             // 
             // btnUpdate
             // 
@@ -684,19 +697,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(199, 105);
             this.panel4.TabIndex = 1;
-            // 
-            // comboBoxStatus
-            // 
-            this.comboBoxStatus.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxStatus.FormattingEnabled = true;
-            this.comboBoxStatus.Items.AddRange(new object[] {
-            "Alive",
-            "Deceased"});
-            this.comboBoxStatus.Location = new System.Drawing.Point(903, 27);
-            this.comboBoxStatus.Name = "comboBoxStatus";
-            this.comboBoxStatus.Size = new System.Drawing.Size(158, 30);
-            this.comboBoxStatus.TabIndex = 40;
-            this.comboBoxStatus.Text = "Alive";
             // 
             // PatientListEdit
             // 

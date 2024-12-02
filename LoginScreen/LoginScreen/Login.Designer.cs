@@ -36,7 +36,6 @@
             this.lblShowPassword = new System.Windows.Forms.Label();
             this.guna2GradientButtonLogin = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButtonClear = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.guna2PanelBackground = new Guna.UI2.WinForms.Guna2Panel();
@@ -49,7 +48,7 @@
             this.guna2PanelLogo.BackgroundImage = global::LoginScreen.Properties.Resources.LoginLbl;
             this.guna2PanelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2PanelLogo.Location = new System.Drawing.Point(446, 67);
-            this.guna2PanelLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2PanelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PanelLogo.Name = "guna2PanelLogo";
             this.guna2PanelLogo.Size = new System.Drawing.Size(217, 99);
             this.guna2PanelLogo.TabIndex = 0;
@@ -91,7 +90,7 @@
             this.guna2ToggleSwitch1.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.guna2ToggleSwitch1.CheckedState.InnerColor = System.Drawing.Color.White;
             this.guna2ToggleSwitch1.Location = new System.Drawing.Point(425, 310);
-            this.guna2ToggleSwitch1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2ToggleSwitch1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2ToggleSwitch1.Name = "guna2ToggleSwitch1";
             this.guna2ToggleSwitch1.Size = new System.Drawing.Size(30, 15);
             this.guna2ToggleSwitch1.TabIndex = 3;
@@ -135,7 +134,7 @@
             this.guna2GradientButtonLogin.ForeColor = System.Drawing.Color.White;
             this.guna2GradientButtonLogin.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             this.guna2GradientButtonLogin.Location = new System.Drawing.Point(464, 394);
-            this.guna2GradientButtonLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2GradientButtonLogin.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GradientButtonLogin.Name = "guna2GradientButtonLogin";
             this.guna2GradientButtonLogin.Size = new System.Drawing.Size(180, 40);
             this.guna2GradientButtonLogin.TabIndex = 5;
@@ -158,23 +157,12 @@
             this.guna2GradientButtonClear.ForeColor = System.Drawing.Color.White;
             this.guna2GradientButtonClear.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             this.guna2GradientButtonClear.Location = new System.Drawing.Point(612, 308);
-            this.guna2GradientButtonClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2GradientButtonClear.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GradientButtonClear.Name = "guna2GradientButtonClear";
             this.guna2GradientButtonClear.Size = new System.Drawing.Size(80, 22);
             this.guna2GradientButtonClear.TabIndex = 6;
             this.guna2GradientButtonClear.Text = "CLEAR";
             this.guna2GradientButtonClear.Click += new System.EventHandler(this.guna2GradientButtonClear_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label2.Location = new System.Drawing.Point(475, 360);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(155, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Forgot Username or Password?";
             // 
             // lblUsername
             // 
@@ -208,7 +196,6 @@
             this.guna2PanelBackground.Controls.Add(this.txtbPassword);
             this.guna2PanelBackground.Controls.Add(this.lblPassword);
             this.guna2PanelBackground.Controls.Add(this.lblUsername);
-            this.guna2PanelBackground.Controls.Add(this.label2);
             this.guna2PanelBackground.Controls.Add(this.guna2GradientButtonClear);
             this.guna2PanelBackground.Controls.Add(this.guna2GradientButtonLogin);
             this.guna2PanelBackground.Controls.Add(this.lblShowPassword);
@@ -218,7 +205,7 @@
             this.guna2PanelBackground.Controls.Add(this.guna2PanelLogo);
             this.guna2PanelBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2PanelBackground.Location = new System.Drawing.Point(0, 0);
-            this.guna2PanelBackground.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2PanelBackground.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PanelBackground.Name = "guna2PanelBackground";
             this.guna2PanelBackground.Size = new System.Drawing.Size(784, 511);
             this.guna2PanelBackground.TabIndex = 0;
@@ -261,7 +248,7 @@
             this.Controls.Add(this.guna2PanelBackground);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Harmony Medical Care";
@@ -281,7 +268,6 @@
         private System.Windows.Forms.Label lblShowPassword;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButtonLogin;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButtonClear;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;
         private Guna.UI2.WinForms.Guna2Panel guna2PanelBackground;

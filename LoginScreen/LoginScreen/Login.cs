@@ -49,17 +49,14 @@ namespace LoginScreen
                             }
                             else
                             {
-                                
-                                Error error = new Error();
-                                error.ShowDialog();
+                                MessageBox.Show("Invalid username or password.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    Error error = new Error();
-                    error.ShowDialog();
+                    MessageBox.Show("An error occurred while trying to log in. Please try again later.", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
