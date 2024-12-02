@@ -48,7 +48,6 @@
             this.txtDate = new CustomControls.RJControls.RJTextBox();
             this.txtAge = new CustomControls.RJControls.RJTextBox();
             this.txtAdd = new CustomControls.RJControls.RJTextBox();
-            this.txtName = new CustomControls.RJControls.RJTextBox();
             this.txtDosage = new System.Windows.Forms.Label();
             this.txtMedName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,6 +59,7 @@
             this.txtSex = new CustomControls.RJControls.RJTextBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.txtName = new CustomControls.RJControls.RJTextBox();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panelPhysicalExam.SuspendLayout();
@@ -367,28 +367,6 @@
             this.txtAdd.Texts = "";
             this.txtAdd.UnderlinedStyle = true;
             // 
-            // txtName
-            // 
-            this.txtName.BackColor = System.Drawing.SystemColors.Window;
-            this.txtName.BorderColor = System.Drawing.Color.Black;
-            this.txtName.BorderFocusColor = System.Drawing.Color.Black;
-            this.txtName.BorderRadius = 0;
-            this.txtName.BorderSize = 1;
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtName.Location = new System.Drawing.Point(96, 212);
-            this.txtName.Margin = new System.Windows.Forms.Padding(6);
-            this.txtName.Multiline = false;
-            this.txtName.Name = "txtName";
-            this.txtName.Padding = new System.Windows.Forms.Padding(15, 11, 15, 11);
-            this.txtName.PasswordChar = false;
-            this.txtName.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtName.PlaceholderText = "";
-            this.txtName.Size = new System.Drawing.Size(375, 47);
-            this.txtName.TabIndex = 56;
-            this.txtName.Texts = "";
-            this.txtName.UnderlinedStyle = true;
-            // 
             // txtDosage
             // 
             this.txtDosage.AutoSize = true;
@@ -524,6 +502,28 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.SystemColors.Window;
+            this.txtName.BorderColor = System.Drawing.Color.Black;
+            this.txtName.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtName.BorderRadius = 0;
+            this.txtName.BorderSize = 1;
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtName.Location = new System.Drawing.Point(96, 212);
+            this.txtName.Margin = new System.Windows.Forms.Padding(6);
+            this.txtName.Multiline = false;
+            this.txtName.Name = "txtName";
+            this.txtName.Padding = new System.Windows.Forms.Padding(15, 11, 15, 11);
+            this.txtName.PasswordChar = false;
+            this.txtName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtName.PlaceholderText = "";
+            this.txtName.Size = new System.Drawing.Size(375, 47);
+            this.txtName.TabIndex = 56;
+            this.txtName.Texts = "";
+            this.txtName.UnderlinedStyle = true;
+            // 
             // Prescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -571,7 +571,6 @@
         private CustomControls.RJControls.RJTextBox txtDate;
         private CustomControls.RJControls.RJTextBox txtAge;
         private CustomControls.RJControls.RJTextBox txtAdd;
-        private CustomControls.RJControls.RJTextBox txtName;
         private System.Windows.Forms.Label txtDosage;
         private CustomControls.RJControls.RJTextBox txtSex;
         private System.Windows.Forms.Label label10;
@@ -581,5 +580,6 @@
         private System.Windows.Forms.Panel panel2;
         private CustomControls.Controls.RJButton btnContinue;
         private CustomControls.Controls.RJButton btnBack;
+        private CustomControls.RJControls.RJTextBox txtName;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,9 @@ namespace PIMS
     {
         private int consultationId;
         private int patientId;
+
+        private dbConnection db = new dbConnection(); 
+
         public Prescription(int consultationId, int patientId)
         {
             this.patientId = patientId;
@@ -31,9 +35,45 @@ namespace PIMS
 
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
+            try
+            {
+                string query = @"
+                    SELECT last_name, first_name, middle_name, home_add, age, birthday, gender
+                    FROM PatientInfo
+                    WHERE id = @patient_id";
 
+                using (var conn = new NpgsqlConnection(db.connectDb)) 
+                {
+                    conn.Open();
+
+                    using (var command = new NpgsqlCommand(query, conn))
+                    {
+                        command.Parameters.AddWithValue("patient_id", patientId);
+
+                        using (var reader = command.ExecuteReader())
+                        {
+                            if (reader.Read()) 
+                            {
+                                txtName.Text = $"{reader["first_name"]} {reader["middle_name"]} {reader["last_name"]}";
+
+                                txtAdd.Text = reader["home_add"].ToString();
+                                txtAge.Text = reader["age"].ToString();
+                                txtDate.Text = Convert.ToDateTime(reader["birthday"]).ToString("MM/dd/yyyy");
+                                txtSex.Text = reader["gender"].ToString();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Patient not found.");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
-
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
