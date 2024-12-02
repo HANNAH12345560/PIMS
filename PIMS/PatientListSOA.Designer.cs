@@ -82,7 +82,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1358, 21);
             this.panel7.TabIndex = 0;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // panel8
             // 
@@ -103,7 +102,6 @@
             this.lblDashboard.TabIndex = 0;
             this.lblDashboard.Text = "STATEMENT OF AMOUNT";
             this.lblDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblDashboard.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel4
             // 
@@ -127,7 +125,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1370, 749);
             this.panel6.TabIndex = 1;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // btnPrint
             // 
@@ -190,7 +187,6 @@
             this.panelSOA.Name = "panelSOA";
             this.panelSOA.Size = new System.Drawing.Size(1290, 600);
             this.panelSOA.TabIndex = 0;
-            this.panelSOA.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPhysicalExam_Paint);
             // 
             // label10
             // 
@@ -227,7 +223,6 @@
             this.label1.Size = new System.Drawing.Size(312, 48);
             this.label1.TabIndex = 25;
             this.label1.Text = "Statement of Amount";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // panel1
             // 
@@ -250,7 +245,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1144, 480);
             this.panel1.TabIndex = 18;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // txtDate
             // 
@@ -295,7 +289,6 @@
             this.txtAge.TabIndex = 41;
             this.txtAge.Texts = "";
             this.txtAge.UnderlinedStyle = true;
-            this.txtAge._TextChanged += new System.EventHandler(this.rjTextBox5__TextChanged);
             // 
             // txtSOA
             // 

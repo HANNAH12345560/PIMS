@@ -14,12 +14,14 @@ namespace PIMS
     public partial class PatientListHistory : Form
     {
         private int consultationId;
+        private int patientId;
         private dbConnection db = new dbConnection();
 
-        public PatientListHistory(int consultationId)
+        public PatientListHistory(int consultationId, int patientId)
         {
             InitializeComponent();
             this.consultationId = consultationId;
+            this.patientId = patientId;
         }
 
         private void DashboardScreen_Load(object sender, EventArgs e)
