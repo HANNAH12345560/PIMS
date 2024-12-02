@@ -1,6 +1,6 @@
 ﻿namespace PIMS
 {
-    partial class LogIn
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -28,248 +28,251 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogIn));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.chkBoxShowPass = new System.Windows.Forms.CheckBox();
-            this.btnLogin = new CustomControls.Controls.RJButton();
-            this.txtPass = new CustomControls.RJControls.RJTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtUsername = new CustomControls.RJControls.RJTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            this.guna2PanelLogo = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2GradientButtonLogin = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButtonClear = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.lblForget = new System.Windows.Forms.Label();
+            this.lblShowPassword = new System.Windows.Forms.Label();
+            this.guna2ToggleSwitch1 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.txtbPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtbUsername = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // guna2PanelLogo
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = global::PIMS.Properties.Resources.LOG_IN;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.rjTextBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 514);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.guna2PanelLogo.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PanelLogo.BackgroundImage = global::PIMS.Properties.Resources.LoginLbl;
+            this.guna2PanelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2PanelLogo.Location = new System.Drawing.Point(456, 59);
+            this.guna2PanelLogo.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.guna2PanelLogo.Name = "guna2PanelLogo";
+            this.guna2PanelLogo.Size = new System.Drawing.Size(200, 87);
+            this.guna2PanelLogo.TabIndex = 0;
             // 
-            // panel3
+            // guna2Panel1
             // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BackgroundImage = global::PIMS.Properties.Resources.LOG_IN;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Controls.Add(this.chkBoxShowPass);
-            this.panel3.Controls.Add(this.btnLogin);
-            this.panel3.Controls.Add(this.txtPass);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.txtUsername);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(784, 514);
-            this.panel3.TabIndex = 3;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.guna2Panel1.BackgroundImage = global::PIMS.Properties.Resources.LOG_IN;
+            this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Panel1.Controls.Add(this.guna2GradientButtonLogin);
+            this.guna2Panel1.Controls.Add(this.guna2GradientButtonClear);
+            this.guna2Panel1.Controls.Add(this.lblForget);
+            this.guna2Panel1.Controls.Add(this.lblShowPassword);
+            this.guna2Panel1.Controls.Add(this.guna2ToggleSwitch1);
+            this.guna2Panel1.Controls.Add(this.txtbPassword);
+            this.guna2Panel1.Controls.Add(this.txtbUsername);
+            this.guna2Panel1.Controls.Add(this.lblPassword);
+            this.guna2Panel1.Controls.Add(this.lblUsername);
+            this.guna2Panel1.Controls.Add(this.guna2PanelLogo);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(784, 456);
+            this.guna2Panel1.TabIndex = 1;
             // 
-            // chkBoxShowPass
+            // guna2GradientButtonLogin
             // 
-            this.chkBoxShowPass.AutoSize = true;
-            this.chkBoxShowPass.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkBoxShowPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
-            this.chkBoxShowPass.Location = new System.Drawing.Point(401, 346);
-            this.chkBoxShowPass.Name = "chkBoxShowPass";
-            this.chkBoxShowPass.Size = new System.Drawing.Size(112, 23);
-            this.chkBoxShowPass.TabIndex = 6;
-            this.chkBoxShowPass.Text = "Show Password";
-            this.chkBoxShowPass.UseVisualStyleBackColor = true;
-            this.chkBoxShowPass.CheckedChanged += new System.EventHandler(this.chkBoxShowPass_CheckedChanged);
+            this.guna2GradientButtonLogin.AutoRoundedCorners = true;
+            this.guna2GradientButtonLogin.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientButtonLogin.BorderRadius = 15;
+            this.guna2GradientButtonLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButtonLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButtonLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButtonLogin.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButtonLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButtonLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.guna2GradientButtonLogin.FillColor2 = System.Drawing.Color.HotPink;
+            this.guna2GradientButtonLogin.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButtonLogin.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButtonLogin.Location = new System.Drawing.Point(484, 355);
+            this.guna2GradientButtonLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2GradientButtonLogin.Name = "guna2GradientButtonLogin";
+            this.guna2GradientButtonLogin.Size = new System.Drawing.Size(133, 32);
+            this.guna2GradientButtonLogin.TabIndex = 9;
+            this.guna2GradientButtonLogin.Text = "LOGIN";
+            this.guna2GradientButtonLogin.Click += new System.EventHandler(this.guna2GradientButtonLogin_Click);
             // 
-            // btnLogin
+            // guna2GradientButtonClear
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnLogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnLogin.BorderRadius = 25;
-            this.btnLogin.BorderSize = 0;
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Poppins SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(239)))), ((int)(((byte)(244)))));
-            this.btnLogin.Location = new System.Drawing.Point(449, 390);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(208, 47);
-            this.btnLogin.TabIndex = 5;
-            this.btnLogin.Text = "LOGIN";
-            this.btnLogin.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(239)))), ((int)(((byte)(244)))));
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.guna2GradientButtonClear.AutoRoundedCorners = true;
+            this.guna2GradientButtonClear.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientButtonClear.BorderRadius = 9;
+            this.guna2GradientButtonClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButtonClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButtonClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButtonClear.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButtonClear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButtonClear.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.guna2GradientButtonClear.FillColor2 = System.Drawing.Color.HotPink;
+            this.guna2GradientButtonClear.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButtonClear.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButtonClear.Location = new System.Drawing.Point(606, 280);
+            this.guna2GradientButtonClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2GradientButtonClear.Name = "guna2GradientButtonClear";
+            this.guna2GradientButtonClear.Size = new System.Drawing.Size(85, 21);
+            this.guna2GradientButtonClear.TabIndex = 8;
+            this.guna2GradientButtonClear.Text = "CLEAR";
+            this.guna2GradientButtonClear.Click += new System.EventHandler(this.guna2GradientButtonClear_Click);
             // 
-            // txtPass
+            // lblForget
             // 
-            this.txtPass.BackColor = System.Drawing.SystemColors.Window;
-            this.txtPass.BorderColor = System.Drawing.Color.Transparent;
-            this.txtPass.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtPass.BorderRadius = 15;
-            this.txtPass.BorderSize = 2;
-            this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPass.Location = new System.Drawing.Point(401, 306);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPass.Multiline = false;
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtPass.PasswordChar = true;
-            this.txtPass.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtPass.PlaceholderText = "";
-            this.txtPass.Size = new System.Drawing.Size(310, 31);
-            this.txtPass.TabIndex = 4;
-            this.txtPass.Texts = "";
-            this.txtPass.UnderlinedStyle = false;
-            this.txtPass._TextChanged += new System.EventHandler(this.txtPass__TextChanged);
+            this.lblForget.AutoSize = true;
+            this.lblForget.BackColor = System.Drawing.Color.Transparent;
+            this.lblForget.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblForget.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lblForget.Location = new System.Drawing.Point(472, 322);
+            this.lblForget.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblForget.Name = "lblForget";
+            this.lblForget.Size = new System.Drawing.Size(155, 13);
+            this.lblForget.TabIndex = 7;
+            this.lblForget.Text = "Forgot Username or Password?";
             // 
-            // label3
+            // lblShowPassword
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
-            this.label3.Location = new System.Drawing.Point(396, 274);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 28);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Password";
+            this.lblShowPassword.AutoSize = true;
+            this.lblShowPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblShowPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowPassword.Location = new System.Drawing.Point(453, 280);
+            this.lblShowPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblShowPassword.Name = "lblShowPassword";
+            this.lblShowPassword.Size = new System.Drawing.Size(83, 13);
+            this.lblShowPassword.TabIndex = 6;
+            this.lblShowPassword.Text = "Show Password";
             // 
-            // txtUsername
+            // guna2ToggleSwitch1
             // 
-            this.txtUsername.BackColor = System.Drawing.SystemColors.Window;
-            this.txtUsername.BorderColor = System.Drawing.Color.Transparent;
-            this.txtUsername.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtUsername.BorderRadius = 15;
-            this.txtUsername.BorderSize = 2;
-            this.txtUsername.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtUsername.Location = new System.Drawing.Point(401, 215);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
-            this.txtUsername.Multiline = false;
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtUsername.PasswordChar = false;
-            this.txtUsername.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtUsername.PlaceholderText = "";
-            this.txtUsername.Size = new System.Drawing.Size(310, 38);
-            this.txtUsername.TabIndex = 2;
-            this.txtUsername.Texts = "";
-            this.txtUsername.UnderlinedStyle = false;
-            this.txtUsername._TextChanged += new System.EventHandler(this.txtUsername__TextChanged);
+            this.guna2ToggleSwitch1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ToggleSwitch1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ToggleSwitch1.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.guna2ToggleSwitch1.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.guna2ToggleSwitch1.Location = new System.Drawing.Point(416, 280);
+            this.guna2ToggleSwitch1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2ToggleSwitch1.Name = "guna2ToggleSwitch1";
+            this.guna2ToggleSwitch1.Size = new System.Drawing.Size(33, 13);
+            this.guna2ToggleSwitch1.TabIndex = 5;
+            this.guna2ToggleSwitch1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2ToggleSwitch1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2ToggleSwitch1.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.guna2ToggleSwitch1.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.guna2ToggleSwitch1.CheckedChanged += new System.EventHandler(this.guna2ToggleSwitch1_CheckedChanged);
             // 
-            // label2
+            // txtbPassword
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
-            this.label2.Location = new System.Drawing.Point(396, 183);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 28);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Username";
+            this.txtbPassword.AutoRoundedCorners = true;
+            this.txtbPassword.BackColor = System.Drawing.Color.Transparent;
+            this.txtbPassword.BorderColor = System.Drawing.Color.LightCoral;
+            this.txtbPassword.BorderRadius = 14;
+            this.txtbPassword.BorderThickness = 2;
+            this.txtbPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbPassword.DefaultText = "";
+            this.txtbPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtbPassword.ForeColor = System.Drawing.Color.Black;
+            this.txtbPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbPassword.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtbPassword.IconLeft")));
+            this.txtbPassword.IconLeftOffset = new System.Drawing.Point(5, 0);
+            this.txtbPassword.IconLeftSize = new System.Drawing.Size(15, 15);
+            this.txtbPassword.Location = new System.Drawing.Point(416, 247);
+            this.txtbPassword.Name = "txtbPassword";
+            this.txtbPassword.PasswordChar = '\0';
+            this.txtbPassword.PlaceholderForeColor = System.Drawing.Color.Red;
+            this.txtbPassword.PlaceholderText = "";
+            this.txtbPassword.SelectedText = "";
+            this.txtbPassword.Size = new System.Drawing.Size(275, 30);
+            this.txtbPassword.TabIndex = 4;
             // 
-            // panel4
+            // txtbUsername
             // 
-            this.panel4.BackgroundImage = global::PIMS.Properties.Resources.LoginLbl;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel4.Location = new System.Drawing.Point(449, 63);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(207, 99);
-            this.panel4.TabIndex = 0;
+            this.txtbUsername.AutoRoundedCorners = true;
+            this.txtbUsername.BackColor = System.Drawing.Color.Transparent;
+            this.txtbUsername.BorderColor = System.Drawing.Color.LightCoral;
+            this.txtbUsername.BorderRadius = 14;
+            this.txtbUsername.BorderThickness = 2;
+            this.txtbUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtbUsername.DefaultText = "";
+            this.txtbUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtbUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtbUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbUsername.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtbUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtbUsername.ForeColor = System.Drawing.Color.Black;
+            this.txtbUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtbUsername.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtbUsername.IconLeft")));
+            this.txtbUsername.IconLeftOffset = new System.Drawing.Point(5, 0);
+            this.txtbUsername.IconLeftSize = new System.Drawing.Size(15, 15);
+            this.txtbUsername.Location = new System.Drawing.Point(416, 193);
+            this.txtbUsername.Name = "txtbUsername";
+            this.txtbUsername.PasswordChar = '\0';
+            this.txtbUsername.PlaceholderForeColor = System.Drawing.Color.Red;
+            this.txtbUsername.PlaceholderText = "";
+            this.txtbUsername.SelectedText = "";
+            this.txtbUsername.Size = new System.Drawing.Size(275, 30);
+            this.txtbUsername.TabIndex = 3;
             // 
-            // rjTextBox1
+            // lblPassword
             // 
-            this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox1.BorderRadius = 15;
-            this.rjTextBox1.BorderSize = 2;
-            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox1.Location = new System.Drawing.Point(401, 215);
-            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox1.Multiline = false;
-            this.rjTextBox1.Name = "rjTextBox1";
-            this.rjTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox1.PasswordChar = false;
-            this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox1.PlaceholderText = "";
-            this.rjTextBox1.Size = new System.Drawing.Size(310, 31);
-            this.rjTextBox1.TabIndex = 2;
-            this.rjTextBox1.Texts = "";
-            this.rjTextBox1.UnderlinedStyle = false;
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblPassword.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(413, 226);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(87, 18);
+            this.lblPassword.TabIndex = 2;
+            this.lblPassword.Text = "Password";
             // 
-            // label1
+            // lblUsername
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
-            this.label1.Location = new System.Drawing.Point(396, 183);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 28);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Username";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsername.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(413, 172);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(90, 18);
+            this.lblUsername.TabIndex = 1;
+            this.lblUsername.Text = "Username";
             // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::PIMS.Properties.Resources.LoginLbl;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Location = new System.Drawing.Point(449, 63);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(207, 99);
-            this.panel2.TabIndex = 0;
-            // 
-            // LogIn
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(784, 514);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.ClientSize = new System.Drawing.Size(784, 456);
+            this.Controls.Add(this.guna2Panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.Name = "LogIn";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
-            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.Text = "Harmony Medical Care";
+            this.Load += new System.EventHandler(this.Login_Load);
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private CustomControls.RJControls.RJTextBox rjTextBox1;
-        private System.Windows.Forms.Panel panel3;
-        private CustomControls.Controls.RJButton btnLogin;
-        private CustomControls.RJControls.RJTextBox txtPass;
-        private System.Windows.Forms.Label label3;
-        private CustomControls.RJControls.RJTextBox txtUsername;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.CheckBox chkBoxShowPass;
+        private Guna.UI2.WinForms.Guna2Panel guna2PanelLogo;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblUsername;
+        private Guna.UI2.WinForms.Guna2TextBox txtbUsername;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch guna2ToggleSwitch1;
+        private Guna.UI2.WinForms.Guna2TextBox txtbPassword;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButtonClear;
+        private System.Windows.Forms.Label lblForget;
+        private System.Windows.Forms.Label lblShowPassword;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButtonLogin;
     }
 }
-

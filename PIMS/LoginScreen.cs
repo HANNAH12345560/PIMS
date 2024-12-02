@@ -11,81 +11,78 @@ using System.Windows.Forms;
 
 namespace PIMS
 {
-    public partial class LogIn : Form
+    public partial class Login : Form
     {
-        public LogIn()
+        private string connString = "Host=localhost;Username=user1;Password=Miyaki_11;Database=PatientManagementSystem";
+
+        public Login()
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            label1.Font = new Font("Poppins-SemiBold", 12, FontStyle.Bold);
-            label3.Font = new Font("Poppins-SemiBold", 12, FontStyle.Bold);
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void guna2ToggleSwitch1_CheckedChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txtUsername__TextChanged(object sender, EventArgs e)
-        {
-            txtUsername.Font = new Font("Poppins", 10, FontStyle.Regular);
-            txtPass.Font = new Font("Poppins", 10, FontStyle.Regular);
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            dbConnection functions = new dbConnection();
-
-            using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+            if (guna2ToggleSwitch1.Checked)
             {
-                conn.Open();
-                try
-                {
-                    MessageBox.Show("Connection successful!");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Connection failed!");
-                }
-               
-
-            }
-            //this.Hide();
-            //StartScreen startScreen = new StartScreen();
-            //startScreen.ShowDialog();
-            //this.Close();
-        }
-
-        private void txtPass__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chkBoxShowPass_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkBoxShowPass.Checked)
-            {
-                txtPass.PasswordChar = false;
+                txtbPassword.UseSystemPasswordChar = false;
             }
             else
             {
-                txtPass.PasswordChar = true;
+                txtbPassword.UseSystemPasswordChar = true;
             }
         }
 
+        private void guna2GradientButtonClear_Click(object sender, EventArgs e)
+        {
+
+            txtbUsername.Clear();
+            txtbPassword.Clear();
+
+            guna2ToggleSwitch1.Checked = false;
+            txtbPassword.UseSystemPasswordChar = true;
+        }
+
+        private void guna2GradientButtonLogin_Click(object sender, EventArgs e)
+        {
+            string username = txtbUsername.Text;
+            string password = txtbPassword.Text;
+
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT * FROM usernurse WHERE username = @username AND password = @password";
+                    using (var cmd = new NpgsqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("username", username);
+                        cmd.Parameters.AddWithValue("password", password);
+
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                this.Hide();
+                                StartScreen startScreen = new StartScreen();
+                                startScreen.ShowDialog();
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Login failed! Please check your username and password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void Login_Load(object sender, EventArgs e)
+        {
+            txtbPassword.UseSystemPasswordChar = true;
+        }
     }
 }

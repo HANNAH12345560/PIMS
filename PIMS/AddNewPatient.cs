@@ -68,28 +68,12 @@ namespace PIMS
         {
             HoverbtnReset(btnPatientList);
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void panel9_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private void btnMedRec_Click(object sender, EventArgs e)
         {
             this.Hide();
             MedicalRecordScreen medicalRecordScreen = new MedicalRecordScreen();
             medicalRecordScreen.ShowDialog();
             this.Close();
-        }
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
         }
         private void btnDashboard_Click(object sender, EventArgs e)
         {
@@ -113,36 +97,9 @@ namespace PIMS
             Addrec.ShowDialog();
             this.Close();
         }
-        private void panel11_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel12_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         private void btnLogout_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-        private void panel13_Paint(object sender, PaintEventArgs e)
-        {
-
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -159,10 +116,6 @@ namespace PIMS
             txtReligion.Text = string.Empty;
             txtTelNo.Text = string.Empty;
             txtOccupation.Text = string.Empty;
-        }
-        private void panel9_Paint_1(object sender, PaintEventArgs e)
-        {
-
         }
         private void btnContinue_Click(object sender, EventArgs e)
         {

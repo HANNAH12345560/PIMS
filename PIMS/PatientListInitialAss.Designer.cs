@@ -71,7 +71,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1358, 834);
             this.panel7.TabIndex = 0;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // panel8
             // 
@@ -91,7 +90,6 @@
             this.lblDashboard.TabIndex = 0;
             this.lblDashboard.Text = "INITIAL ASSESSMENT";
             this.lblDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDashboard.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel4
             // 
@@ -114,7 +112,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1370, 749);
             this.panel6.TabIndex = 1;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // panelScroll
             // 
@@ -176,7 +173,6 @@
             this.panelPhysicalExam.Name = "panelPhysicalExam";
             this.panelPhysicalExam.Size = new System.Drawing.Size(1350, 603);
             this.panelPhysicalExam.TabIndex = 0;
-            this.panelPhysicalExam.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPhysicalExam_Paint);
             // 
             // panel1
             // 
