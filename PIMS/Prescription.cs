@@ -12,8 +12,10 @@ namespace PIMS
 {
     public partial class Prescription : Form
     {
-        public Prescription()
+        int consultationId;
+        public Prescription(int consultationId)
         {
+            this.consultationId = consultationId;
             InitializeComponent();
         }
 
@@ -27,128 +29,19 @@ namespace PIMS
 
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
-        }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+    }
 
-        }
-
-        private void panel9_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel11_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel12_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelPhysicalExam_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void btnContinue_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPhysician_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
+            this.Hide();
+            Insurance i = new Insurance(consultationId);
+            i.ShowDialog();
+            this.Close();
         }
 
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel9_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void rjTextBox5__TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
@@ -162,24 +55,11 @@ namespace PIMS
             e.Graphics.DrawImage(bmp, m);
         }
 
-        private void txtDate__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnContinue_Click_2(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Insurance i = new Insurance();
-            i.ShowDialog();
-            this.Close();
-        }
-
-        private void btnBack_Click_2(object sender, EventArgs e)
-        {
-            //this.Hide();
-            //PatientListEvaluation pl = new PatientListEvaluation();
-            //pl.ShowDialog();
+            PatientListEvaluation pl = new PatientListEvaluation(consultationId);
+            pl.ShowDialog();
             this.Close();
         }
     }
