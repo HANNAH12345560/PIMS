@@ -100,7 +100,7 @@ namespace PIMS
 
                         int paymentId = (int)command.ExecuteScalar();
 
-                        MessageBox.Show($"New payment added with ID: {paymentId}");
+                        MessageBox.Show("Payment added successfully");
 
                         this.Hide();
                         PatientListSOA ps = new PatientListSOA(consultationId, patientId);

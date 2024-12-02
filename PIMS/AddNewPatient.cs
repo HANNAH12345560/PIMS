@@ -160,7 +160,7 @@ namespace PIMS
 
                         int patientId = (int)command.ExecuteScalar();
 
-                        MessageBox.Show($"New patient added with ID: {patientId}");
+                        MessageBox.Show("New patient added");
 
                         this.Hide();
                         PatientListInitialAss pe = new PatientListInitialAss(patientId);

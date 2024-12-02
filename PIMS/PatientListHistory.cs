@@ -158,7 +158,7 @@ namespace PIMS
 
                 int physicianEvalId = (int)command.ExecuteScalar();
 
-                MessageBox.Show($"Physician evaluation added successfully with ID: {physicianEvalId}");
+                MessageBox.Show("Patient successfully assigned to physician");
                 return physicianEvalId;
             }
         }

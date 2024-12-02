@@ -48,7 +48,7 @@ namespace PIMS
                         comboBoxAfter.SelectedItem?.ToString()
                     );
 
-                    MessageBox.Show("Data updated successfully.");
+                    
                 }
             }
             catch (Exception ex)
@@ -134,7 +134,7 @@ namespace PIMS
 
                         totalPrice += price;
 
-                        MessageBox.Show($"Medical treatment added successfully with ID: {medicalTreatmentId}");
+                        MessageBox.Show("Medical treatment added successfully");
 
                         txtMedName.Clear();
                         txtDosage.Clear();

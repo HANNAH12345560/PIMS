@@ -60,7 +60,7 @@ namespace PIMS
 
                         int insuranceId = (int)command.ExecuteScalar();
 
-                        MessageBox.Show($"New insurance record added with ID: {insuranceId}");
+                        MessageBox.Show("Insurance record added");
 
                         this.Hide();
                         Payment pl = new Payment(consultationId, patientId, totalPrice);

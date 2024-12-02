@@ -141,7 +141,7 @@ namespace PIMS
 
                     int consultationId = (int)cmd.ExecuteScalar();
 
-                    MessageBox.Show("Consultation details saved successfully!");
+                    MessageBox.Show("Initial Assesment saved successfully!");
 
                     this.Hide();
                     AddRecordHistory pe = new AddRecordHistory(consultationId, patientId);
