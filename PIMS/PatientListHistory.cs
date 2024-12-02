@@ -130,7 +130,7 @@ namespace PIMS
             {
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
-
+            this.Hide();
             PatientListEvaluation pl = new PatientListEvaluation(consultationId);
             pl.ShowDialog(); 
             this.Close();

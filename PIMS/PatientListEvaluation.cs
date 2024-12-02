@@ -52,7 +52,7 @@ namespace PIMS
             }
 
             this.Hide();
-            Prescription pre = new Prescription();
+            Prescription pre = new Prescription(physicianEvaluationId);
             pre.ShowDialog();
             this.Close();
         }
@@ -129,6 +129,10 @@ namespace PIMS
 
 
                         MessageBox.Show($"Medical treatment added successfully with ID: {medicalTreatmentId}");
+
+                        txtMedName.Clear();
+                        txtDosage.Clear();
+                        txtPrice.Clear();
                     }
                 }
             }
