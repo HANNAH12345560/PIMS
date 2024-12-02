@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,21 @@ namespace PIMS
 {
     public partial class AddRecordPrescription : Form
     {
-        public AddRecordPrescription()
+        private double totalPrice = 0.0;
+        private int consultationId;
+        private int patientId;
+        private int physicianEvaluationId;
+
+        private dbConnection db = new dbConnection();
+
+        public AddRecordPrescription(int consultationId, int patientId, int physicianEvaluationId, double totalPrice)
         {
+            this.patientId = patientId;
+            this.consultationId = consultationId;
+            this.physicianEvaluationId = physicianEvaluationId;
             InitializeComponent();
+            this.physicianEvaluationId = physicianEvaluationId;
+            this.totalPrice = totalPrice;
         }
 
         Bitmap bmp;
@@ -27,6 +40,136 @@ namespace PIMS
 
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
+            //MessageBox.Show(physicianEvaluationId.ToString());
+
+            try
+            {
+                string query = @"
+                        SELECT last_name, first_name, middle_name, home_add, age, birthday, gender
+                        FROM PatientInfo
+                        WHERE id = @patient_id";
+
+                using (var conn = new NpgsqlConnection(db.connectDb))
+                {
+                    conn.Open();
+
+                    using (var command = new NpgsqlCommand(query, conn))
+                    {
+                        command.Parameters.AddWithValue("@patient_id", patientId);
+
+                        using (var reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                TextBox innerName = (TextBox)txtName.Controls[0];
+                                TextBox innerAdd = (TextBox)txtAdd.Controls[0];
+                                TextBox innerAge = (TextBox)txtAge.Controls[0];
+                                TextBox innerDate = (TextBox)txtDate.Controls[0];
+                                TextBox innerSex = (TextBox)txtSex.Controls[0];
+
+                                innerName.Text = $"{reader["first_name"]} {reader["middle_name"]} {reader["last_name"]}";
+                                innerAdd.Text = reader["home_add"].ToString();
+                                innerAge.Text = reader["age"].ToString();
+                                innerDate.Text = Convert.ToDateTime(reader["birthday"]).ToString("MM/dd/yyyy");
+                                innerSex.Text = reader["gender"].ToString();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Patient not found.");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+
+            //medicine display
+            try
+            {
+                string queryMed = @"
+                        SELECT * 
+                        FROM medicaltreatment
+                        WHERE physician_eval_id = @physicianEvaluationId";
+
+                using (var conn = new NpgsqlConnection(db.connectDb))
+                {
+                    conn.Open();
+
+                    using (var command = new NpgsqlCommand(queryMed, conn))
+                    {
+                        command.Parameters.AddWithValue("@physicianEvaluationId", physicianEvaluationId);
+
+                        using (var reader = command.ExecuteReader())
+                        {
+                            int yOffset = 340;
+                            while (reader.Read())
+                            {
+
+
+                                Label MedName = new Label();
+                                MedName.Location = new Point(225, yOffset);
+                                MedName.Text = reader["name"].ToString();
+                                MedName.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Regular);
+                                MedName.AutoSize = true;
+                                MedName.ForeColor = Color.Black;
+                                MedName.BackColor = Color.Transparent;
+                                this.PrescriptionPanel.Controls.Add(MedName);
+
+                                Label Dosage = new Label();
+                                Dosage.Location = new Point(416, yOffset);
+                                Dosage.Text = reader["dosage"].ToString();
+                                Dosage.AutoSize = true;
+                                Dosage.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Regular);
+                                Dosage.ForeColor = Color.Black;
+                                Dosage.BackColor = Color.Transparent;
+                                this.PrescriptionPanel.Controls.Add(Dosage);
+
+                                yOffset += 30;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+            //physician name
+            try
+            {
+                string query = @"
+                        SELECT * FROM physicianevaluation WHERE consultation_id = @consultationId";
+
+                using (var conn = new NpgsqlConnection(db.connectDb))
+                {
+                    conn.Open();
+
+                    using (var command = new NpgsqlCommand(query, conn))
+                    {
+                        command.Parameters.AddWithValue("@consultationId", consultationId);
+
+                        using (var reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                txtPhysicianName.TextAlign = ContentAlignment.MiddleCenter;
+                                txtPhysicianName.Text = reader["physician"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -167,10 +310,10 @@ namespace PIMS
 
         private void btnBack_Click_2(object sender, EventArgs e)
         {
-            this.Hide();
-            AddRecordEvaluation pe = new AddRecordEvaluation();
-            pe.ShowDialog();
-            this.Close();
+            //this.Hide();
+            //AddRecordEvaluation pe = new AddRecordEvaluation();
+            //pe.ShowDialog();
+            //this.Close();
         }
 
         private void btnContinue_Click_1(object sender, EventArgs e)

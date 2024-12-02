@@ -84,10 +84,10 @@ namespace PIMS
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AddRecordPrescription p = new AddRecordPrescription();
-            p.ShowDialog();
-            this.Close();
+            //this.Hide();
+            //AddRecordPrescription p = new AddRecordPrescription();
+            //p.ShowDialog();
+            //this.Close();
         }
 
         private void btnContinue_Click(object sender, EventArgs e)

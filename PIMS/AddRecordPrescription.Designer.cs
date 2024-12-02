@@ -42,7 +42,7 @@
             this.PrescriptionPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.txtPhysicianName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDate = new CustomControls.RJControls.RJTextBox();
@@ -213,7 +213,7 @@
             this.PrescriptionPanel.BackColor = System.Drawing.Color.White;
             this.PrescriptionPanel.Controls.Add(this.panel2);
             this.PrescriptionPanel.Controls.Add(this.label10);
-            this.PrescriptionPanel.Controls.Add(this.label8);
+            this.PrescriptionPanel.Controls.Add(this.txtPhysicianName);
             this.PrescriptionPanel.Controls.Add(this.label3);
             this.PrescriptionPanel.Controls.Add(this.label2);
             this.PrescriptionPanel.Controls.Add(this.txtDate);
@@ -256,17 +256,17 @@
             this.label10.TabIndex = 62;
             this.label10.Text = "Signature";
             // 
-            // label8
+            // txtPhysicianName
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(471, 535);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 22);
-            this.label8.TabIndex = 61;
-            this.label8.Text = "Physician Name";
+            this.txtPhysicianName.AutoSize = true;
+            this.txtPhysicianName.BackColor = System.Drawing.Color.Transparent;
+            this.txtPhysicianName.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhysicianName.ForeColor = System.Drawing.Color.Black;
+            this.txtPhysicianName.Location = new System.Drawing.Point(471, 535);
+            this.txtPhysicianName.Name = "txtPhysicianName";
+            this.txtPhysicianName.Size = new System.Drawing.Size(108, 22);
+            this.txtPhysicianName.TabIndex = 61;
+            this.txtPhysicianName.Text = "Physician Name";
             // 
             // label3
             // 
@@ -561,7 +561,7 @@
         private System.Windows.Forms.Label txtDosage;
         private CustomControls.RJControls.RJTextBox txtSex;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label txtPhysicianName;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Panel panel2;

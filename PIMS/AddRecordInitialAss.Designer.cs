@@ -36,9 +36,9 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelScroll = new System.Windows.Forms.Panel();
             this.btnContinue = new CustomControls.Controls.RJButton();
-            this.btnBack = new CustomControls.Controls.RJButton();
             this.panelPhysicalExam = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbkBloodType = new System.Windows.Forms.ComboBox();
             this.txtComplaint = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -56,7 +56,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbkBloodType = new System.Windows.Forms.ComboBox();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panelScroll.SuspendLayout();
@@ -119,7 +118,6 @@
             // panelScroll
             // 
             this.panelScroll.Controls.Add(this.btnContinue);
-            this.panelScroll.Controls.Add(this.btnBack);
             this.panelScroll.Controls.Add(this.panelPhysicalExam);
             this.panelScroll.Location = new System.Drawing.Point(12, 134);
             this.panelScroll.Name = "panelScroll";
@@ -137,7 +135,7 @@
             this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinue.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Location = new System.Drawing.Point(611, 622);
+            this.btnContinue.Location = new System.Drawing.Point(467, 629);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(246, 40);
             this.btnContinue.TabIndex = 39;
@@ -145,26 +143,6 @@
             this.btnContinue.TextColor = System.Drawing.Color.White;
             this.btnContinue.UseVisualStyleBackColor = false;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnBack.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnBack.BorderRadius = 7;
-            this.btnBack.BorderSize = 0;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(342, 622);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(246, 40);
-            this.btnBack.TabIndex = 38;
-            this.btnBack.Text = "BACK";
-            this.btnBack.TextColor = System.Drawing.Color.White;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // panelPhysicalExam
             // 
@@ -203,6 +181,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1293, 475);
             this.panel1.TabIndex = 18;
+            // 
+            // cbkBloodType
+            // 
+            this.cbkBloodType.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbkBloodType.FormattingEnabled = true;
+            this.cbkBloodType.Items.AddRange(new object[] {
+            "A+  ",
+            "A-  ",
+            "B+  ",
+            "B-  ",
+            "AB+  ",
+            "AB-  ",
+            "O+  ",
+            "O-  "});
+            this.cbkBloodType.Location = new System.Drawing.Point(48, 189);
+            this.cbkBloodType.Name = "cbkBloodType";
+            this.cbkBloodType.Size = new System.Drawing.Size(282, 30);
+            this.cbkBloodType.TabIndex = 38;
             // 
             // txtComplaint
             // 
@@ -374,24 +370,6 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Physical Examination:";
             // 
-            // cbkBloodType
-            // 
-            this.cbkBloodType.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbkBloodType.FormattingEnabled = true;
-            this.cbkBloodType.Items.AddRange(new object[] {
-            "A+  ",
-            "A-  ",
-            "B+  ",
-            "B-  ",
-            "AB+  ",
-            "AB-  ",
-            "O+  ",
-            "O-  "});
-            this.cbkBloodType.Location = new System.Drawing.Point(48, 189);
-            this.cbkBloodType.Name = "cbkBloodType";
-            this.cbkBloodType.Size = new System.Drawing.Size(282, 30);
-            this.cbkBloodType.TabIndex = 38;
-            // 
             // AddRecordInitialAss
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,7 +421,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private CustomControls.Controls.RJButton btnContinue;
-        private CustomControls.Controls.RJButton btnBack;
         private System.Windows.Forms.ComboBox cbkBloodType;
     }
 }

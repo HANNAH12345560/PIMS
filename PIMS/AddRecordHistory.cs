@@ -14,12 +14,14 @@ namespace PIMS
     public partial class AddRecordHistory : Form
     {
         private int consultationId;
+        private int patientId;
         private dbConnection db = new dbConnection();
 
-        public AddRecordHistory(int consultationId)
+        public AddRecordHistory(int consultationId, int patientId)
         {
             InitializeComponent();
             this.consultationId = consultationId;  
+            this.patientId = patientId;
         }
 
         private void DashboardScreen_Load(object sender, EventArgs e)
@@ -52,9 +54,10 @@ namespace PIMS
             chkStatusNO_MD3.Tag = "Row6";
             chkStatusYES_MD3.Tag = "Row6";
             chkStatusNOTKNOWN_MD3.Tag = "Row6";
- 
+
             AddCheckedChangedEventHandlers();
         }
+
 
         private void AddCheckedChangedEventHandlers()
         {
@@ -107,37 +110,59 @@ namespace PIMS
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AddRecordInitialAss ar = new AddRecordInitialAss();
-            ar.ShowDialog();
-            this.Close();
+            //this.Hide();
+            //AddRecordInitialAss ar = new AddRecordInitialAss();
+            //ar.ShowDialog();
+            //this.Close();
         }
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
             try
             {
-
+                int physicianEvalId;
                 using (var connection = new NpgsqlConnection(db.connectDb))
                 {
                     connection.Open();
-
                     InsertAllergyData(connection);
                     InsertMedicalHistoryData(connection);
+                    physicianEvalId = InsertPhysicianEvaluation(consultationId, connection);
 
                     MessageBox.Show("Data inserted successfully.");
                 }
+                this.Hide();
+                AddRecordEvaluation pl = new AddRecordEvaluation(consultationId, physicianEvalId, patientId);
+                pl.ShowDialog();
+                this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
+        }
 
-            // Optionally, you can hide the current form and show another one:
-            // this.Hide();
-            // AddRecordEvaluation ar = new AddRecordEvaluation();
-            // ar.ShowDialog();
-            // this.Close();
+        private int InsertPhysicianEvaluation(int consultationId, NpgsqlConnection connection)
+        {
+            string physician = comboBoxPhysician.SelectedItem?.ToString() ?? string.Empty;
+
+            string query = @"
+                INSERT INTO PhysicianEvaluation (
+                    consultation_id, physician
+                )
+                VALUES (
+                    @consultation_id, @physician
+                ) RETURNING id";
+
+            using (var command = new NpgsqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@consultation_id", consultationId);
+                command.Parameters.AddWithValue("@physician", physician);
+
+                int physicianEvalId = (int)command.ExecuteScalar();
+
+                MessageBox.Show($"Physician evaluation added successfully with ID: {physicianEvalId}");
+                return physicianEvalId;
+            }
         }
 
         private void InsertMedicalHistoryData(NpgsqlConnection connection)
@@ -149,14 +174,14 @@ namespace PIMS
 
                     int medHistoryId = InsertIntoMedicalHistory(connection, type, status);
 
-                    if (status == "Yes" && descriptionTextBox != null)
+                    if (status == "yes" && descriptionTextBox != null)
                     {
                         InsertIntoMedicalHistoryDetails(connection, medHistoryId, descriptionTextBox.Text);
                     }
                 };
-            insertMedicalHistory("MD1", chkStatusYES_MD1, chkStatusNOTKNOWN_MD1, chkStatusNO_MD1, txtMH1desc);
-            insertMedicalHistory("MD2", chkStatusYES_MD2, chkStatusNOTKNOWN_MD2, chkStatusNO_MD2, txtMH2desc);
-            insertMedicalHistory("MD3", chkStatusYES_MD3, chkStatusNOTKNOWN_MD3, chkStatusNO_MD3, txtMH3desc);
+            insertMedicalHistory("previous", chkStatusYES_MD1, chkStatusNOTKNOWN_MD1, chkStatusNO_MD1, txtMH1desc);
+            insertMedicalHistory("current", chkStatusYES_MD2, chkStatusNOTKNOWN_MD2, chkStatusNO_MD2, txtMH2desc);
+            insertMedicalHistory("family", chkStatusYES_MD3, chkStatusNOTKNOWN_MD3, chkStatusNO_MD3, txtMH3desc);
         }
 
         private void InsertAllergyData(NpgsqlConnection connection)
@@ -165,15 +190,15 @@ namespace PIMS
             {
                 int allergyId = InsertIntoAllergies(connection, type, status);
 
-                if (status == "Yes")
+                if (status == "yes")
                 {
                     InsertIntoAllergiesDetails(connection, allergyId, descriptionTextBox.Text);
                 }
             };
 
-            insertAllergy("DRUG", GetCheckBoxStatus(chkStatusYES_DRUG, chkStatusNOTKNOWN_DRUG, chkStatusNO_DRUG), txtDrugDesc);
-            insertAllergy("FOOD", GetCheckBoxStatus(chkStatusYES_FOOD, chkStatusNOTKNOWN_FOOD, chkStatusNO_FOOD), txtFoodDesc);
-            insertAllergy("OTHER", GetCheckBoxStatus(chkStatusYES_OTHER, chkStatusNOTKNOWN_OTHER, chkStatusNO_OTHER), txtOtherDesc);
+            insertAllergy("drug", GetCheckBoxStatus(chkStatusYES_DRUG, chkStatusNOTKNOWN_DRUG, chkStatusNO_DRUG), txtDrugDesc);
+            insertAllergy("food", GetCheckBoxStatus(chkStatusYES_FOOD, chkStatusNOTKNOWN_FOOD, chkStatusNO_FOOD), txtFoodDesc);
+            insertAllergy("other", GetCheckBoxStatus(chkStatusYES_OTHER, chkStatusNOTKNOWN_OTHER, chkStatusNO_OTHER), txtOtherDesc);
         }
 
         private int InsertIntoAllergies(NpgsqlConnection connection, string type, string status)
@@ -192,6 +217,7 @@ namespace PIMS
                 return (int)command.ExecuteScalar();
             }
         }
+
         private int InsertIntoMedicalHistory(NpgsqlConnection connection, string type, string status)
         {
             string insertMedHistoryQuery = @"
@@ -223,6 +249,8 @@ namespace PIMS
                 command.ExecuteNonQuery();
             }
         }
+
+
         private void InsertIntoMedicalHistoryDetails(NpgsqlConnection connection, int medHistoryId, string specificDetail)
         {
             string insertMedHistoryDetailQuery = @"
@@ -240,9 +268,9 @@ namespace PIMS
 
         private string GetCheckBoxStatus(CheckBox yesCheckBox, CheckBox notKnownCheckBox, CheckBox noCheckBox)
         {
-            if (yesCheckBox.Checked) return "Yes";
-            if (notKnownCheckBox.Checked) return "Not Known";
-            return "No";
+            if (yesCheckBox.Checked) return "yes";
+            if (notKnownCheckBox.Checked) return "not_known";
+            return "no";
         }
 
         private void label1_Click(object sender, EventArgs e) { }

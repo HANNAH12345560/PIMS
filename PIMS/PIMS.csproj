@@ -111,10 +111,10 @@
     <Compile Include="AddRecordEvaluation.Designer.cs">
       <DependentUpon>AddRecordEvaluation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Resources\AddRecordHistory.cs">
+    <Compile Include="AddRecordHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Resources\AddRecordHistory.Designer.cs">
+    <Compile Include="AddRecordHistory.Designer.cs">
       <DependentUpon>AddRecordHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="AddRecordInitialAss.cs">
@@ -317,7 +317,7 @@
     <EmbeddedResource Include="AddRecordEvaluation.resx">
       <DependentUpon>AddRecordEvaluation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\AddRecordHistory.resx">
+    <EmbeddedResource Include="AddRecordHistory.resx">
       <DependentUpon>AddRecordHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddRecordInitialAss.resx">

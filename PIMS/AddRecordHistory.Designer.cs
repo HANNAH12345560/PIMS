@@ -36,8 +36,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelPhysicalExam = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.comboBoxGender = new System.Windows.Forms.ComboBox();
+            this.comboBoxPhysician = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtMH3desc = new System.Windows.Forms.TextBox();
@@ -73,9 +72,9 @@
             this.chkStatusNO_OTHER = new System.Windows.Forms.CheckBox();
             this.chkStatusNOTKNOWN_OTHER = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.panelScroll = new System.Windows.Forms.Panel();
             this.btnContinue = new CustomControls.Controls.RJButton();
-            this.btnBack = new CustomControls.Controls.RJButton();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panelPhysicalExam.SuspendLayout();
@@ -155,7 +154,7 @@
             // 
             this.panel1.BackgroundImage = global::PIMS.Properties.Resources.EvaluationPanelPink;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.comboBoxGender);
+            this.panel1.Controls.Add(this.comboBoxPhysician);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.tableLayoutPanel2);
             this.panel1.Controls.Add(this.label8);
@@ -168,28 +167,16 @@
             this.panel1.Size = new System.Drawing.Size(1293, 677);
             this.panel1.TabIndex = 18;
             // 
-            // label13
+            // comboBoxPhysician
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
-            this.label13.Location = new System.Drawing.Point(48, 574);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(95, 22);
-            this.label13.TabIndex = 41;
-            this.label13.Text = "Physician List:";
-            // 
-            // comboBoxGender
-            // 
-            this.comboBoxGender.FormattingEnabled = true;
-            this.comboBoxGender.Items.AddRange(new object[] {
+            this.comboBoxPhysician.FormattingEnabled = true;
+            this.comboBoxPhysician.Items.AddRange(new object[] {
             "Dr. Reyes",
             "Dr. Lopez"});
-            this.comboBoxGender.Location = new System.Drawing.Point(48, 591);
-            this.comboBoxGender.Name = "comboBoxGender";
-            this.comboBoxGender.Size = new System.Drawing.Size(236, 30);
-            this.comboBoxGender.TabIndex = 40;
+            this.comboBoxPhysician.Location = new System.Drawing.Point(48, 591);
+            this.comboBoxPhysician.Name = "comboBoxPhysician";
+            this.comboBoxPhysician.Size = new System.Drawing.Size(236, 30);
+            this.comboBoxPhysician.TabIndex = 40;
             // 
             // label9
             // 
@@ -665,11 +652,22 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "Allergies/ Adverse Reaction/ Suspected Allergies to:";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
+            this.label13.Location = new System.Drawing.Point(48, 574);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(95, 22);
+            this.label13.TabIndex = 41;
+            this.label13.Text = "Physician List:";
+            // 
             // panelScroll
             // 
             this.panelScroll.BackColor = System.Drawing.Color.Transparent;
             this.panelScroll.Controls.Add(this.btnContinue);
-            this.panelScroll.Controls.Add(this.btnBack);
             this.panelScroll.Location = new System.Drawing.Point(12, 699);
             this.panelScroll.Name = "panelScroll";
             this.panelScroll.Size = new System.Drawing.Size(1346, 326);
@@ -686,7 +684,7 @@
             this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Location = new System.Drawing.Point(628, 243);
+            this.btnContinue.Location = new System.Drawing.Point(569, 209);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(246, 40);
             this.btnContinue.TabIndex = 39;
@@ -694,26 +692,6 @@
             this.btnContinue.TextColor = System.Drawing.Color.White;
             this.btnContinue.UseVisualStyleBackColor = false;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnBack.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnBack.BorderRadius = 7;
-            this.btnBack.BorderSize = 0;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(367, 243);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(246, 40);
-            this.btnBack.TabIndex = 38;
-            this.btnBack.Text = "BACK";
-            this.btnBack.TextColor = System.Drawing.Color.White;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // AddRecordHistory
             // 
@@ -786,9 +764,8 @@
         private System.Windows.Forms.TextBox txtFoodDesc;
         private System.Windows.Forms.Panel panelScroll;
         private CustomControls.Controls.RJButton btnContinue;
-        private CustomControls.Controls.RJButton btnBack;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBoxGender;
+        private System.Windows.Forms.ComboBox comboBoxPhysician;
         private System.Windows.Forms.Label label13;
     }
 }

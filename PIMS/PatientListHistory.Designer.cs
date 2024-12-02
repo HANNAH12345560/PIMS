@@ -75,7 +75,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelScroll = new System.Windows.Forms.Panel();
             this.btnContinue = new CustomControls.Controls.RJButton();
-            this.btnBack = new CustomControls.Controls.RJButton();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panelPhysicalExam.SuspendLayout();
@@ -164,14 +163,14 @@
             this.panel1.Size = new System.Drawing.Size(1293, 677);
             this.panel1.TabIndex = 18;
             // 
-            // comboBoxGender
+            // comboBoxPhysician
             // 
             this.comboBoxPhysician.FormattingEnabled = true;
             this.comboBoxPhysician.Items.AddRange(new object[] {
             "Dr. Reyes",
             "Dr. Lopez"});
             this.comboBoxPhysician.Location = new System.Drawing.Point(48, 596);
-            this.comboBoxPhysician.Name = "comboBoxGender";
+            this.comboBoxPhysician.Name = "comboBoxPhysician";
             this.comboBoxPhysician.Size = new System.Drawing.Size(236, 30);
             this.comboBoxPhysician.TabIndex = 40;
             // 
@@ -661,7 +660,6 @@
             // 
             this.panelScroll.BackColor = System.Drawing.Color.Transparent;
             this.panelScroll.Controls.Add(this.btnContinue);
-            this.panelScroll.Controls.Add(this.btnBack);
             this.panelScroll.Location = new System.Drawing.Point(12, 699);
             this.panelScroll.Name = "panelScroll";
             this.panelScroll.Size = new System.Drawing.Size(1346, 304);
@@ -678,7 +676,7 @@
             this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Location = new System.Drawing.Point(630, 247);
+            this.btnContinue.Location = new System.Drawing.Point(495, 201);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(246, 40);
             this.btnContinue.TabIndex = 39;
@@ -686,26 +684,6 @@
             this.btnContinue.TextColor = System.Drawing.Color.White;
             this.btnContinue.UseVisualStyleBackColor = false;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnBack.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnBack.BorderRadius = 7;
-            this.btnBack.BorderSize = 0;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(369, 247);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(246, 40);
-            this.btnBack.TabIndex = 38;
-            this.btnBack.Text = "BACK";
-            this.btnBack.TextColor = System.Drawing.Color.White;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // PatientListHistory
             // 
@@ -779,7 +757,6 @@
         private System.Windows.Forms.TextBox txtFoodDesc;
         private System.Windows.Forms.Panel panelScroll;
         private CustomControls.Controls.RJButton btnContinue;
-        private CustomControls.Controls.RJButton btnBack;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBoxPhysician;
         private System.Windows.Forms.Label label13;

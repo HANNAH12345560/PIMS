@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +18,31 @@ namespace PIMS
             InitializeComponent();
         }
 
+        dbConnection functions = new dbConnection();
+        string querySearch;
+        private static Dictionary<string, string> patientInfoCache = new Dictionary<string, string>();
+        public int patientId;
+
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
-
+            if (patientInfoCache.Count > 0)
+            {
+                patientId = Convert.ToInt32(patientInfoCache["id"]);
+                lblStatus.Text = patientInfoCache["status"];
+                txtPhilHealthNo.Text = patientInfoCache["philhealthno"];
+                txtFirstName.Text = patientInfoCache["first_name"];
+                txtLastName.Text = patientInfoCache["last_name"];
+                txtMiddleName.Text = patientInfoCache["middle_name"];
+                txtAddress.Text = patientInfoCache["home_add"];
+                txtAge.Text = patientInfoCache["age"];
+                txtBday.Text = patientInfoCache["birthday"];
+                txtBirthPlace.Text = patientInfoCache["birthplace"];
+                txtCivilStatus.Text = patientInfoCache["civilstat"];
+                txtGender.Text = patientInfoCache["gender"];
+                txtTelNo.Text = patientInfoCache["mobiletelno"];
+                txtReligion.Text = patientInfoCache["religion"];
+                txtOccupation.Text = patientInfoCache["occupation"];
+            }
         }
 
         
@@ -197,9 +220,116 @@ namespace PIMS
         private void btnContinue_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddRecordInitialAss pe = new AddRecordInitialAss();
+            AddRecordInitialAss pe = new AddRecordInitialAss(patientId);
             pe.ShowDialog();
             this.Close();
         }
+
+        private void txtSearchName__TextChanged(object sender, EventArgs e)
+        {
+            querySearch = "SELECT * FROM patientinfo";
+
+            using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+            {
+                conn.Open();
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand(querySearch, conn))
+                {
+                    var source = new AutoCompleteStringCollection();
+
+                    using (NpgsqlDataReader read = cmd.ExecuteReader())
+                    {
+                        while (read.Read())
+                        {
+                            string fullname = read["first_name"].ToString() + " " + read["middle_name"].ToString() + " " + read["last_name"].ToString();
+                            source.Add(fullname);
+                        }
+                    }
+
+                    TextBox innerTextBox = (TextBox)txtSearchName.Controls[0];
+                    innerTextBox.AutoCompleteCustomSource = source;
+                    innerTextBox.AutoCompleteMode = AutoCompleteMode.Suggest;
+                    innerTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                }
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            TextBox innerTextBox = (TextBox)txtSearchName.Controls[0];
+            string search = innerTextBox.Text;
+
+            if (string.IsNullOrWhiteSpace(search))
+            {
+                MessageBox.Show("Please enter a name to search");
+            }
+            else
+            {
+                try
+                {
+                    using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+                    {
+                        conn.Open();
+                        querySearch = "SELECT * FROM patientinfo WHERE first_name || ' ' || middle_name || ' ' || last_name = @search";
+                        using (NpgsqlCommand cmd = new NpgsqlCommand(querySearch, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@search", search);
+                            using (NpgsqlDataReader read = cmd.ExecuteReader())
+                            {
+                                if (read.Read())
+                                {
+                                    patientId = Convert.ToInt32(read["id"]);
+                                    lblStatus.Text = read["status"].ToString();
+                                    txtPhilHealthNo.Text = read["philhealthno"].ToString();
+                                    txtFirstName.Text = read["first_name"].ToString();
+                                    txtLastName.Text = read["last_name"].ToString();
+                                    txtMiddleName.Text = read["middle_name"].ToString();
+                                    txtAddress.Text = read["home_add"].ToString();
+                                    txtAge.Text = read["age"].ToString();
+                                    txtBday.Text = read["birthday"].ToString();
+                                    txtBirthPlace.Text = read["birthplace"].ToString();
+                                    txtCivilStatus.Text = read["civilstat"].ToString();
+                                    txtGender.Text = read["gender"].ToString();
+                                    txtTelNo.Text = read["mobiletelno"].ToString();
+                                    txtReligion.Text = read["religion"].ToString();
+                                    txtOccupation.Text = read["occupation"].ToString();
+
+                                    CachePatientInfo();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Patient not found.");
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void CachePatientInfo()
+        {
+            patientInfoCache["id"] = patientId.ToString();
+            patientInfoCache["status"] = lblStatus.Text;
+            patientInfoCache["philhealthno"] = txtPhilHealthNo.Text;
+            patientInfoCache["first_name"] = txtFirstName.Text;
+            patientInfoCache["last_name"] = txtLastName.Text;
+            patientInfoCache["middle_name"] = txtMiddleName.Text;
+            patientInfoCache["home_add"] = txtAddress.Text;
+            patientInfoCache["age"] = txtAge.Text;
+            patientInfoCache["birthday"] = txtBday.Text;
+            patientInfoCache["birthplace"] = txtBirthPlace.Text;
+            patientInfoCache["civilstat"] = txtCivilStatus.Text;
+            patientInfoCache["gender"] = txtGender.Text;
+            patientInfoCache["mobiletelno"] = txtTelNo.Text;
+            patientInfoCache["religion"] = txtReligion.Text;
+            patientInfoCache["occupation"] = txtOccupation.Text;
+        }
+
+
     }
 }
