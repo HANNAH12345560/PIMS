@@ -13,14 +13,17 @@ namespace PIMS
 {
     public partial class PatientListEvaluation : Form
     {
-
+        private int consultationId; 
         private int physicianEvaluationId;
+
 
         private dbConnection db = new dbConnection();
 
-        public PatientListEvaluation(int physicianEvaluationId)
+        public PatientListEvaluation(int consultationId, int physicianEvaluationId)
         {
             InitializeComponent();
+           
+            this.consultationId = consultationId; 
             this.physicianEvaluationId = physicianEvaluationId;
         }
 
@@ -52,7 +55,7 @@ namespace PIMS
             }
 
             this.Hide();
-            Prescription pre = new Prescription(physicianEvaluationId);
+            Prescription pre = new Prescription(consultationId, physicianEvaluationId);
             pre.ShowDialog();
             this.Close();
         }

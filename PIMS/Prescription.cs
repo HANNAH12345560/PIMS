@@ -12,10 +12,13 @@ namespace PIMS
 {
     public partial class Prescription : Form
     {
-        int consultationId;
-        public Prescription(int consultationId)
+        private int consultationId;
+        private int physicianEvaluationId;
+
+        public Prescription(int consultationId, int physicianEvaluationId)
         {
             this.consultationId = consultationId;
+            this.physicianEvaluationId = physicianEvaluationId;
             InitializeComponent();
         }
 
@@ -57,10 +60,10 @@ namespace PIMS
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            PatientListEvaluation pl = new PatientListEvaluation(consultationId);
-            pl.ShowDialog();
-            this.Close();
+            //this.Hide();
+            //PatientListEvaluation pl = new PatientListEvaluation(consultationId);
+            //pl.ShowDialog();
+            //this.Close();
         }
     }
 }

@@ -116,38 +116,38 @@ namespace PIMS
         {
             try
             {
+                int physicianEvalId;
                 using (var connection = new NpgsqlConnection(db.connectDb))
                 {
                     connection.Open();
                     InsertAllergyData(connection);
                     InsertMedicalHistoryData(connection);
-                    InsertPhysicianEvaluation(consultationId, connection);
+                    physicianEvalId = InsertPhysicianEvaluation(consultationId, connection);
 
                     MessageBox.Show("Data inserted successfully.");
                 }
+                this.Hide();
+                PatientListEvaluation pl = new PatientListEvaluation(consultationId, physicianEvalId);
+                pl.ShowDialog();
+                this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
-            this.Hide();
-            PatientListEvaluation pl = new PatientListEvaluation(consultationId);
-            pl.ShowDialog(); 
-            this.Close();
-
         }
 
-        private void InsertPhysicianEvaluation(int consultationId, NpgsqlConnection connection)
+        private int InsertPhysicianEvaluation(int consultationId, NpgsqlConnection connection)
         {
             string physician = comboBoxPhysician.SelectedItem?.ToString() ?? string.Empty;
 
             string query = @"
-    INSERT INTO PhysicianEvaluation (
-        consultation_id, physician
-    )
-    VALUES (
-        @consultation_id, @physician
-    ) RETURNING id";
+                INSERT INTO PhysicianEvaluation (
+                    consultation_id, physician
+                )
+                VALUES (
+                    @consultation_id, @physician
+                ) RETURNING id";
 
             using (var command = new NpgsqlCommand(query, connection))
             {
@@ -157,6 +157,7 @@ namespace PIMS
                 int physicianEvalId = (int)command.ExecuteScalar();
 
                 MessageBox.Show($"Physician evaluation added successfully with ID: {physicianEvalId}");
+                return physicianEvalId;
             }
         }
 
@@ -264,7 +265,7 @@ namespace PIMS
         {
             if (yesCheckBox.Checked) return "yes";
             if (notKnownCheckBox.Checked) return "not_known";
-            return "No";
+            return "no";
         }
     }
 }

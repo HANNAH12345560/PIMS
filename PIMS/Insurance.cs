@@ -17,10 +17,10 @@ namespace PIMS
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Prescription p = new Prescription(consultationId);
-            p.ShowDialog();
-            this.Close();
+            //this.Hide();
+            //Prescription p = new Prescription(consultationId);
+            //p.ShowDialog();
+            //this.Close();
         }
 
         private void btnContinue_Click(object sender, EventArgs e)
