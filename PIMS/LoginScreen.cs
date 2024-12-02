@@ -13,8 +13,8 @@ namespace PIMS
 {
     public partial class Login : Form
     {
-        private string connString = "Host=localhost;Username=user1;Password=Miyaki_11;Database=PatientManagementSystem";
 
+        dbConnection functions = new dbConnection();
         public Login()
         {
             InitializeComponent();
@@ -47,7 +47,7 @@ namespace PIMS
             string username = txtbUsername.Text;
             string password = txtbPassword.Text;
 
-            using (var conn = new NpgsqlConnection(connString))
+            using (var conn = new NpgsqlConnection(functions.connectDb))
             {
                 try
                 {

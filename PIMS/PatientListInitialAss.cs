@@ -58,7 +58,8 @@ namespace PIMS
 
             DateTime date = DateTime.Now;
 
-            string connectionString = "Host=localhost;Port=5432;Username=postgres;Password=Miyaki_11;Database=PatientManagementSystem;";
+            dbConnection functions = new dbConnection();
+
             string query = @"
         INSERT INTO ConsultationAssesment (patient_id, bp, rr, pr, temp, wt, ht, complaint, date, blood_type)
         VALUES (@patient_id, @bp, @rr, @pr, @temp, @wt, @ht, @complaint, @date, @blood_type)
@@ -66,7 +67,7 @@ namespace PIMS
 
             try
             {
-                using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
+                using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
                 {
                     conn.Open();
                     NpgsqlCommand cmd = new NpgsqlCommand(query, conn);

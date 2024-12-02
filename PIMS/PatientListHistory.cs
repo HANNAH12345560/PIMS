@@ -170,14 +170,14 @@ namespace PIMS
 
                     int medHistoryId = InsertIntoMedicalHistory(connection, type, status);
 
-                    if (status == "Yes" && descriptionTextBox != null)
+                    if (status == "yes" && descriptionTextBox != null)
                     {
                         InsertIntoMedicalHistoryDetails(connection, medHistoryId, descriptionTextBox.Text);
                     }
                 };
-            insertMedicalHistory("MD1", chkStatusYES_MD1, chkStatusNOTKNOWN_MD1, chkStatusNO_MD1, txtMH1desc);
-            insertMedicalHistory("MD2", chkStatusYES_MD2, chkStatusNOTKNOWN_MD2, chkStatusNO_MD2, txtMH2desc);
-            insertMedicalHistory("MD3", chkStatusYES_MD3, chkStatusNOTKNOWN_MD3, chkStatusNO_MD3, txtMH3desc);
+            insertMedicalHistory("previous", chkStatusYES_MD1, chkStatusNOTKNOWN_MD1, chkStatusNO_MD1, txtMH1desc);
+            insertMedicalHistory("current", chkStatusYES_MD2, chkStatusNOTKNOWN_MD2, chkStatusNO_MD2, txtMH2desc);
+            insertMedicalHistory("family", chkStatusYES_MD3, chkStatusNOTKNOWN_MD3, chkStatusNO_MD3, txtMH3desc);
         }
 
         private void InsertAllergyData(NpgsqlConnection connection)
@@ -186,15 +186,15 @@ namespace PIMS
             {
                 int allergyId = InsertIntoAllergies(connection, type, status);
 
-                if (status == "Yes")
+                if (status == "yes")
                 {
                     InsertIntoAllergiesDetails(connection, allergyId, descriptionTextBox.Text);
                 }
             };
 
-            insertAllergy("DRUG", GetCheckBoxStatus(chkStatusYES_DRUG, chkStatusNOTKNOWN_DRUG, chkStatusNO_DRUG), txtDrugDesc);
-            insertAllergy("FOOD", GetCheckBoxStatus(chkStatusYES_FOOD, chkStatusNOTKNOWN_FOOD, chkStatusNO_FOOD), txtFoodDesc);
-            insertAllergy("OTHER", GetCheckBoxStatus(chkStatusYES_OTHER, chkStatusNOTKNOWN_OTHER, chkStatusNO_OTHER), txtOtherDesc);
+            insertAllergy("drug", GetCheckBoxStatus(chkStatusYES_DRUG, chkStatusNOTKNOWN_DRUG, chkStatusNO_DRUG), txtDrugDesc);
+            insertAllergy("food", GetCheckBoxStatus(chkStatusYES_FOOD, chkStatusNOTKNOWN_FOOD, chkStatusNO_FOOD), txtFoodDesc);
+            insertAllergy("other", GetCheckBoxStatus(chkStatusYES_OTHER, chkStatusNOTKNOWN_OTHER, chkStatusNO_OTHER), txtOtherDesc);
         }
         private int InsertIntoAllergies(NpgsqlConnection connection, string type, string status)
         {
@@ -262,8 +262,8 @@ namespace PIMS
 
         private string GetCheckBoxStatus(CheckBox yesCheckBox, CheckBox notKnownCheckBox, CheckBox noCheckBox)
         {
-            if (yesCheckBox.Checked) return "Yes";
-            if (notKnownCheckBox.Checked) return "Not Known";
+            if (yesCheckBox.Checked) return "yes";
+            if (notKnownCheckBox.Checked) return "not_known";
             return "No";
         }
     }
