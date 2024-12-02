@@ -35,6 +35,9 @@
             this.lblDashboard = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelPhysicalExam = new System.Windows.Forms.Panel();
+            this.btnBack = new CustomControls.Controls.RJButton();
+            this.btnContinue = new CustomControls.Controls.RJButton();
+            this.btnPrint = new CustomControls.Controls.RJButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.PrescriptionPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -42,6 +45,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtDate = new CustomControls.RJControls.RJTextBox();
+            this.txtAge = new CustomControls.RJControls.RJTextBox();
+            this.txtAdd = new CustomControls.RJControls.RJTextBox();
+            this.txtName = new CustomControls.RJControls.RJTextBox();
             this.txtDosage = new System.Windows.Forms.Label();
             this.txtMedName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,16 +57,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtSex = new CustomControls.RJControls.RJTextBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.btnContinue = new CustomControls.Controls.RJButton();
-            this.btnPrint = new CustomControls.Controls.RJButton();
-            this.txtDate = new CustomControls.RJControls.RJTextBox();
-            this.txtAge = new CustomControls.RJControls.RJTextBox();
-            this.txtAdd = new CustomControls.RJControls.RJTextBox();
-            this.txtName = new CustomControls.RJControls.RJTextBox();
-            this.txtSex = new CustomControls.RJControls.RJTextBox();
-            this.btnBack = new CustomControls.Controls.RJButton();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panelPhysicalExam.SuspendLayout();
@@ -136,6 +136,69 @@
             this.panelPhysicalExam.Name = "panelPhysicalExam";
             this.panelPhysicalExam.Size = new System.Drawing.Size(2076, 1286);
             this.panelPhysicalExam.TabIndex = 0;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
+            this.btnBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
+            this.btnBack.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnBack.BorderRadius = 7;
+            this.btnBack.BorderSize = 0;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(590, 1133);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(369, 62);
+            this.btnBack.TabIndex = 45;
+            this.btnBack.Text = "BACK";
+            this.btnBack.TextColor = System.Drawing.Color.White;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnContinue
+            // 
+            this.btnContinue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
+            this.btnContinue.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
+            this.btnContinue.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnContinue.BorderRadius = 7;
+            this.btnContinue.BorderSize = 0;
+            this.btnContinue.FlatAppearance.BorderSize = 0;
+            this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContinue.ForeColor = System.Drawing.Color.White;
+            this.btnContinue.Location = new System.Drawing.Point(983, 1133);
+            this.btnContinue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnContinue.Name = "btnContinue";
+            this.btnContinue.Size = new System.Drawing.Size(369, 62);
+            this.btnContinue.TabIndex = 44;
+            this.btnContinue.Text = "CONTINUE";
+            this.btnContinue.TextColor = System.Drawing.Color.White;
+            this.btnContinue.UseVisualStyleBackColor = false;
+            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
+            this.btnPrint.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
+            this.btnPrint.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnPrint.BorderRadius = 7;
+            this.btnPrint.BorderSize = 0;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Location = new System.Drawing.Point(1396, 37);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(369, 62);
+            this.btnPrint.TabIndex = 40;
+            this.btnPrint.Text = "PRINT";
+            this.btnPrint.TextColor = System.Drawing.Color.White;
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.rjButton1_Click);
             // 
             // panel1
             // 
@@ -238,6 +301,94 @@
             this.label2.TabIndex = 51;
             this.label2.Text = "Date:";
             // 
+            // txtDate
+            // 
+            this.txtDate.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDate.BorderColor = System.Drawing.Color.Black;
+            this.txtDate.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtDate.BorderRadius = 0;
+            this.txtDate.BorderSize = 1;
+            this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtDate.Location = new System.Drawing.Point(556, 280);
+            this.txtDate.Margin = new System.Windows.Forms.Padding(6);
+            this.txtDate.Multiline = false;
+            this.txtDate.Name = "txtDate";
+            this.txtDate.Padding = new System.Windows.Forms.Padding(15, 11, 15, 11);
+            this.txtDate.PasswordChar = false;
+            this.txtDate.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtDate.PlaceholderText = "";
+            this.txtDate.Size = new System.Drawing.Size(158, 47);
+            this.txtDate.TabIndex = 59;
+            this.txtDate.Texts = "";
+            this.txtDate.UnderlinedStyle = true;
+            // 
+            // txtAge
+            // 
+            this.txtAge.BackColor = System.Drawing.SystemColors.Window;
+            this.txtAge.BorderColor = System.Drawing.Color.Black;
+            this.txtAge.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtAge.BorderRadius = 0;
+            this.txtAge.BorderSize = 1;
+            this.txtAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtAge.Location = new System.Drawing.Point(556, 218);
+            this.txtAge.Margin = new System.Windows.Forms.Padding(6);
+            this.txtAge.Multiline = false;
+            this.txtAge.Name = "txtAge";
+            this.txtAge.Padding = new System.Windows.Forms.Padding(15, 11, 15, 11);
+            this.txtAge.PasswordChar = false;
+            this.txtAge.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtAge.PlaceholderText = "";
+            this.txtAge.Size = new System.Drawing.Size(171, 47);
+            this.txtAge.TabIndex = 58;
+            this.txtAge.Texts = "";
+            this.txtAge.UnderlinedStyle = true;
+            // 
+            // txtAdd
+            // 
+            this.txtAdd.BackColor = System.Drawing.SystemColors.Window;
+            this.txtAdd.BorderColor = System.Drawing.Color.Black;
+            this.txtAdd.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtAdd.BorderRadius = 0;
+            this.txtAdd.BorderSize = 1;
+            this.txtAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtAdd.Location = new System.Drawing.Point(120, 280);
+            this.txtAdd.Margin = new System.Windows.Forms.Padding(6);
+            this.txtAdd.Multiline = false;
+            this.txtAdd.Name = "txtAdd";
+            this.txtAdd.Padding = new System.Windows.Forms.Padding(15, 11, 15, 11);
+            this.txtAdd.PasswordChar = false;
+            this.txtAdd.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtAdd.PlaceholderText = "";
+            this.txtAdd.Size = new System.Drawing.Size(351, 47);
+            this.txtAdd.TabIndex = 57;
+            this.txtAdd.Texts = "";
+            this.txtAdd.UnderlinedStyle = true;
+            // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.SystemColors.Window;
+            this.txtName.BorderColor = System.Drawing.Color.Black;
+            this.txtName.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtName.BorderRadius = 0;
+            this.txtName.BorderSize = 1;
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtName.Location = new System.Drawing.Point(96, 212);
+            this.txtName.Margin = new System.Windows.Forms.Padding(6);
+            this.txtName.Multiline = false;
+            this.txtName.Name = "txtName";
+            this.txtName.Padding = new System.Windows.Forms.Padding(15, 11, 15, 11);
+            this.txtName.PasswordChar = false;
+            this.txtName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtName.PlaceholderText = "";
+            this.txtName.Size = new System.Drawing.Size(375, 47);
+            this.txtName.TabIndex = 56;
+            this.txtName.Texts = "";
+            this.txtName.UnderlinedStyle = true;
+            // 
             // txtDosage
             // 
             this.txtDosage.AutoSize = true;
@@ -336,151 +487,6 @@
             this.label5.TabIndex = 37;
             this.label5.Text = "Name:";
             // 
-            // printDocument1
-            // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // printPreviewDialog1
-            // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Document = this.printDocument1;
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
-            // 
-            // btnContinue
-            // 
-            this.btnContinue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnContinue.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnContinue.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnContinue.BorderRadius = 7;
-            this.btnContinue.BorderSize = 0;
-            this.btnContinue.FlatAppearance.BorderSize = 0;
-            this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Location = new System.Drawing.Point(983, 1133);
-            this.btnContinue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnContinue.Name = "btnContinue";
-            this.btnContinue.Size = new System.Drawing.Size(369, 62);
-            this.btnContinue.TabIndex = 44;
-            this.btnContinue.Text = "CONTINUE";
-            this.btnContinue.TextColor = System.Drawing.Color.White;
-            this.btnContinue.UseVisualStyleBackColor = false;
-            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnPrint.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnPrint.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnPrint.BorderRadius = 7;
-            this.btnPrint.BorderSize = 0;
-            this.btnPrint.FlatAppearance.BorderSize = 0;
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.Location = new System.Drawing.Point(1396, 37);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(369, 62);
-            this.btnPrint.TabIndex = 40;
-            this.btnPrint.Text = "PRINT";
-            this.btnPrint.TextColor = System.Drawing.Color.White;
-            this.btnPrint.UseVisualStyleBackColor = false;
-            this.btnPrint.Click += new System.EventHandler(this.rjButton1_Click);
-            // 
-            // txtDate
-            // 
-            this.txtDate.BackColor = System.Drawing.SystemColors.Window;
-            this.txtDate.BorderColor = System.Drawing.Color.Black;
-            this.txtDate.BorderFocusColor = System.Drawing.Color.Black;
-            this.txtDate.BorderRadius = 0;
-            this.txtDate.BorderSize = 1;
-            this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDate.Location = new System.Drawing.Point(556, 280);
-            this.txtDate.Margin = new System.Windows.Forms.Padding(6);
-            this.txtDate.Multiline = false;
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Padding = new System.Windows.Forms.Padding(15, 11, 15, 11);
-            this.txtDate.PasswordChar = false;
-            this.txtDate.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtDate.PlaceholderText = "";
-            this.txtDate.Size = new System.Drawing.Size(158, 47);
-            this.txtDate.TabIndex = 59;
-            this.txtDate.Texts = "";
-            this.txtDate.UnderlinedStyle = true;
-            // 
-            // txtAge
-            // 
-            this.txtAge.BackColor = System.Drawing.SystemColors.Window;
-            this.txtAge.BorderColor = System.Drawing.Color.Black;
-            this.txtAge.BorderFocusColor = System.Drawing.Color.Black;
-            this.txtAge.BorderRadius = 0;
-            this.txtAge.BorderSize = 1;
-            this.txtAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtAge.Location = new System.Drawing.Point(556, 218);
-            this.txtAge.Margin = new System.Windows.Forms.Padding(6);
-            this.txtAge.Multiline = false;
-            this.txtAge.Name = "txtAge";
-            this.txtAge.Padding = new System.Windows.Forms.Padding(15, 11, 15, 11);
-            this.txtAge.PasswordChar = false;
-            this.txtAge.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtAge.PlaceholderText = "";
-            this.txtAge.Size = new System.Drawing.Size(171, 47);
-            this.txtAge.TabIndex = 58;
-            this.txtAge.Texts = "";
-            this.txtAge.UnderlinedStyle = true;
-            // 
-            // txtAdd
-            // 
-            this.txtAdd.BackColor = System.Drawing.SystemColors.Window;
-            this.txtAdd.BorderColor = System.Drawing.Color.Black;
-            this.txtAdd.BorderFocusColor = System.Drawing.Color.Black;
-            this.txtAdd.BorderRadius = 0;
-            this.txtAdd.BorderSize = 1;
-            this.txtAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtAdd.Location = new System.Drawing.Point(120, 280);
-            this.txtAdd.Margin = new System.Windows.Forms.Padding(6);
-            this.txtAdd.Multiline = false;
-            this.txtAdd.Name = "txtAdd";
-            this.txtAdd.Padding = new System.Windows.Forms.Padding(15, 11, 15, 11);
-            this.txtAdd.PasswordChar = false;
-            this.txtAdd.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtAdd.PlaceholderText = "";
-            this.txtAdd.Size = new System.Drawing.Size(351, 47);
-            this.txtAdd.TabIndex = 57;
-            this.txtAdd.Texts = "";
-            this.txtAdd.UnderlinedStyle = true;
-            // 
-            // txtName
-            // 
-            this.txtName.BackColor = System.Drawing.SystemColors.Window;
-            this.txtName.BorderColor = System.Drawing.Color.Black;
-            this.txtName.BorderFocusColor = System.Drawing.Color.Black;
-            this.txtName.BorderRadius = 0;
-            this.txtName.BorderSize = 1;
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtName.Location = new System.Drawing.Point(96, 212);
-            this.txtName.Margin = new System.Windows.Forms.Padding(6);
-            this.txtName.Multiline = false;
-            this.txtName.Name = "txtName";
-            this.txtName.Padding = new System.Windows.Forms.Padding(15, 11, 15, 11);
-            this.txtName.PasswordChar = false;
-            this.txtName.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtName.PlaceholderText = "";
-            this.txtName.Size = new System.Drawing.Size(375, 47);
-            this.txtName.TabIndex = 56;
-            this.txtName.Texts = "";
-            this.txtName.UnderlinedStyle = true;
-            // 
             // txtSex
             // 
             this.txtSex.BackColor = System.Drawing.SystemColors.Window;
@@ -503,26 +509,20 @@
             this.txtSex.Texts = "";
             this.txtSex.UnderlinedStyle = true;
             // 
-            // btnBack
+            // printDocument1
             // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnBack.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnBack.BorderRadius = 7;
-            this.btnBack.BorderSize = 0;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(590, 1133);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(369, 62);
-            this.btnBack.TabIndex = 45;
-            this.btnBack.Text = "BACK";
-            this.btnBack.TextColor = System.Drawing.Color.White;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // Prescription
             // 

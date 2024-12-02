@@ -36,68 +36,6 @@ namespace PIMS
             dataGridView1.Rows.Add("Other Discount");
         }
 
-       
-      
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel9_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-       
-
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        
-
-        private void panel11_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel12_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelPhysicalExam_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-       
-
-       
-
         private void btnPrint_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -105,24 +43,7 @@ namespace PIMS
             cr.ShowDialog();
             this.Close();
         }
-
-        
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
+     
         private void btnPrint_Click_1(object sender, EventArgs e)
         {
             CapturePanelShot(panelSOA);
@@ -133,11 +54,6 @@ namespace PIMS
         {
             Rectangle m = e.PageBounds;
             e.Graphics.DrawImage(bmp, m);
-        }
-
-        private void rjTextBox5__TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

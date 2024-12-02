@@ -7,18 +7,20 @@ namespace PIMS
     public partial class Insurance : Form
     {
         private int consultationId;
+        private int patientId;
         dbConnection functions = new dbConnection();
 
-        public Insurance(int consultationId)
+        public Insurance(int consultationId, int patientId)
         {
             InitializeComponent();
-            this.consultationId = consultationId; 
+            this.consultationId = consultationId;
+            this.patientId = patientId;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Prescription p = new Prescription(consultationId);
+            Prescription p = new Prescription(consultationId, patientId);
             p.ShowDialog();
             this.Close();
         }
@@ -52,14 +54,14 @@ namespace PIMS
                         command.Parameters.AddWithValue("company", txtInsurComp.Text);
                         command.Parameters.AddWithValue("insurance_id", txtInsurID.Text);
                         command.Parameters.AddWithValue("policyholder", txtLName.Text + " " + txtFName.Text);
-                        command.Parameters.AddWithValue("consultation_id", consultationId); 
+                        command.Parameters.AddWithValue("consultation_id", consultationId);
 
                         int insuranceId = (int)command.ExecuteScalar();
 
                         MessageBox.Show($"New insurance record added with ID: {insuranceId}");
 
                         this.Hide();
-                        Payment pl = new Payment();
+                        Payment pl = new Payment(consultationId, patientId);
                         pl.ShowDialog();
                         this.Close();
                     }

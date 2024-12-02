@@ -15,13 +15,15 @@ namespace PIMS
     {
 
         private int physicianEvaluationId;
+        private int patientId;
 
         private dbConnection db = new dbConnection();
 
-        public PatientListEvaluation(int physicianEvaluationId)
+        public PatientListEvaluation(int physicianEvaluationId, int patientId)
         {
             InitializeComponent();
             this.physicianEvaluationId = physicianEvaluationId;
+            this.patientId = patientId;
         }
 
         private void DashboardScreen_Load(object sender, EventArgs e)
@@ -52,7 +54,7 @@ namespace PIMS
             }
 
             this.Hide();
-            Prescription pre = new Prescription(physicianEvaluationId);
+            Prescription pre = new Prescription(physicianEvaluationId, patientId);
             pre.ShowDialog();
             this.Close();
         }
@@ -92,7 +94,7 @@ namespace PIMS
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PatientListHistory pl = new PatientListHistory(physicianEvaluationId);
+            PatientListHistory pl = new PatientListHistory(physicianEvaluationId, patientId);
             pl.ShowDialog();
             this.Close();
         }
@@ -113,7 +115,7 @@ namespace PIMS
             )
             VALUES (
                 @physician_eval_id, @name, @dosage, @price
-            ) RETURNING id";  
+            ) RETURNING id";
 
                 using (var conn = new NpgsqlConnection(db.connectDb))
                 {
@@ -121,11 +123,11 @@ namespace PIMS
 
                     using (var command = new NpgsqlCommand(query, conn))
                     {
-                        command.Parameters.AddWithValue("physician_eval_id", physicianEvaluationId); 
+                        command.Parameters.AddWithValue("physician_eval_id", physicianEvaluationId);
                         command.Parameters.AddWithValue("name", txtMedName.Text);
-                        command.Parameters.AddWithValue("dosage", int.TryParse(txtDosage.Text, out int dosage) ? dosage : 0); 
-                        command.Parameters.AddWithValue("price", double.TryParse(txtPrice.Text, out double price) ? price : 0.0); 
-                        int medicalTreatmentId = (int)command.ExecuteScalar();  
+                        command.Parameters.AddWithValue("dosage", int.TryParse(txtDosage.Text, out int dosage) ? dosage : 0);
+                        command.Parameters.AddWithValue("price", double.TryParse(txtPrice.Text, out double price) ? price : 0.0);
+                        int medicalTreatmentId = (int)command.ExecuteScalar();
 
 
                         MessageBox.Show($"Medical treatment added successfully with ID: {medicalTreatmentId}");

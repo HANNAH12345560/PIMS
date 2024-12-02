@@ -12,9 +12,11 @@ namespace PIMS
 {
     public partial class Prescription : Form
     {
-        int consultationId;
-        public Prescription(int consultationId)
+        private int consultationId;
+        private int patientId;
+        public Prescription(int consultationId, int patientId)
         {
+            this.patientId = patientId;
             this.consultationId = consultationId;
             InitializeComponent();
         }
@@ -30,13 +32,13 @@ namespace PIMS
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
 
-    }
+        }
 
-       
+
         private void btnContinue_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Insurance i = new Insurance(consultationId);
+            Insurance i = new Insurance(consultationId, patientId);
             i.ShowDialog();
             this.Close();
         }
@@ -45,7 +47,7 @@ namespace PIMS
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
-            CapturePanelShot(PrescriptionPanel); 
+            CapturePanelShot(PrescriptionPanel);
             printPreviewDialog1.ShowDialog();
         }
 
@@ -58,7 +60,7 @@ namespace PIMS
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PatientListEvaluation pl = new PatientListEvaluation(consultationId);
+            PatientListEvaluation pl = new PatientListEvaluation(consultationId, patientId);
             pl.ShowDialog();
             this.Close();
         }

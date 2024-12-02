@@ -14,12 +14,14 @@ namespace PIMS
     public partial class PatientListHistory : Form
     {
         private int consultationId;
+        private int patientId;
         private dbConnection db = new dbConnection();
 
-        public PatientListHistory(int consultationId)
+        public PatientListHistory(int consultationId, int patientId)
         {
             InitializeComponent();
             this.consultationId = consultationId;
+            this.patientId = patientId;
         }
 
         private void DashboardScreen_Load(object sender, EventArgs e)
@@ -131,8 +133,8 @@ namespace PIMS
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
             this.Hide();
-            PatientListEvaluation pl = new PatientListEvaluation(consultationId);
-            pl.ShowDialog(); 
+            PatientListEvaluation pl = new PatientListEvaluation(consultationId, patientId);
+            pl.ShowDialog();
             this.Close();
 
         }

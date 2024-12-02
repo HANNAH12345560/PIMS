@@ -47,14 +47,14 @@ namespace PIMS
                 MessageBox.Show("Please fill in all fields.");
                 return;
             }
-            int bp = Convert.ToInt32(txtBP.Text);  
-            int rr = Convert.ToInt32(txtRR.Text);  
-            int pr = Convert.ToInt32(txtPR.Text);  
-            int temp = Convert.ToInt32(txtTemp.Text);  
-            int wt = Convert.ToInt32(txtWT.Text);  
-            int ht = Convert.ToInt32(txtHT.Text);  
-            string complaint = txtComplaint.Text;  
-            string bloodType = cbkBloodType.SelectedItem.ToString(); 
+            int bp = Convert.ToInt32(txtBP.Text);
+            int rr = Convert.ToInt32(txtRR.Text);
+            int pr = Convert.ToInt32(txtPR.Text);
+            int temp = Convert.ToInt32(txtTemp.Text);
+            int wt = Convert.ToInt32(txtWT.Text);
+            int ht = Convert.ToInt32(txtHT.Text);
+            string complaint = txtComplaint.Text;
+            string bloodType = cbkBloodType.SelectedItem.ToString();
 
             DateTime date = DateTime.Now;
 
@@ -62,7 +62,7 @@ namespace PIMS
             string query = @"
         INSERT INTO ConsultationAssesment (patient_id, bp, rr, pr, temp, wt, ht, complaint, date, blood_type)
         VALUES (@patient_id, @bp, @rr, @pr, @temp, @wt, @ht, @complaint, @date, @blood_type)
-        RETURNING id";  
+        RETURNING id";
 
             try
             {
@@ -71,7 +71,7 @@ namespace PIMS
                     conn.Open();
                     NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
 
-                    cmd.Parameters.AddWithValue("@patient_id", patientId);  
+                    cmd.Parameters.AddWithValue("@patient_id", patientId);
                     cmd.Parameters.AddWithValue("@bp", bp);
                     cmd.Parameters.AddWithValue("@rr", rr);
                     cmd.Parameters.AddWithValue("@pr", pr);
@@ -79,15 +79,15 @@ namespace PIMS
                     cmd.Parameters.AddWithValue("@wt", wt);
                     cmd.Parameters.AddWithValue("@ht", ht);
                     cmd.Parameters.AddWithValue("@complaint", complaint);
-                    cmd.Parameters.AddWithValue("@date", date);  
+                    cmd.Parameters.AddWithValue("@date", date);
                     cmd.Parameters.AddWithValue("@blood_type", bloodType);
 
-                    int consultationId = (int)cmd.ExecuteScalar();  
+                    int consultationId = (int)cmd.ExecuteScalar();
 
                     MessageBox.Show("Consultation details saved successfully!");
 
                     this.Hide();
-                    PatientListHistory pe = new PatientListHistory(consultationId);
+                    PatientListHistory pe = new PatientListHistory(consultationId, patientId);
                     pe.ShowDialog();
                     this.Close();
                 }
