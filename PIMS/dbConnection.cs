@@ -10,7 +10,7 @@ namespace PIMS
 {
     internal class dbConnection
     {
-        public string connectDb = "Server=localhost;Port=5432;User Id = postgres; Password=hannah;Database=PatientManagementSystem;";
+        public string connectDb = "Server=localhost;Port=5432;User Id = postgres; Password=Miyaki_11;Database=PatientManagementSystem;";
         public NpgsqlConnection conn;
 
         public void Connect()

@@ -89,9 +89,6 @@ namespace PIMS
                         dataGridView1.Rows[3].Cells[2].Value = dr["sc_pwd_discount"].ToString();
                         dataGridView1.Rows[4].Cells[2].Value = dr["other_discount"].ToString();
 
-
-
-
                     }
                 }
             }
@@ -99,6 +96,7 @@ namespace PIMS
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            InsertHospitalAdmission(patientId);
             this.Hide();
             PatientListScreen cr = new PatientListScreen();
             cr.ShowDialog();
@@ -115,6 +113,41 @@ namespace PIMS
         {
             Rectangle m = e.PageBounds;
             e.Graphics.DrawImage(bmp, m);
+        }
+        public void InsertHospitalAdmission(int patientId)
+        {
+            string query = @"
+        INSERT INTO HospitalAdmission 
+        (patient_id, physician, complete_diagnosis, medical_treatment, med_fee, discount, total_bill, remarks, admit_date, discharge_date)
+        SELECT 
+            pi.id AS patient_id,
+            pe.physician,
+            pe.diagnosis AS complete_diagnosis,
+            STRING_AGG(mt.name, ', ') AS medical_treatment,
+            COALESCE(SUM(mt.price), 0) AS med_fee,
+            COALESCE(SUM(p.sc_pwd_discount + p.other_discount + p.philhealth_discount), 0) AS discount,
+            p.balance_due AS total_bill,
+            pe.remark AS remarks,
+            pi.date_added AS admit_date,
+            ca.date AS discharge_date 
+
+        FROM PatientInfo pi
+        LEFT JOIN ConsultationAssesment ca ON ca.patient_id = pi.id
+        LEFT JOIN PhysicianEvaluation pe ON pe.consultation_id = ca.id
+        LEFT JOIN MedicalTreatment mt ON mt.physician_eval_id = pe.id
+        LEFT JOIN Payment p ON p.consultation_id = ca.id
+        WHERE pi.id = @PatientId
+        GROUP BY pi.id, pe.physician, pe.diagnosis, p.balance_due, pe.remark, pi.date_added, ca.date";
+
+            using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@PatientId", patientId);
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
     }
 }
