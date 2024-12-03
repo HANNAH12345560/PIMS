@@ -77,7 +77,7 @@ namespace PIMS
     "FROM patientinfo p " +
     "JOIN hospitaladmission a " +
     "ON p.id = a.patient_id " +
-    "WHERE p.id = @patientId;";
+    "WHERE p.id = @patientId AND a.id = @admissionId;";
 
             using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
             {
@@ -85,6 +85,7 @@ namespace PIMS
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@patientId", patientId);
+                    cmd.Parameters.AddWithValue("@admissionId", admissionId);
                     using (NpgsqlDataReader rd = cmd.ExecuteReader())
                     {
                         while (rd.Read())

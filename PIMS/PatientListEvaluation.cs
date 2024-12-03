@@ -85,7 +85,7 @@ namespace PIMS
 
                 if (rowsAffected > 0)
                 {
-                    MessageBox.Show("Diagnosis and remark updated successfully.");
+                    MessageBox.Show("Evaluation recorded succesfully!");
                 }
                 else
                 {

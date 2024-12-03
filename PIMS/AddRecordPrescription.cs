@@ -319,7 +319,7 @@ namespace PIMS
         private void btnContinue_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            AddRecordInsurance pe = new AddRecordInsurance();
+            AddRecordInsurance pe = new AddRecordInsurance(consultationId, patientId, totalPrice);
             pe.ShowDialog();
             this.Close();
         }

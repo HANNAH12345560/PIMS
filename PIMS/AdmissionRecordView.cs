@@ -21,10 +21,10 @@ namespace PIMS
         }
         dbConnection functions = new dbConnection();
 
-        public void FetchId(int id, int id_2)
+        public void FetchId(int patientId, int admissionId)
         {
-            patientId = id;
-            admissionId = id_2;
+            this.patientId = patientId;
+            this.admissionId = admissionId;
         }
 
         public string medTreat;
@@ -34,11 +34,8 @@ namespace PIMS
         public double discount;
         public double totalBill;
 
-
-
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
-            //MessageBox.Show(admissionId.ToString());
             string query =
                 "SELECT " +
                 "a.id AS admission_id, " +
@@ -63,7 +60,7 @@ namespace PIMS
                 "FROM patientinfo p " +
                 "JOIN hospitaladmission a " +
                 "ON p.id = a.patient_id " +
-                "WHERE p.id = @patientId;";
+                "WHERE p.id = @patientId AND a.id = @admissionId;";
 
             using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
             {
@@ -71,6 +68,7 @@ namespace PIMS
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@patientId", patientId);
+                    cmd.Parameters.AddWithValue("@admissionId", admissionId);
                     NpgsqlDataReader rd = cmd.ExecuteReader();
                     while (rd.Read())
                     {
@@ -93,16 +91,10 @@ namespace PIMS
                         txtTelNo.Text = rd["mobiletelno"].ToString();
                         txtPhysician.Text = rd["physician"].ToString();
                         txtDiagnosis.Text = rd["complete_diagnosis"].ToString();
-
                     }
                 }
             }
-
         }
-
-
-
-
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -114,8 +106,6 @@ namespace PIMS
 
         }
 
-
-
         private void panel7_Paint(object sender, PaintEventArgs e)
         {
 
@@ -125,8 +115,6 @@ namespace PIMS
         {
 
         }
-
-
 
         private void panel11_Paint(object sender, PaintEventArgs e)
         {
@@ -158,8 +146,6 @@ namespace PIMS
 
         }
 
-
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -175,9 +161,6 @@ namespace PIMS
             AdmissionRecordViewContinuation cr = new AdmissionRecordViewContinuation();
             cr.FetchId(patientId, admissionId);
             cr.DisplayConn(medTreat, medFee, remarks, addFee, discount, totalBill);
-
-
-
             cr.ShowDialog();
             this.Close();
         }

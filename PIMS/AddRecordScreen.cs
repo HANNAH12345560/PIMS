@@ -116,6 +116,7 @@ namespace PIMS
 
         private void btnMedRec_Click(object sender, EventArgs e)
         {
+            ClearFields();
             this.Hide();
             MedicalRecordScreen medicalRecordScreen = new MedicalRecordScreen();
             medicalRecordScreen.ShowDialog();
@@ -134,6 +135,7 @@ namespace PIMS
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
+            ClearFields();
             this.Hide();
             DashboardScreen newDashboard = new DashboardScreen();
             newDashboard.ShowDialog();
@@ -142,6 +144,7 @@ namespace PIMS
 
         private void btnPatientList_Click(object sender, EventArgs e)
         {
+            ClearFields();
             this.Hide();
             PatientListScreen edit = new PatientListScreen();
             edit.ShowDialog();
@@ -150,6 +153,7 @@ namespace PIMS
 
         private void btnAddRec_Click(object sender, EventArgs e)
         {
+            ClearFields();
             this.Hide();
             AddRecordScreen Addrec = new AddRecordScreen();
             Addrec.ShowDialog();
@@ -219,6 +223,7 @@ namespace PIMS
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
+            ClearFields();
             this.Hide();
             AddRecordInitialAss pe = new AddRecordInitialAss(patientId);
             pe.ShowDialog();
@@ -330,6 +335,24 @@ namespace PIMS
             patientInfoCache["occupation"] = txtOccupation.Text;
         }
 
-
+        private void ClearFields()
+        {
+            lblStatus.Text = string.Empty;
+            txtPhilHealthNo.Text = string.Empty;
+            txtFirstName.Text = string.Empty;
+            txtLastName.Text = string.Empty;
+            txtMiddleName.Text = string.Empty;
+            txtAddress.Text = string.Empty;
+            txtAge.Text = string.Empty;
+            txtBday.Text = string.Empty;
+            txtBirthPlace.Text = string.Empty;
+            txtCivilStatus.Text = string.Empty;
+            txtGender.Text = string.Empty;
+            txtTelNo.Text = string.Empty;
+            txtReligion.Text = string.Empty;
+            txtOccupation.Text = string.Empty;
+        }
     }
 }
+
+

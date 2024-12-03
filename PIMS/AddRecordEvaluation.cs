@@ -118,7 +118,6 @@ namespace PIMS
                         comboBoxAfter.SelectedItem?.ToString()
                     );
 
-                    MessageBox.Show("Data updated successfully.");
                 }
             }
             catch (Exception ex)
@@ -155,7 +154,7 @@ namespace PIMS
 
                 if (rowsAffected > 0)
                 {
-                    MessageBox.Show("Diagnosis and remark updated successfully.");
+                    MessageBox.Show("Evaluation recorded succesfully!");
                 }
                 else
                 {

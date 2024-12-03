@@ -43,7 +43,7 @@ namespace PIMS
                 NpgsqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    dataGridView1.Rows.Add(dr[0], dr[1], dr[2], dr[3]);
+                    dataGridView1.Rows.Add(dr["id"], dr["nurse"], dr["admit_date"], dr["discharge_date"]);
                 }
             }
 
@@ -224,23 +224,26 @@ namespace PIMS
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridView1.Columns["View"].Index && e.RowIndex >= 0)
+            if (e.RowIndex >= 0)
             {
-                int selectedConsultationRecord = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["AdmissionID"].Value.ToString());
+                if (e.ColumnIndex == dataGridView1.Columns["View"].Index)
+                {
+                    int selectedConsultationRecord = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["AdmissionID"].Value.ToString());
 
-                this.Hide();
-                AdmissionRecordView consultationRecordView = new AdmissionRecordView();
-                consultationRecordView.FetchId(patientId, selectedConsultationRecord);
-                consultationRecordView.ShowDialog();
-            }
-            else if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
-            {
-                int selectedConsultationRecord = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["AdmissionID"].Value.ToString());
+                    this.Hide();
+                    AdmissionRecordView consultationRecordView = new AdmissionRecordView();
+                    consultationRecordView.FetchId(patientId, selectedConsultationRecord);
+                    consultationRecordView.ShowDialog();
+                }
+                else if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index)
+                {
+                    int selectedConsultationRecord = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["AdmissionID"].Value.ToString());
 
-                this.Hide();
-                AdmissionRecordEdit editAdmissionRecord = new AdmissionRecordEdit();
-                editAdmissionRecord.FetchId(patientId, selectedConsultationRecord);
-                editAdmissionRecord.ShowDialog();
+                    this.Hide();
+                    AdmissionRecordEdit editAdmissionRecord = new AdmissionRecordEdit();
+                    editAdmissionRecord.FetchId(patientId, selectedConsultationRecord);
+                    editAdmissionRecord.ShowDialog();
+                }
             }
         }
 

@@ -27,10 +27,10 @@ namespace PIMS
             InitializeComponent();
         }
 
-        public void FetchId(int id, int id_2)
+        public void FetchId(int patientId, int admissionId)
         {
-            patientId = id;
-            admissionId = id_2;
+            this.patientId = patientId;
+            this.admissionId = admissionId;
         }
 
         public void DisplayConn(string medTreat, double medFee, string remarks, double addFee, double discount, double totalBill)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,17 @@ namespace PIMS
 {
     public partial class AddRecordInsurance: Form
     {
-        public AddRecordInsurance()
+        private int consultationId;
+        private int patientId;
+        private double totalPrice = 0.0;
+        dbConnection functions = new dbConnection();
+
+        public AddRecordInsurance(int consultationId, int patientId, double totalPrice)
         {
             InitializeComponent();
+            this.consultationId = consultationId;
+            this.patientId = patientId;
+            this.totalPrice = totalPrice;
         }
 
         private void DashboardScreen_Load(object sender, EventArgs e)
@@ -92,10 +101,50 @@ namespace PIMS
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AddRecordPayment ar = new AddRecordPayment();
-            ar.ShowDialog();
-            this.Close();
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtInsurID.Text) ||
+                    string.IsNullOrWhiteSpace(txtLName.Text) ||
+                    string.IsNullOrWhiteSpace(txtFName.Text) ||
+                    string.IsNullOrWhiteSpace(txtInsurComp.Text))
+                {
+                    MessageBox.Show("Please fill in all required fields.");
+                    return;
+                }
+                string query = @"
+        INSERT INTO Insurance (
+            company, insurance_id, policyholder, consultation_id
+        )
+        VALUES (
+            @company, @insurance_id, @policyholder, @consultation_id
+        ) RETURNING id";
+
+                using (var conn = new NpgsqlConnection(functions.connectDb))
+                {
+                    conn.Open();
+
+                    using (var command = new NpgsqlCommand(query, conn))
+                    {
+                        command.Parameters.AddWithValue("company", txtInsurComp.Text);
+                        command.Parameters.AddWithValue("insurance_id", txtInsurID.Text);
+                        command.Parameters.AddWithValue("policyholder", txtLName.Text + " " + txtFName.Text);
+                        command.Parameters.AddWithValue("consultation_id", consultationId);
+
+                        int insuranceId = (int)command.ExecuteScalar();
+
+                        MessageBox.Show("Insurance record added");
+
+                        this.Hide();
+                        AddRecordPayment pl = new AddRecordPayment(consultationId, patientId, totalPrice);
+                        pl.ShowDialog();
+                        this.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void txtLastName_TextChanged(object sender, EventArgs e)

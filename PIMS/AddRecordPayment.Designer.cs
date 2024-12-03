@@ -36,18 +36,17 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelScroll = new System.Windows.Forms.Panel();
             this.btnCalculate = new CustomControls.Controls.RJButton();
-            this.btnBack = new CustomControls.Controls.RJButton();
             this.panelPhysicalExam = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPhilDiscount = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtOtherDisc = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtInsurPay = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtTemp = new System.Windows.Forms.TextBox();
+            this.txtSCPWDiscount = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtBP = new System.Windows.Forms.TextBox();
+            this.txtConsult = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -111,7 +110,6 @@
             // panelScroll
             // 
             this.panelScroll.Controls.Add(this.btnCalculate);
-            this.panelScroll.Controls.Add(this.btnBack);
             this.panelScroll.Controls.Add(this.panelPhysicalExam);
             this.panelScroll.Location = new System.Drawing.Point(12, 134);
             this.panelScroll.Name = "panelScroll";
@@ -129,7 +127,7 @@
             this.btnCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalculate.ForeColor = System.Drawing.Color.White;
-            this.btnCalculate.Location = new System.Drawing.Point(611, 622);
+            this.btnCalculate.Location = new System.Drawing.Point(530, 622);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(246, 40);
             this.btnCalculate.TabIndex = 39;
@@ -137,26 +135,6 @@
             this.btnCalculate.TextColor = System.Drawing.Color.White;
             this.btnCalculate.UseVisualStyleBackColor = false;
             this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnBack.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnBack.BorderRadius = 7;
-            this.btnBack.BorderSize = 0;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(342, 622);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(246, 40);
-            this.btnBack.TabIndex = 38;
-            this.btnBack.Text = "BACK";
-            this.btnBack.TextColor = System.Drawing.Color.White;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // panelPhysicalExam
             // 
@@ -174,28 +152,27 @@
             // 
             this.panel1.BackgroundImage = global::PIMS.Properties.Resources.EvaluationPanelPink;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.txtPhilDiscount);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtOtherDisc);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtInsurPay);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txtTemp);
+            this.panel1.Controls.Add(this.txtSCPWDiscount);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.txtBP);
+            this.panel1.Controls.Add(this.txtConsult);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(19, 57);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1293, 475);
             this.panel1.TabIndex = 18;
             // 
-            // textBox3
+            // txtPhilDiscount
             // 
-            this.textBox3.Location = new System.Drawing.Point(46, 149);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(522, 25);
-            this.textBox3.TabIndex = 37;
+            this.txtPhilDiscount.Location = new System.Drawing.Point(46, 149);
+            this.txtPhilDiscount.Name = "txtPhilDiscount";
+            this.txtPhilDiscount.Size = new System.Drawing.Size(522, 25);
+            this.txtPhilDiscount.TabIndex = 37;
             // 
             // label1
             // 
@@ -210,13 +187,12 @@
             this.label1.Text = "Philhealth:";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // textBox1
+            // txtOtherDisc
             // 
-            this.textBox1.Location = new System.Drawing.Point(632, 93);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(522, 25);
-            this.textBox1.TabIndex = 35;
+            this.txtOtherDisc.Location = new System.Drawing.Point(632, 93);
+            this.txtOtherDisc.Name = "txtOtherDisc";
+            this.txtOtherDisc.Size = new System.Drawing.Size(522, 25);
+            this.txtOtherDisc.TabIndex = 35;
             // 
             // label4
             // 
@@ -231,13 +207,12 @@
             this.label4.Text = "Other Discount:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // textBox2
+            // txtInsurPay
             // 
-            this.textBox2.Location = new System.Drawing.Point(632, 39);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(522, 25);
-            this.textBox2.TabIndex = 33;
+            this.txtInsurPay.Location = new System.Drawing.Point(632, 39);
+            this.txtInsurPay.Name = "txtInsurPay";
+            this.txtInsurPay.Size = new System.Drawing.Size(522, 25);
+            this.txtInsurPay.TabIndex = 33;
             // 
             // label5
             // 
@@ -251,14 +226,13 @@
             this.label5.TabIndex = 32;
             this.label5.Text = "Insurance Payment";
             // 
-            // txtTemp
+            // txtSCPWDiscount
             // 
-            this.txtTemp.Location = new System.Drawing.Point(48, 93);
-            this.txtTemp.Name = "txtTemp";
-            this.txtTemp.ReadOnly = true;
-            this.txtTemp.Size = new System.Drawing.Size(522, 25);
-            this.txtTemp.TabIndex = 31;
-            this.txtTemp.TextChanged += new System.EventHandler(this.txtTemp_TextChanged);
+            this.txtSCPWDiscount.Location = new System.Drawing.Point(48, 93);
+            this.txtSCPWDiscount.Name = "txtSCPWDiscount";
+            this.txtSCPWDiscount.Size = new System.Drawing.Size(522, 25);
+            this.txtSCPWDiscount.TabIndex = 31;
+            this.txtSCPWDiscount.TextChanged += new System.EventHandler(this.txtTemp_TextChanged);
             // 
             // label9
             // 
@@ -273,14 +247,13 @@
             this.label9.Text = "SC / PWD D iscount:";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // txtBP
+            // txtConsult
             // 
-            this.txtBP.Location = new System.Drawing.Point(48, 39);
-            this.txtBP.Name = "txtBP";
-            this.txtBP.ReadOnly = true;
-            this.txtBP.Size = new System.Drawing.Size(522, 25);
-            this.txtBP.TabIndex = 24;
-            this.txtBP.TextChanged += new System.EventHandler(this.txtBP_TextChanged);
+            this.txtConsult.Location = new System.Drawing.Point(48, 39);
+            this.txtConsult.Name = "txtConsult";
+            this.txtConsult.Size = new System.Drawing.Size(522, 25);
+            this.txtConsult.TabIndex = 24;
+            this.txtConsult.TextChanged += new System.EventHandler(this.txtBP_TextChanged);
             // 
             // label3
             // 
@@ -327,17 +300,16 @@
         private System.Windows.Forms.Panel panelScroll;
         private System.Windows.Forms.Panel panelPhysicalExam;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtTemp;
+        private System.Windows.Forms.TextBox txtSCPWDiscount;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtBP;
+        private System.Windows.Forms.TextBox txtConsult;
         private System.Windows.Forms.Label label3;
         private CustomControls.Controls.RJButton btnCalculate;
-        private CustomControls.Controls.RJButton btnBack;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtOtherDisc;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtInsurPay;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPhilDiscount;
         private System.Windows.Forms.Label label1;
     }
 }

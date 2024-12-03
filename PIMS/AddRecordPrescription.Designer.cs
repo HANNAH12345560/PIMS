@@ -36,7 +36,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelPhysicalExam = new System.Windows.Forms.Panel();
             this.btnContinue = new CustomControls.Controls.RJButton();
-            this.btnBack = new CustomControls.Controls.RJButton();
             this.btnPrint = new CustomControls.Controls.RJButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.PrescriptionPanel = new System.Windows.Forms.Panel();
@@ -127,7 +126,6 @@
             this.panelPhysicalExam.BackgroundImage = global::PIMS.Properties.Resources.PanelWhite1;
             this.panelPhysicalExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelPhysicalExam.Controls.Add(this.btnContinue);
-            this.panelPhysicalExam.Controls.Add(this.btnBack);
             this.panelPhysicalExam.Controls.Add(this.btnPrint);
             this.panelPhysicalExam.Controls.Add(this.panel1);
             this.panelPhysicalExam.Location = new System.Drawing.Point(25, 133);
@@ -147,7 +145,7 @@
             this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Location = new System.Drawing.Point(660, 736);
+            this.btnContinue.Location = new System.Drawing.Point(543, 736);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(246, 40);
             this.btnContinue.TabIndex = 43;
@@ -155,26 +153,6 @@
             this.btnContinue.TextColor = System.Drawing.Color.White;
             this.btnContinue.UseVisualStyleBackColor = false;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click_1);
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnBack.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnBack.BorderRadius = 7;
-            this.btnBack.BorderSize = 0;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(391, 736);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(246, 40);
-            this.btnBack.TabIndex = 42;
-            this.btnBack.Text = "BACK";
-            this.btnBack.TextColor = System.Drawing.Color.White;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click_2);
             // 
             // btnPrint
             // 
@@ -542,7 +520,6 @@
         private System.Windows.Forms.Panel panel1;
         private CustomControls.Controls.RJButton btnPrint;
         private CustomControls.Controls.RJButton btnContinue;
-        private CustomControls.Controls.RJButton btnBack;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel PrescriptionPanel;
         private System.Windows.Forms.Label txtMedName;
