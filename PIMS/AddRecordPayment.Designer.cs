@@ -109,7 +109,6 @@
             // 
             // panelScroll
             // 
-            this.panelScroll.Controls.Add(this.btnCalculate);
             this.panelScroll.Controls.Add(this.panelPhysicalExam);
             this.panelScroll.Location = new System.Drawing.Point(12, 134);
             this.panelScroll.Name = "panelScroll";
@@ -125,9 +124,9 @@
             this.btnCalculate.BorderSize = 0;
             this.btnCalculate.FlatAppearance.BorderSize = 0;
             this.btnCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalculate.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalculate.ForeColor = System.Drawing.Color.White;
-            this.btnCalculate.Location = new System.Drawing.Point(530, 622);
+            this.btnCalculate.Location = new System.Drawing.Point(530, 338);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(246, 40);
             this.btnCalculate.TabIndex = 39;
@@ -140,11 +139,12 @@
             // 
             this.panelPhysicalExam.BackgroundImage = global::PIMS.Properties.Resources.PanelWhite1;
             this.panelPhysicalExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelPhysicalExam.Controls.Add(this.btnCalculate);
             this.panelPhysicalExam.Controls.Add(this.panel1);
             this.panelPhysicalExam.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelPhysicalExam.Location = new System.Drawing.Point(0, 0);
             this.panelPhysicalExam.Name = "panelPhysicalExam";
-            this.panelPhysicalExam.Size = new System.Drawing.Size(1350, 603);
+            this.panelPhysicalExam.Size = new System.Drawing.Size(1350, 439);
             this.panelPhysicalExam.TabIndex = 0;
             this.panelPhysicalExam.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPhysicalExam_Paint);
             // 
@@ -164,11 +164,12 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(19, 57);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1293, 475);
+            this.panel1.Size = new System.Drawing.Size(1293, 251);
             this.panel1.TabIndex = 18;
             // 
             // txtPhilDiscount
             // 
+            this.txtPhilDiscount.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhilDiscount.Location = new System.Drawing.Point(46, 149);
             this.txtPhilDiscount.Name = "txtPhilDiscount";
             this.txtPhilDiscount.Size = new System.Drawing.Size(522, 25);
@@ -189,6 +190,7 @@
             // 
             // txtOtherDisc
             // 
+            this.txtOtherDisc.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOtherDisc.Location = new System.Drawing.Point(632, 93);
             this.txtOtherDisc.Name = "txtOtherDisc";
             this.txtOtherDisc.Size = new System.Drawing.Size(522, 25);
@@ -209,6 +211,7 @@
             // 
             // txtInsurPay
             // 
+            this.txtInsurPay.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInsurPay.Location = new System.Drawing.Point(632, 39);
             this.txtInsurPay.Name = "txtInsurPay";
             this.txtInsurPay.Size = new System.Drawing.Size(522, 25);
@@ -228,6 +231,7 @@
             // 
             // txtSCPWDiscount
             // 
+            this.txtSCPWDiscount.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSCPWDiscount.Location = new System.Drawing.Point(48, 93);
             this.txtSCPWDiscount.Name = "txtSCPWDiscount";
             this.txtSCPWDiscount.Size = new System.Drawing.Size(522, 25);
@@ -249,6 +253,7 @@
             // 
             // txtConsult
             // 
+            this.txtConsult.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConsult.Location = new System.Drawing.Point(48, 39);
             this.txtConsult.Name = "txtConsult";
             this.txtConsult.Size = new System.Drawing.Size(522, 25);

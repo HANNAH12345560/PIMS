@@ -108,7 +108,6 @@
             // 
             // panelScroll
             // 
-            this.panelScroll.Controls.Add(this.btnContinue);
             this.panelScroll.Controls.Add(this.panelPhysicalExam);
             this.panelScroll.Location = new System.Drawing.Point(12, 134);
             this.panelScroll.Name = "panelScroll";
@@ -126,7 +125,7 @@
             this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Location = new System.Drawing.Point(496, 609);
+            this.btnContinue.Location = new System.Drawing.Point(480, 308);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(246, 40);
             this.btnContinue.TabIndex = 39;
@@ -139,12 +138,13 @@
             // 
             this.panelPhysicalExam.BackgroundImage = global::PIMS.Properties.Resources.PanelWhite1;
             this.panelPhysicalExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelPhysicalExam.Controls.Add(this.btnContinue);
             this.panelPhysicalExam.Controls.Add(this.panel1);
             this.panelPhysicalExam.Controls.Add(this.label1);
             this.panelPhysicalExam.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelPhysicalExam.Location = new System.Drawing.Point(0, 0);
             this.panelPhysicalExam.Name = "panelPhysicalExam";
-            this.panelPhysicalExam.Size = new System.Drawing.Size(1350, 603);
+            this.panelPhysicalExam.Size = new System.Drawing.Size(1350, 390);
             this.panelPhysicalExam.TabIndex = 0;
             this.panelPhysicalExam.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPhysicalExam_Paint);
             // 
@@ -162,7 +162,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(19, 57);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1293, 475);
+            this.panel1.Size = new System.Drawing.Size(1293, 219);
             this.panel1.TabIndex = 18;
             // 
             // txtFName

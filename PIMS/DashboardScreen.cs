@@ -22,7 +22,6 @@ namespace PIMS
 
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
-
             string query = "SELECT (SELECT COUNT(id) FROM patientinfo) AS PatientCount," +
                 "(SELECT COUNT(id) FROM consultationassesment) AS AppointmentCount," +
                 "(SELECT COUNT(id) FROM payment) AS PaymentCount," +
@@ -35,13 +34,24 @@ namespace PIMS
                 NpgsqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    lblTtlPatients.Text = dr["PatientCount"].ToString();
-                    lblTtlAppointment.Text = dr["AppointmentCount"].ToString();
-                    lblTtlPresc.Text = dr["PaymentCount"].ToString();
-                    lblTtlRevenue.Text = string.Format("{0:N2}", dr["Revenue"]);
+                    lblTtlPatients.Text = FormatNumber(dr["PatientCount"]);
+                    lblTtlAppointment.Text = FormatNumber(dr["AppointmentCount"]);
+                    lblTtlPresc.Text = FormatNumber(dr["PaymentCount"]);
+                    lblTtlRevenue.Text = FormatNumber(dr["Revenue"]);
                 }
             }
+        }
 
+        private string FormatNumber(object number)
+        {
+            double num = Convert.ToDouble(number);
+            if (num >= 1000000000)
+                return (num / 1000000000D).ToString("0.##") + "B";
+            if (num >= 1000000)
+                return (num / 1000000D).ToString("0.##") + "M";
+            if (num >= 1000)
+                return (num / 1000D).ToString("0.##") + "K";
+            return num.ToString("0.##");
         }
 
         public void HoverBtn(Button btn)
@@ -51,7 +61,6 @@ namespace PIMS
                 btn.BackColor = Color.FromArgb(255, 240, 245);
                 btn.ForeColor = Color.FromArgb(255, 92, 141);
             }
-
         }
 
         public void HoverbtnReset(Button btn)
@@ -153,6 +162,11 @@ namespace PIMS
         }
 
         private void lblTtlPatients_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTtlRevenue_Click(object sender, EventArgs e)
         {
 
         }

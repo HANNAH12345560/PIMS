@@ -81,7 +81,6 @@
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panelScroll.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel7
@@ -140,10 +139,11 @@
             // 
             this.panelPhysicalExam.BackgroundImage = global::PIMS.Properties.Resources.PanelWhite1;
             this.panelPhysicalExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelPhysicalExam.Controls.Add(this.btnContinue);
             this.panelPhysicalExam.Controls.Add(this.panel1);
             this.panelPhysicalExam.Location = new System.Drawing.Point(33, 149);
             this.panelPhysicalExam.Name = "panelPhysicalExam";
-            this.panelPhysicalExam.Size = new System.Drawing.Size(1350, 724);
+            this.panelPhysicalExam.Size = new System.Drawing.Size(1350, 810);
             this.panelPhysicalExam.TabIndex = 0;
             // 
             // panel1
@@ -232,6 +232,7 @@
             // 
             // txtMH3desc
             // 
+            this.txtMH3desc.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMH3desc.Location = new System.Drawing.Point(584, 147);
             this.txtMH3desc.Multiline = true;
             this.txtMH3desc.Name = "txtMH3desc";
@@ -241,6 +242,7 @@
             // 
             // txtMH2desc
             // 
+            this.txtMH2desc.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMH2desc.Location = new System.Drawing.Point(584, 78);
             this.txtMH2desc.Multiline = true;
             this.txtMH2desc.Name = "txtMH2desc";
@@ -369,6 +371,7 @@
             // 
             // txtMH1desc
             // 
+            this.txtMH1desc.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMH1desc.Location = new System.Drawing.Point(584, 3);
             this.txtMH1desc.Multiline = true;
             this.txtMH1desc.Name = "txtMH1desc";
@@ -461,6 +464,7 @@
             // 
             // txtOtherDesc
             // 
+            this.txtOtherDesc.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOtherDesc.Location = new System.Drawing.Point(584, 147);
             this.txtOtherDesc.Multiline = true;
             this.txtOtherDesc.Name = "txtOtherDesc";
@@ -470,6 +474,7 @@
             // 
             // txtFoodDesc
             // 
+            this.txtFoodDesc.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFoodDesc.Location = new System.Drawing.Point(584, 78);
             this.txtFoodDesc.Multiline = true;
             this.txtFoodDesc.Name = "txtFoodDesc";
@@ -598,6 +603,7 @@
             // 
             // txtDrugDesc
             // 
+            this.txtDrugDesc.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDrugDesc.Location = new System.Drawing.Point(584, 3);
             this.txtDrugDesc.Multiline = true;
             this.txtDrugDesc.Name = "txtDrugDesc";
@@ -659,7 +665,6 @@
             // panelScroll
             // 
             this.panelScroll.BackColor = System.Drawing.Color.Transparent;
-            this.panelScroll.Controls.Add(this.btnContinue);
             this.panelScroll.Location = new System.Drawing.Point(12, 699);
             this.panelScroll.Name = "panelScroll";
             this.panelScroll.Size = new System.Drawing.Size(1346, 304);
@@ -676,7 +681,7 @@
             this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Location = new System.Drawing.Point(495, 201);
+            this.btnContinue.Location = new System.Drawing.Point(495, 707);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(246, 40);
             this.btnContinue.TabIndex = 39;
@@ -707,7 +712,6 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.panelScroll.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

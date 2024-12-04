@@ -201,7 +201,6 @@ namespace PIMS
 
                             totalPrice += price;
 
-                            MessageBox.Show($"Medical treatment added successfully with ID: {medicalTreatmentId}");
 
                             txtMedName.Clear();
                             txtDosage.Clear();

@@ -20,29 +20,11 @@ namespace PIMS
 
         dbConnection functions = new dbConnection();
         string querySearch;
-        private static Dictionary<string, string> patientInfoCache = new Dictionary<string, string>();
         public int patientId;
 
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
-            if (patientInfoCache.Count > 0)
-            {
-                patientId = Convert.ToInt32(patientInfoCache["id"]);
-                lblStatus.Text = patientInfoCache["status"];
-                txtPhilHealthNo.Text = patientInfoCache["philhealthno"];
-                txtFirstName.Text = patientInfoCache["first_name"];
-                txtLastName.Text = patientInfoCache["last_name"];
-                txtMiddleName.Text = patientInfoCache["middle_name"];
-                txtAddress.Text = patientInfoCache["home_add"];
-                txtAge.Text = patientInfoCache["age"];
-                txtBday.Text = patientInfoCache["birthday"];
-                txtBirthPlace.Text = patientInfoCache["birthplace"];
-                txtCivilStatus.Text = patientInfoCache["civilstat"];
-                txtGender.Text = patientInfoCache["gender"];
-                txtTelNo.Text = patientInfoCache["mobiletelno"];
-                txtReligion.Text = patientInfoCache["religion"];
-                txtOccupation.Text = patientInfoCache["occupation"];
-            }
+            
         }
 
         
@@ -116,7 +98,6 @@ namespace PIMS
 
         private void btnMedRec_Click(object sender, EventArgs e)
         {
-            ClearFields();
             this.Hide();
             MedicalRecordScreen medicalRecordScreen = new MedicalRecordScreen();
             medicalRecordScreen.ShowDialog();
@@ -135,7 +116,6 @@ namespace PIMS
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            ClearFields();
             this.Hide();
             DashboardScreen newDashboard = new DashboardScreen();
             newDashboard.ShowDialog();
@@ -144,7 +124,6 @@ namespace PIMS
 
         private void btnPatientList_Click(object sender, EventArgs e)
         {
-            ClearFields();
             this.Hide();
             PatientListScreen edit = new PatientListScreen();
             edit.ShowDialog();
@@ -153,7 +132,6 @@ namespace PIMS
 
         private void btnAddRec_Click(object sender, EventArgs e)
         {
-            ClearFields();
             this.Hide();
             AddRecordScreen Addrec = new AddRecordScreen();
             Addrec.ShowDialog();
@@ -223,7 +201,6 @@ namespace PIMS
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            ClearFields();
             this.Hide();
             AddRecordInitialAss pe = new AddRecordInitialAss(patientId);
             pe.ShowDialog();
@@ -299,7 +276,7 @@ namespace PIMS
                                     txtReligion.Text = read["religion"].ToString();
                                     txtOccupation.Text = read["occupation"].ToString();
 
-                                    CachePatientInfo();
+                                    
                                 }
                                 else
                                 {
@@ -316,41 +293,11 @@ namespace PIMS
             }
         }
 
-        private void CachePatientInfo()
-        {
-            patientInfoCache["id"] = patientId.ToString();
-            patientInfoCache["status"] = lblStatus.Text;
-            patientInfoCache["philhealthno"] = txtPhilHealthNo.Text;
-            patientInfoCache["first_name"] = txtFirstName.Text;
-            patientInfoCache["last_name"] = txtLastName.Text;
-            patientInfoCache["middle_name"] = txtMiddleName.Text;
-            patientInfoCache["home_add"] = txtAddress.Text;
-            patientInfoCache["age"] = txtAge.Text;
-            patientInfoCache["birthday"] = txtBday.Text;
-            patientInfoCache["birthplace"] = txtBirthPlace.Text;
-            patientInfoCache["civilstat"] = txtCivilStatus.Text;
-            patientInfoCache["gender"] = txtGender.Text;
-            patientInfoCache["mobiletelno"] = txtTelNo.Text;
-            patientInfoCache["religion"] = txtReligion.Text;
-            patientInfoCache["occupation"] = txtOccupation.Text;
-        }
+      
 
-        private void ClearFields()
+       
+        private void btnClear_Click(object sender, EventArgs e)
         {
-            lblStatus.Text = string.Empty;
-            txtPhilHealthNo.Text = string.Empty;
-            txtFirstName.Text = string.Empty;
-            txtLastName.Text = string.Empty;
-            txtMiddleName.Text = string.Empty;
-            txtAddress.Text = string.Empty;
-            txtAge.Text = string.Empty;
-            txtBday.Text = string.Empty;
-            txtBirthPlace.Text = string.Empty;
-            txtCivilStatus.Text = string.Empty;
-            txtGender.Text = string.Empty;
-            txtTelNo.Text = string.Empty;
-            txtReligion.Text = string.Empty;
-            txtOccupation.Text = string.Empty;
         }
     }
 }

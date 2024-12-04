@@ -44,7 +44,7 @@ namespace PIMS
                 string query =
     "SELECT CONCAT(p.first_name, ' ', p.middle_name, ' ', p.last_name) AS full_name, " +
     "e.physician, p.home_add, pm.id AS payment_id, p.age, c.date, pm.consultation_fee, " +
-    "pm.balance_due, pm.philhealth_discount, sc_pwd_discount, other_discount, " +
+    "pm.balance_due, pm.philhealth_discount, pm.sc_pwd_discount, pm.other_discount, pm.insurance_payment, " +
     "SUM(mt.price) AS total_price " +
     "FROM patientinfo AS p " +
     "JOIN consultationassesment AS c ON p.id = c.patient_id " +
@@ -54,7 +54,7 @@ namespace PIMS
     "WHERE c.id = @consultationId " +
     "GROUP BY mt.physician_eval_id, p.first_name, p.middle_name, p.last_name, " +
     "e.physician, p.home_add, pm.id, p.age, c.date, pm.consultation_fee, " +
-    "pm.balance_due, pm.philhealth_discount, sc_pwd_discount, other_discount;";
+    "pm.balance_due, pm.philhealth_discount, pm.sc_pwd_discount, pm.other_discount, pm.insurance_payment;";
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
@@ -68,17 +68,14 @@ namespace PIMS
                         txtSOAref.Text = dr["payment_id"].ToString();
                         txtAge.Text = dr["age"].ToString();
                         txtDatetime.Text = dr["date"].ToString();
-                        lblTotalBal.Text = dr["balance_due"].ToString();
+                        lblTotalBal.Text = string.Format("{0:n0}", dr["balance_due"]);
 
-                        dataGridView1.Rows[0].Cells[1].Value = dr["consultation_fee"].ToString();
-                        dataGridView1.Rows[1].Cells[1].Value = dr["total_price"].ToString();
-                        dataGridView1.Rows[2].Cells[2].Value = dr["philhealth_discount"].ToString();
-                        dataGridView1.Rows[3].Cells[2].Value = dr["sc_pwd_discount"].ToString();
-                        dataGridView1.Rows[4].Cells[2].Value = dr["other_discount"].ToString();
-
-
-
-
+                        dataGridView1.Rows[0].Cells[1].Value = string.Format("{0:n0}", dr["consultation_fee"]);
+                        dataGridView1.Rows[1].Cells[1].Value = string.Format("{0:n0}", dr["total_price"]);
+                        dataGridView1.Rows[2].Cells[2].Value = string.Format("{0:n0}", dr["insurance_payment"]);
+                        dataGridView1.Rows[3].Cells[2].Value = string.Format("{0:n0}", dr["philhealth_discount"]);
+                        dataGridView1.Rows[4].Cells[2].Value = string.Format("{0:n0}", dr["sc_pwd_discount"]);
+                        dataGridView1.Rows[5].Cells[2].Value = string.Format("{0:n0}", dr["other_discount"]);
                     }
                 }
             }

@@ -73,7 +73,7 @@
             // 
             // lblDashboard
             // 
-            this.lblDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDashboard.Font = new System.Drawing.Font("Poppins SemiBold", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDashboard.Location = new System.Drawing.Point(213, 0);
             this.lblDashboard.Name = "lblDashboard";
             this.lblDashboard.Size = new System.Drawing.Size(699, 84);
@@ -105,7 +105,6 @@
             // 
             // panelScroll
             // 
-            this.panelScroll.Controls.Add(this.btnContinue);
             this.panelScroll.Controls.Add(this.panelPhysicalExam);
             this.panelScroll.Location = new System.Drawing.Point(12, 134);
             this.panelScroll.Name = "panelScroll";
@@ -121,9 +120,9 @@
             this.btnContinue.BorderSize = 0;
             this.btnContinue.FlatAppearance.BorderSize = 0;
             this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContinue.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Location = new System.Drawing.Point(435, 631);
+            this.btnContinue.Location = new System.Drawing.Point(447, 307);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(246, 40);
             this.btnContinue.TabIndex = 39;
@@ -136,11 +135,12 @@
             // 
             this.panelPhysicalExam.BackgroundImage = global::PIMS.Properties.Resources.PanelWhite1;
             this.panelPhysicalExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelPhysicalExam.Controls.Add(this.btnContinue);
             this.panelPhysicalExam.Controls.Add(this.panel1);
             this.panelPhysicalExam.Controls.Add(this.label1);
             this.panelPhysicalExam.Location = new System.Drawing.Point(0, 0);
             this.panelPhysicalExam.Name = "panelPhysicalExam";
-            this.panelPhysicalExam.Size = new System.Drawing.Size(1350, 603);
+            this.panelPhysicalExam.Size = new System.Drawing.Size(1350, 401);
             this.panelPhysicalExam.TabIndex = 0;
             // 
             // panel1
@@ -157,82 +157,86 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(19, 57);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1293, 475);
+            this.panel1.Size = new System.Drawing.Size(1293, 208);
             this.panel1.TabIndex = 18;
             // 
             // txtFName
             // 
+            this.txtFName.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFName.Location = new System.Drawing.Point(632, 93);
             this.txtFName.Name = "txtFName";
-            this.txtFName.Size = new System.Drawing.Size(522, 20);
+            this.txtFName.Size = new System.Drawing.Size(522, 24);
             this.txtFName.TabIndex = 35;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label4.Location = new System.Drawing.Point(628, 76);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 15);
+            this.label4.Size = new System.Drawing.Size(79, 22);
             this.label4.TabIndex = 34;
             this.label4.Text = "First Name:";
             // 
             // txtInsurID
             // 
+            this.txtInsurID.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInsurID.Location = new System.Drawing.Point(632, 39);
             this.txtInsurID.Name = "txtInsurID";
-            this.txtInsurID.Size = new System.Drawing.Size(522, 20);
+            this.txtInsurID.Size = new System.Drawing.Size(522, 24);
             this.txtInsurID.TabIndex = 33;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label5.Location = new System.Drawing.Point(628, 22);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 15);
+            this.label5.Size = new System.Drawing.Size(86, 22);
             this.label5.TabIndex = 32;
             this.label5.Text = "Insurance ID";
             // 
             // txtLName
             // 
+            this.txtLName.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLName.Location = new System.Drawing.Point(48, 93);
             this.txtLName.Name = "txtLName";
-            this.txtLName.Size = new System.Drawing.Size(522, 20);
+            this.txtLName.Size = new System.Drawing.Size(522, 24);
             this.txtLName.TabIndex = 31;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label9.Location = new System.Drawing.Point(44, 76);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 15);
+            this.label9.Size = new System.Drawing.Size(79, 22);
             this.label9.TabIndex = 28;
             this.label9.Text = "Last Name:";
             // 
             // txtInsurComp
             // 
+            this.txtInsurComp.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInsurComp.Location = new System.Drawing.Point(48, 39);
             this.txtInsurComp.Name = "txtInsurComp";
-            this.txtInsurComp.Size = new System.Drawing.Size(522, 20);
+            this.txtInsurComp.Size = new System.Drawing.Size(522, 24);
             this.txtInsurComp.TabIndex = 24;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label3.Location = new System.Drawing.Point(44, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 15);
+            this.label3.Size = new System.Drawing.Size(138, 22);
             this.label3.TabIndex = 21;
             this.label3.Text = "Insurance Company:";
             // 
@@ -240,11 +244,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Poppins SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(22, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(243, 26);
+            this.label1.Size = new System.Drawing.Size(254, 37);
             this.label1.TabIndex = 19;
             this.label1.Text = "Insurance Information";
             // 

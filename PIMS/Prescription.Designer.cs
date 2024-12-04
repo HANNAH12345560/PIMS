@@ -40,7 +40,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.PrescriptionPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
             this.txtPhysicianName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -95,7 +94,7 @@
             // 
             // lblDashboard
             // 
-            this.lblDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDashboard.Font = new System.Drawing.Font("Poppins SemiBold", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblDashboard.Location = new System.Drawing.Point(291, 14);
             this.lblDashboard.Name = "lblDashboard";
@@ -184,7 +183,6 @@
             this.PrescriptionPanel.AutoScroll = true;
             this.PrescriptionPanel.BackColor = System.Drawing.Color.White;
             this.PrescriptionPanel.Controls.Add(this.panel2);
-            this.PrescriptionPanel.Controls.Add(this.label10);
             this.PrescriptionPanel.Controls.Add(this.txtPhysicianName);
             this.PrescriptionPanel.Controls.Add(this.label3);
             this.PrescriptionPanel.Controls.Add(this.label2);
@@ -215,19 +213,6 @@
             this.panel2.Size = new System.Drawing.Size(155, 144);
             this.panel2.TabIndex = 63;
             // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(525, 531);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 15);
-            this.label10.TabIndex = 62;
-            this.label10.Text = "Signature";
-            // 
             // txtPhysicianName
             // 
             this.txtPhysicianName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -235,7 +220,7 @@
             this.txtPhysicianName.BackColor = System.Drawing.Color.Transparent;
             this.txtPhysicianName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhysicianName.ForeColor = System.Drawing.Color.Black;
-            this.txtPhysicianName.Location = new System.Drawing.Point(504, 546);
+            this.txtPhysicianName.Location = new System.Drawing.Point(474, 548);
             this.txtPhysicianName.Name = "txtPhysicianName";
             this.txtPhysicianName.Size = new System.Drawing.Size(110, 15);
             this.txtPhysicianName.TabIndex = 61;
@@ -529,7 +514,6 @@
         private CustomControls.RJControls.RJTextBox txtAdd;
         private System.Windows.Forms.Label txtDosage;
         private CustomControls.RJControls.RJTextBox txtSex;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label txtPhysicianName;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;

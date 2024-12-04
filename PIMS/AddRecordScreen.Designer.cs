@@ -182,7 +182,7 @@
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(149, 31);
             this.lblStatus.TabIndex = 7;
-            this.lblStatus.Text = "Alive";
+            this.lblStatus.Text = "---";
             this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3

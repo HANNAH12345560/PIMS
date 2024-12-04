@@ -68,7 +68,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1358, 834);
+            this.panel7.Size = new System.Drawing.Size(1358, 831);
             this.panel7.TabIndex = 0;
             this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
@@ -117,11 +117,10 @@
             // 
             // panelScroll
             // 
-            this.panelScroll.Controls.Add(this.btnContinue);
             this.panelScroll.Controls.Add(this.panelPhysicalExam);
             this.panelScroll.Location = new System.Drawing.Point(12, 134);
             this.panelScroll.Name = "panelScroll";
-            this.panelScroll.Size = new System.Drawing.Size(1346, 700);
+            this.panelScroll.Size = new System.Drawing.Size(1346, 697);
             this.panelScroll.TabIndex = 2;
             // 
             // btnContinue
@@ -135,7 +134,7 @@
             this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinue.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Location = new System.Drawing.Point(467, 629);
+            this.btnContinue.Location = new System.Drawing.Point(467, 533);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(246, 40);
             this.btnContinue.TabIndex = 39;
@@ -148,11 +147,12 @@
             // 
             this.panelPhysicalExam.BackgroundImage = global::PIMS.Properties.Resources.PanelWhite1;
             this.panelPhysicalExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelPhysicalExam.Controls.Add(this.btnContinue);
             this.panelPhysicalExam.Controls.Add(this.panel1);
             this.panelPhysicalExam.Controls.Add(this.label1);
             this.panelPhysicalExam.Location = new System.Drawing.Point(0, 0);
             this.panelPhysicalExam.Name = "panelPhysicalExam";
-            this.panelPhysicalExam.Size = new System.Drawing.Size(1350, 603);
+            this.panelPhysicalExam.Size = new System.Drawing.Size(1350, 623);
             this.panelPhysicalExam.TabIndex = 0;
             this.panelPhysicalExam.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPhysicalExam_Paint);
             // 
@@ -184,7 +184,7 @@
             // 
             // cbkBloodType
             // 
-            this.cbkBloodType.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbkBloodType.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbkBloodType.FormattingEnabled = true;
             this.cbkBloodType.Items.AddRange(new object[] {
             "A+  ",
@@ -197,11 +197,12 @@
             "O-  "});
             this.cbkBloodType.Location = new System.Drawing.Point(48, 189);
             this.cbkBloodType.Name = "cbkBloodType";
-            this.cbkBloodType.Size = new System.Drawing.Size(282, 30);
+            this.cbkBloodType.Size = new System.Drawing.Size(282, 27);
             this.cbkBloodType.TabIndex = 38;
             // 
             // txtComplaint
             // 
+            this.txtComplaint.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComplaint.Location = new System.Drawing.Point(48, 251);
             this.txtComplaint.Multiline = true;
             this.txtComplaint.Name = "txtComplaint";
@@ -234,23 +235,26 @@
             // 
             // txtHT
             // 
+            this.txtHT.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHT.Location = new System.Drawing.Point(770, 127);
             this.txtHT.Name = "txtHT";
-            this.txtHT.Size = new System.Drawing.Size(282, 20);
+            this.txtHT.Size = new System.Drawing.Size(282, 24);
             this.txtHT.TabIndex = 33;
             // 
             // txtWT
             // 
+            this.txtWT.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWT.Location = new System.Drawing.Point(412, 127);
             this.txtWT.Name = "txtWT";
-            this.txtWT.Size = new System.Drawing.Size(282, 20);
+            this.txtWT.Size = new System.Drawing.Size(282, 24);
             this.txtWT.TabIndex = 32;
             // 
             // txtTemp
             // 
+            this.txtTemp.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTemp.Location = new System.Drawing.Point(48, 127);
             this.txtTemp.Name = "txtTemp";
-            this.txtTemp.Size = new System.Drawing.Size(282, 20);
+            this.txtTemp.Size = new System.Drawing.Size(282, 24);
             this.txtTemp.TabIndex = 31;
             // 
             // label4
@@ -291,23 +295,26 @@
             // 
             // txtPR
             // 
+            this.txtPR.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPR.Location = new System.Drawing.Point(770, 72);
             this.txtPR.Name = "txtPR";
-            this.txtPR.Size = new System.Drawing.Size(282, 20);
+            this.txtPR.Size = new System.Drawing.Size(282, 24);
             this.txtPR.TabIndex = 26;
             // 
             // txtRR
             // 
+            this.txtRR.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRR.Location = new System.Drawing.Point(412, 72);
             this.txtRR.Name = "txtRR";
-            this.txtRR.Size = new System.Drawing.Size(282, 20);
+            this.txtRR.Size = new System.Drawing.Size(282, 24);
             this.txtRR.TabIndex = 25;
             // 
             // txtBP
             // 
+            this.txtBP.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBP.Location = new System.Drawing.Point(48, 72);
             this.txtBP.Name = "txtBP";
-            this.txtBP.Size = new System.Drawing.Size(282, 20);
+            this.txtBP.Size = new System.Drawing.Size(282, 24);
             this.txtBP.TabIndex = 24;
             // 
             // label8

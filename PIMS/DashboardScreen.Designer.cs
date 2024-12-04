@@ -50,14 +50,14 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.btnLogout = new CustomControls.Controls.RJButton();
             this.btnPatientList = new CustomControls.Controls.RJButton();
             this.btnAddRec = new CustomControls.Controls.RJButton();
             this.btnMedRec = new CustomControls.Controls.RJButton();
             this.btnDashboard = new CustomControls.Controls.RJButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel6.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -115,12 +115,13 @@
             this.lblTtlRevenue.AutoSize = true;
             this.lblTtlRevenue.Font = new System.Drawing.Font("Poppins SemiBold", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTtlRevenue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
-            this.lblTtlRevenue.Location = new System.Drawing.Point(37, 38);
+            this.lblTtlRevenue.Location = new System.Drawing.Point(3, 38);
             this.lblTtlRevenue.Name = "lblTtlRevenue";
             this.lblTtlRevenue.Size = new System.Drawing.Size(193, 141);
             this.lblTtlRevenue.TabIndex = 1;
             this.lblTtlRevenue.Text = "150";
             this.lblTtlRevenue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTtlRevenue.Click += new System.EventHandler(this.lblTtlRevenue_Click);
             // 
             // label7
             // 
@@ -223,7 +224,7 @@
             this.lblTtlPatients.AutoSize = true;
             this.lblTtlPatients.Font = new System.Drawing.Font("Poppins SemiBold", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTtlPatients.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
-            this.lblTtlPatients.Location = new System.Drawing.Point(37, 38);
+            this.lblTtlPatients.Location = new System.Drawing.Point(37, 36);
             this.lblTtlPatients.Name = "lblTtlPatients";
             this.lblTtlPatients.Size = new System.Drawing.Size(193, 141);
             this.lblTtlPatients.TabIndex = 1;
@@ -317,37 +318,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(200, 609);
             this.panel5.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(226, 120);
-            this.panel2.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(12, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(199, 105);
-            this.panel3.TabIndex = 1;
-            // 
-            // panel4
-            // 
-            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(199, 105);
-            this.panel4.TabIndex = 1;
             // 
             // btnLogout
             // 
@@ -475,6 +445,37 @@
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             this.btnDashboard.MouseLeave += new System.EventHandler(this.btnDashboard_MouseLeave);
             this.btnDashboard.MouseHover += new System.EventHandler(this.btnDashboard_MouseHover);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(226, 120);
+            this.panel2.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Location = new System.Drawing.Point(12, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(199, 105);
+            this.panel3.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(199, 105);
+            this.panel4.TabIndex = 1;
             // 
             // DashboardScreen
             // 

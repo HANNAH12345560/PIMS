@@ -116,7 +116,6 @@
             // 
             // panelScroll
             // 
-            this.panelScroll.Controls.Add(this.btnContinue);
             this.panelScroll.Controls.Add(this.panelPhysicalExam);
             this.panelScroll.Location = new System.Drawing.Point(12, 134);
             this.panelScroll.Name = "panelScroll";
@@ -134,7 +133,7 @@
             this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Location = new System.Drawing.Point(496, 706);
+            this.btnContinue.Location = new System.Drawing.Point(491, 627);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(246, 40);
             this.btnContinue.TabIndex = 39;
@@ -147,11 +146,12 @@
             // 
             this.panelPhysicalExam.BackgroundImage = global::PIMS.Properties.Resources.PanelWhite1;
             this.panelPhysicalExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelPhysicalExam.Controls.Add(this.btnContinue);
             this.panelPhysicalExam.Controls.Add(this.panel15);
             this.panelPhysicalExam.Controls.Add(this.label1);
             this.panelPhysicalExam.Location = new System.Drawing.Point(0, 0);
             this.panelPhysicalExam.Name = "panelPhysicalExam";
-            this.panelPhysicalExam.Size = new System.Drawing.Size(1351, 700);
+            this.panelPhysicalExam.Size = new System.Drawing.Size(1351, 727);
             this.panelPhysicalExam.TabIndex = 0;
             this.panelPhysicalExam.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPhysicalExam_Paint);
             // 
@@ -175,16 +175,17 @@
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label13.Location = new System.Drawing.Point(53, 448);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(57, 15);
+            this.label13.Size = new System.Drawing.Size(58, 22);
             this.label13.TabIndex = 45;
             this.label13.Text = "Remark";
             // 
             // comboBoxAfter
             // 
+            this.comboBoxAfter.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAfter.FormattingEnabled = true;
             this.comboBoxAfter.Items.AddRange(new object[] {
             "Another Consultation",
@@ -192,7 +193,7 @@
             "None"});
             this.comboBoxAfter.Location = new System.Drawing.Point(53, 466);
             this.comboBoxAfter.Name = "comboBoxAfter";
-            this.comboBoxAfter.Size = new System.Drawing.Size(158, 21);
+            this.comboBoxAfter.Size = new System.Drawing.Size(158, 27);
             this.comboBoxAfter.TabIndex = 44;
             // 
             // label4
@@ -211,11 +212,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Poppins SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(158)))), ((int)(((byte)(170)))));
             this.label2.Location = new System.Drawing.Point(51, 229);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(208, 26);
+            this.label2.Size = new System.Drawing.Size(219, 37);
             this.label2.TabIndex = 41;
             this.label2.Text = "Medical Treatment";
             // 
@@ -255,23 +256,26 @@
             // 
             // txtPrice
             // 
+            this.txtPrice.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice.Location = new System.Drawing.Point(725, 33);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(259, 20);
+            this.txtPrice.Size = new System.Drawing.Size(259, 24);
             this.txtPrice.TabIndex = 46;
             // 
             // txtMedName
             // 
+            this.txtMedName.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMedName.Location = new System.Drawing.Point(3, 33);
             this.txtMedName.Name = "txtMedName";
-            this.txtMedName.Size = new System.Drawing.Size(282, 20);
+            this.txtMedName.Size = new System.Drawing.Size(282, 24);
             this.txtMedName.TabIndex = 44;
             // 
             // txtDosage
             // 
+            this.txtDosage.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDosage.Location = new System.Drawing.Point(367, 33);
             this.txtDosage.Name = "txtDosage";
-            this.txtDosage.Size = new System.Drawing.Size(282, 20);
+            this.txtDosage.Size = new System.Drawing.Size(282, 24);
             this.txtDosage.TabIndex = 45;
             this.txtDosage.TextChanged += new System.EventHandler(this.txtRR_TextChanged);
             // 
@@ -279,11 +283,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label3.Location = new System.Drawing.Point(-1, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 15);
+            this.label3.Size = new System.Drawing.Size(107, 22);
             this.label3.TabIndex = 41;
             this.label3.Text = "Medicine Name:";
             // 
@@ -291,11 +295,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label7.Location = new System.Drawing.Point(363, 16);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 15);
+            this.label7.Size = new System.Drawing.Size(60, 22);
             this.label7.TabIndex = 42;
             this.label7.Text = "Dosage:";
             // 
@@ -303,16 +307,17 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label8.Location = new System.Drawing.Point(721, 16);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 15);
+            this.label8.Size = new System.Drawing.Size(42, 22);
             this.label8.TabIndex = 43;
             this.label8.Text = "Price:";
             // 
             // txtComplaint
             // 
+            this.txtComplaint.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComplaint.Location = new System.Drawing.Point(48, 60);
             this.txtComplaint.Multiline = true;
             this.txtComplaint.Name = "txtComplaint";
@@ -324,11 +329,11 @@
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Poppins SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(158)))), ((int)(((byte)(170)))));
             this.label14.Location = new System.Drawing.Point(41, 18);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(124, 26);
+            this.label14.Size = new System.Drawing.Size(127, 37);
             this.label14.TabIndex = 20;
             this.label14.Text = "Diagnosis:";
             // 
