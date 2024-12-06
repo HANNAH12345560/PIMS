@@ -543,7 +543,7 @@
             this.txtSearchName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(158)))), ((int)(((byte)(170)))));
             this.txtSearchName.BorderRadius = 7;
             this.txtSearchName.BorderSize = 2;
-            this.txtSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchName.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtSearchName.Location = new System.Drawing.Point(112, 28);
             this.txtSearchName.Margin = new System.Windows.Forms.Padding(4);
@@ -552,8 +552,8 @@
             this.txtSearchName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtSearchName.PasswordChar = false;
             this.txtSearchName.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtSearchName.PlaceholderText = "";
-            this.txtSearchName.Size = new System.Drawing.Size(846, 31);
+            this.txtSearchName.PlaceholderText = "Search by typing the patient\'s first name";
+            this.txtSearchName.Size = new System.Drawing.Size(846, 38);
             this.txtSearchName.TabIndex = 2;
             this.txtSearchName.Texts = "";
             this.txtSearchName.UnderlinedStyle = false;

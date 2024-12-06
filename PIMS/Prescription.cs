@@ -121,7 +121,7 @@ namespace PIMS
 
                                 Label Dosage = new Label();
                                 Dosage.Location = new Point(416, yOffset);
-                                Dosage.Text = reader["dosage"].ToString();
+                                Dosage.Text = reader["dosage"].ToString()+" ml";
                                 Dosage.AutoSize = true;
                                 Dosage.Font = new Font("Microsoft Sans Serif", 9, FontStyle.Regular);
                                 Dosage.ForeColor = Color.Black; 

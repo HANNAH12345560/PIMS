@@ -80,14 +80,14 @@ namespace PIMS
                         innerSOAref.Text = dr["payment_id"].ToString();
                         innerAge.Text = dr["age"].ToString();
                         innerDate.Text = dr["date"].ToString();
-                        lblTotalBal.Text = string.Format("{0:n0}", dr["balance_due"]);
+                        lblTotalBal.Text = string.Format("₱ {0:n0}", dr["balance_due"]);
 
-                        dataGridView1.Rows[0].Cells[1].Value = string.Format("{0:n0}", dr["consultation_fee"]);
-                        dataGridView1.Rows[1].Cells[1].Value = string.Format("{0:n0}", dr["total_price"]);
-                        dataGridView1.Rows[2].Cells[2].Value = string.Format("{0:n0}", dr["insurance_payment"]);
-                        dataGridView1.Rows[3].Cells[2].Value = string.Format("{0:n0}", dr["philhealth_discount"]);
-                        dataGridView1.Rows[4].Cells[2].Value = string.Format("{0:n0}", dr["sc_pwd_discount"]);
-                        dataGridView1.Rows[5].Cells[2].Value = string.Format("{0:n0}", dr["other_discount"]);
+                        dataGridView1.Rows[0].Cells[1].Value = string.Format("₱ {0:n0}", dr["consultation_fee"]);
+                        dataGridView1.Rows[1].Cells[1].Value = string.Format("₱ {0:n0}", dr["total_price"]);
+                        dataGridView1.Rows[2].Cells[2].Value = string.Format("₱ {0:n0}", dr["insurance_payment"]);
+                        dataGridView1.Rows[3].Cells[2].Value = string.Format("₱ {0:n0}", dr["philhealth_discount"]);
+                        dataGridView1.Rows[4].Cells[2].Value = string.Format("₱ {0:n0}", dr["sc_pwd_discount"]);
+                        dataGridView1.Rows[5].Cells[2].Value = string.Format("₱ {0:n0}", dr["other_discount"]);
                     }
                 }
             }

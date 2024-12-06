@@ -80,14 +80,14 @@ namespace PIMS
                         innerSOAref.Text = dr["payment_id"].ToString();
                         innerAge.Text = dr["age"].ToString();
                         innerDate.Text = dr["date"].ToString();
-                        lblTotalBal.Text = string.Format("{0:n0}", dr["balance_due"]);
+                        lblTotalBal.Text = string.Format("₱ {0:n0}", dr["balance_due"]);
 
-                        dataGridView1.Rows[0].Cells[1].Value = string.Format("{0:n0}", dr["consultation_fee"]);
-                        dataGridView1.Rows[1].Cells[1].Value = string.Format("{0:n0}", dr["total_price"]);
-                        dataGridView1.Rows[2].Cells[2].Value = string.Format("{0:n0}", dr["insurance_payment"]);
-                        dataGridView1.Rows[3].Cells[2].Value = string.Format("{0:n0}", dr["philhealth_discount"]);
-                        dataGridView1.Rows[4].Cells[2].Value = string.Format("{0:n0}", dr["sc_pwd_discount"]);
-                        dataGridView1.Rows[5].Cells[2].Value = string.Format("{0:n0}", dr["other_discount"]);
+                        dataGridView1.Rows[0].Cells[1].Value = string.Format("₱ {0:n0}", dr["consultation_fee"]);
+                        dataGridView1.Rows[1].Cells[1].Value = string.Format("₱ {0:n0}", dr["total_price"]);
+                        dataGridView1.Rows[2].Cells[2].Value = string.Format("₱ {0:n0}", dr["insurance_payment"]);
+                        dataGridView1.Rows[3].Cells[2].Value = string.Format("₱ {0:n0}", dr["philhealth_discount"]);
+                        dataGridView1.Rows[4].Cells[2].Value = string.Format("₱ {0:n0}", dr["sc_pwd_discount"]);
+                        dataGridView1.Rows[5].Cells[2].Value = string.Format("₱ {0:n0}", dr["other_discount"]);
 
                     }
                 }
@@ -117,26 +117,26 @@ namespace PIMS
         public void InsertHospitalAdmission(int patientId)
         {
             string query = @"
-            INSERT INTO HospitalAdmission 
-            (patient_id, physician, complete_diagnosis, medical_treatment, med_fee, discount, total_bill, remarks, admit_date, discharge_date)
-            SELECT 
-                pi.id AS patient_id,
-                pe.physician,
-                pe.diagnosis AS complete_diagnosis,
-                STRING_AGG(mt.name, ', ') AS medical_treatment,
-                COALESCE(SUM(mt.price), 0) AS med_fee,
-                COALESCE(SUM(p.sc_pwd_discount + p.other_discount + p.philhealth_discount), 0) AS discount,
-                p.balance_due AS total_bill,
-                pe.remark AS remarks,
-                pi.date_added AS admit_date,
-                ca.date AS discharge_date 
-            FROM PatientInfo pi
-            LEFT JOIN ConsultationAssesment ca ON ca.patient_id = pi.id
-            LEFT JOIN PhysicianEvaluation pe ON pe.consultation_id = ca.id
-            LEFT JOIN MedicalTreatment mt ON mt.physician_eval_id = pe.id
-            LEFT JOIN Payment p ON p.consultation_id = ca.id
-            WHERE pi.id = @PatientId AND pe.remark = 'Hospital Admission'
-            GROUP BY pi.id, pe.physician, pe.diagnosis, p.balance_due, pe.remark, pi.date_added, ca.date";
+                INSERT INTO HospitalAdmission 
+                (patient_id, physician, complete_diagnosis, medical_treatment, med_fee, discount, total_bill, remarks, admit_date, discharge_date)
+                SELECT 
+                    pi.id AS patient_id,
+                    pe.physician,
+                    pe.diagnosis AS complete_diagnosis,
+                    STRING_AGG(mt.name, ', ') AS medical_treatment,
+                    COALESCE(SUM(mt.price), 0) AS med_fee,
+                    COALESCE(SUM(p.sc_pwd_discount + p.other_discount + p.philhealth_discount), 0) AS discount,
+                    p.balance_due AS total_bill,
+                    pe.remark AS remarks,
+                    pi.date_added AS admit_date,
+                    ca.date AS discharge_date 
+                FROM PatientInfo pi
+                LEFT JOIN ConsultationAssesment ca ON ca.patient_id = pi.id
+                LEFT JOIN PhysicianEvaluation pe ON pe.consultation_id = ca.id
+                LEFT JOIN MedicalTreatment mt ON mt.physician_eval_id = pe.id
+                LEFT JOIN Payment p ON p.consultation_id = ca.id
+                WHERE pi.id = @PatientId AND pe.remark = 'Hospital Admission'
+                GROUP BY pi.id, pe.physician, pe.diagnosis, p.balance_due, pe.remark, pi.date_added, ca.date";
 
             using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
             {

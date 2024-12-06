@@ -35,8 +35,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelScroll = new System.Windows.Forms.Panel();
-            this.btnCalculate = new CustomControls.Controls.RJButton();
             this.panelPhysicalExam = new System.Windows.Forms.Panel();
+            this.btnCalculate = new CustomControls.Controls.RJButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtPhilDiscount = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -112,6 +112,17 @@
             this.panelScroll.Size = new System.Drawing.Size(1346, 700);
             this.panelScroll.TabIndex = 2;
             // 
+            // panelPhysicalExam
+            // 
+            this.panelPhysicalExam.BackgroundImage = global::PIMS.Properties.Resources.PanelWhite1;
+            this.panelPhysicalExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelPhysicalExam.Controls.Add(this.btnCalculate);
+            this.panelPhysicalExam.Controls.Add(this.panel1);
+            this.panelPhysicalExam.Location = new System.Drawing.Point(0, 0);
+            this.panelPhysicalExam.Name = "panelPhysicalExam";
+            this.panelPhysicalExam.Size = new System.Drawing.Size(1350, 398);
+            this.panelPhysicalExam.TabIndex = 0;
+            // 
             // btnCalculate
             // 
             this.btnCalculate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
@@ -131,17 +142,6 @@
             this.btnCalculate.TextColor = System.Drawing.Color.White;
             this.btnCalculate.UseVisualStyleBackColor = false;
             this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
-            // 
-            // panelPhysicalExam
-            // 
-            this.panelPhysicalExam.BackgroundImage = global::PIMS.Properties.Resources.PanelWhite1;
-            this.panelPhysicalExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelPhysicalExam.Controls.Add(this.btnCalculate);
-            this.panelPhysicalExam.Controls.Add(this.panel1);
-            this.panelPhysicalExam.Location = new System.Drawing.Point(0, 0);
-            this.panelPhysicalExam.Name = "panelPhysicalExam";
-            this.panelPhysicalExam.Size = new System.Drawing.Size(1350, 398);
-            this.panelPhysicalExam.TabIndex = 0;
             // 
             // panel1
             // 
@@ -178,9 +178,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label1.Location = new System.Drawing.Point(43, 132);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 22);
+            this.label1.Size = new System.Drawing.Size(98, 22);
             this.label1.TabIndex = 36;
-            this.label1.Text = "Philhealth:";
+            this.label1.Text = "Philhealth (%):";
             // 
             // txtOtherDisc
             // 
@@ -198,9 +198,9 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label4.Location = new System.Drawing.Point(628, 76);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 22);
+            this.label4.Size = new System.Drawing.Size(130, 22);
             this.label4.TabIndex = 34;
-            this.label4.Text = "Other Discount:";
+            this.label4.Text = "Other Discount (%):";
             // 
             // txtInsurPay
             // 
@@ -238,9 +238,9 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label9.Location = new System.Drawing.Point(44, 76);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(127, 22);
+            this.label9.Size = new System.Drawing.Size(152, 22);
             this.label9.TabIndex = 28;
-            this.label9.Text = "SC / PWD Discount:";
+            this.label9.Text = "SC / PWD Discount (%):";
             // 
             // txtConsult
             // 

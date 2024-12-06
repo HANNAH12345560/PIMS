@@ -35,8 +35,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelScroll = new System.Windows.Forms.Panel();
-            this.btnContinue = new CustomControls.Controls.RJButton();
             this.panelPhysicalExam = new System.Windows.Forms.Panel();
+            this.btnContinue = new CustomControls.Controls.RJButton();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBoxAfter = new System.Windows.Forms.ComboBox();
@@ -122,6 +122,19 @@
             this.panelScroll.Size = new System.Drawing.Size(1346, 790);
             this.panelScroll.TabIndex = 2;
             // 
+            // panelPhysicalExam
+            // 
+            this.panelPhysicalExam.BackgroundImage = global::PIMS.Properties.Resources.PanelWhite1;
+            this.panelPhysicalExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelPhysicalExam.Controls.Add(this.btnContinue);
+            this.panelPhysicalExam.Controls.Add(this.panel15);
+            this.panelPhysicalExam.Controls.Add(this.label1);
+            this.panelPhysicalExam.Location = new System.Drawing.Point(0, 0);
+            this.panelPhysicalExam.Name = "panelPhysicalExam";
+            this.panelPhysicalExam.Size = new System.Drawing.Size(1351, 727);
+            this.panelPhysicalExam.TabIndex = 0;
+            this.panelPhysicalExam.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPhysicalExam_Paint);
+            // 
             // btnContinue
             // 
             this.btnContinue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
@@ -142,25 +155,12 @@
             this.btnContinue.UseVisualStyleBackColor = false;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             // 
-            // panelPhysicalExam
-            // 
-            this.panelPhysicalExam.BackgroundImage = global::PIMS.Properties.Resources.PanelWhite1;
-            this.panelPhysicalExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelPhysicalExam.Controls.Add(this.btnContinue);
-            this.panelPhysicalExam.Controls.Add(this.panel15);
-            this.panelPhysicalExam.Controls.Add(this.label1);
-            this.panelPhysicalExam.Location = new System.Drawing.Point(0, 0);
-            this.panelPhysicalExam.Name = "panelPhysicalExam";
-            this.panelPhysicalExam.Size = new System.Drawing.Size(1351, 727);
-            this.panelPhysicalExam.TabIndex = 0;
-            this.panelPhysicalExam.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPhysicalExam_Paint);
-            // 
             // panel15
             // 
             this.panel15.BackgroundImage = global::PIMS.Properties.Resources.EvaluationPanelPink;
             this.panel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel15.Controls.Add(this.label13);
             this.panel15.Controls.Add(this.comboBoxAfter);
+            this.panel15.Controls.Add(this.label13);
             this.panel15.Controls.Add(this.label4);
             this.panel15.Controls.Add(this.label2);
             this.panel15.Controls.Add(this.panel1);
@@ -299,9 +299,9 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label7.Location = new System.Drawing.Point(363, 16);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 22);
+            this.label7.Size = new System.Drawing.Size(91, 22);
             this.label7.TabIndex = 42;
-            this.label7.Text = "Dosage:";
+            this.label7.Text = "Dosage (ml):";
             // 
             // label8
             // 

@@ -324,6 +324,11 @@ namespace PIMS
             patientInfoCache["religion"] = txtReligion.Text;
             patientInfoCache["occupation"] = txtOccup.Text;
         }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
     }
 }
 

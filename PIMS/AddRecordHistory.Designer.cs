@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddRecordHistory));
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -35,6 +36,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelPhysicalExam = new System.Windows.Forms.Panel();
+            this.btnContinue = new CustomControls.Controls.RJButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBoxPhysician = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -74,7 +76,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panelScroll = new System.Windows.Forms.Panel();
-            this.btnContinue = new CustomControls.Controls.RJButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panelPhysicalExam.SuspendLayout();
@@ -150,6 +152,26 @@
             this.panelPhysicalExam.TabIndex = 0;
             this.panelPhysicalExam.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPhysicalExam_Paint);
             // 
+            // btnContinue
+            // 
+            this.btnContinue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
+            this.btnContinue.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
+            this.btnContinue.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnContinue.BorderRadius = 7;
+            this.btnContinue.BorderSize = 0;
+            this.btnContinue.FlatAppearance.BorderSize = 0;
+            this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContinue.ForeColor = System.Drawing.Color.White;
+            this.btnContinue.Location = new System.Drawing.Point(536, 686);
+            this.btnContinue.Name = "btnContinue";
+            this.btnContinue.Size = new System.Drawing.Size(246, 40);
+            this.btnContinue.TabIndex = 39;
+            this.btnContinue.Text = "CONTINUE";
+            this.btnContinue.TextColor = System.Drawing.Color.White;
+            this.btnContinue.UseVisualStyleBackColor = false;
+            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
+            // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::PIMS.Properties.Resources.EvaluationPanelPink;
@@ -173,7 +195,10 @@
             this.comboBoxPhysician.FormattingEnabled = true;
             this.comboBoxPhysician.Items.AddRange(new object[] {
             "Dr. Reyes",
-            "Dr. Lopez"});
+            "Dr. Lopez",
+            "Dr. Santiago",
+            "Dr. Palattao",
+            "Dr. Alsagon"});
             this.comboBoxPhysician.Location = new System.Drawing.Point(48, 591);
             this.comboBoxPhysician.Name = "comboBoxPhysician";
             this.comboBoxPhysician.Size = new System.Drawing.Size(236, 30);
@@ -281,6 +306,7 @@
             this.chkStatusYES_MD1.Size = new System.Drawing.Size(67, 69);
             this.chkStatusYES_MD1.TabIndex = 37;
             this.chkStatusYES_MD1.Text = "YES";
+            this.toolTip1.SetToolTip(this.chkStatusYES_MD1, "If yes, please specify the specific allergy in the text box provided.");
             this.chkStatusYES_MD1.UseVisualStyleBackColor = true;
             // 
             // label4
@@ -335,6 +361,7 @@
             this.chkStatusYES_MD2.Size = new System.Drawing.Size(67, 63);
             this.chkStatusYES_MD2.TabIndex = 40;
             this.chkStatusYES_MD2.Text = "YES";
+            this.toolTip1.SetToolTip(this.chkStatusYES_MD2, "If yes, please specify the specific allergy in the text box provided.");
             this.chkStatusYES_MD2.UseVisualStyleBackColor = true;
             // 
             // chkStatusNO_MD2
@@ -384,6 +411,7 @@
             this.chkStatusYES_MD3.Size = new System.Drawing.Size(67, 60);
             this.chkStatusYES_MD3.TabIndex = 43;
             this.chkStatusYES_MD3.Text = "YES";
+            this.toolTip1.SetToolTip(this.chkStatusYES_MD3, "If yes, please specify the specific allergy in the text box provided.");
             this.chkStatusYES_MD3.UseVisualStyleBackColor = true;
             // 
             // chkStatusNO_MD3
@@ -514,6 +542,7 @@
             this.chkStatusYES_DRUG.Size = new System.Drawing.Size(67, 69);
             this.chkStatusYES_DRUG.TabIndex = 37;
             this.chkStatusYES_DRUG.Text = "YES";
+            this.toolTip1.SetToolTip(this.chkStatusYES_DRUG, "If yes, please specify the specific allergy in the text box provided.");
             this.chkStatusYES_DRUG.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -569,6 +598,7 @@
             this.chkStatusYES_FOOD.Size = new System.Drawing.Size(67, 63);
             this.chkStatusYES_FOOD.TabIndex = 40;
             this.chkStatusYES_FOOD.Text = "YES";
+            this.toolTip1.SetToolTip(this.chkStatusYES_FOOD, "If yes, please specify the specific allergy in the text box provided.");
             this.chkStatusYES_FOOD.UseVisualStyleBackColor = true;
             this.chkStatusYES_FOOD.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
@@ -619,6 +649,7 @@
             this.chkStatusYES_OTHER.Size = new System.Drawing.Size(67, 60);
             this.chkStatusYES_OTHER.TabIndex = 43;
             this.chkStatusYES_OTHER.Text = "YES";
+            this.toolTip1.SetToolTip(this.chkStatusYES_OTHER, "If yes, please specify the specific allergy in the text box provided.");
             this.chkStatusYES_OTHER.UseVisualStyleBackColor = true;
             // 
             // chkStatusNO_OTHER
@@ -678,26 +709,6 @@
             this.panelScroll.Name = "panelScroll";
             this.panelScroll.Size = new System.Drawing.Size(1346, 236);
             this.panelScroll.TabIndex = 2;
-            // 
-            // btnContinue
-            // 
-            this.btnContinue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnContinue.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
-            this.btnContinue.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnContinue.BorderRadius = 7;
-            this.btnContinue.BorderSize = 0;
-            this.btnContinue.FlatAppearance.BorderSize = 0;
-            this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Location = new System.Drawing.Point(536, 686);
-            this.btnContinue.Name = "btnContinue";
-            this.btnContinue.Size = new System.Drawing.Size(246, 40);
-            this.btnContinue.TabIndex = 39;
-            this.btnContinue.Text = "CONTINUE";
-            this.btnContinue.TextColor = System.Drawing.Color.White;
-            this.btnContinue.UseVisualStyleBackColor = false;
-            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             // 
             // AddRecordHistory
             // 
@@ -772,5 +783,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBoxPhysician;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

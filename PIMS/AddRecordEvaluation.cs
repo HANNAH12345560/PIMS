@@ -200,9 +200,10 @@ namespace PIMS
                             int medicalTreatmentId = (int)command.ExecuteScalar();
 
                             totalPrice += price;
+                        MessageBox.Show("Medical treatment added successfully");
 
 
-                            txtMedName.Clear();
+                        txtMedName.Clear();
                             txtDosage.Clear();
                             txtPrice.Clear();
                         }

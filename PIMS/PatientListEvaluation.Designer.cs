@@ -35,8 +35,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelScroll = new System.Windows.Forms.Panel();
-            this.btnContinue = new CustomControls.Controls.RJButton();
             this.panelPhysicalExam = new System.Windows.Forms.Panel();
+            this.btnContinue = new CustomControls.Controls.RJButton();
             this.panel15 = new System.Windows.Forms.Panel();
             this.comboBoxAfter = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -119,6 +119,18 @@
             this.panelScroll.Size = new System.Drawing.Size(1346, 746);
             this.panelScroll.TabIndex = 2;
             // 
+            // panelPhysicalExam
+            // 
+            this.panelPhysicalExam.BackgroundImage = global::PIMS.Properties.Resources.PanelWhite1;
+            this.panelPhysicalExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelPhysicalExam.Controls.Add(this.btnContinue);
+            this.panelPhysicalExam.Controls.Add(this.panel15);
+            this.panelPhysicalExam.Controls.Add(this.label1);
+            this.panelPhysicalExam.Location = new System.Drawing.Point(0, 0);
+            this.panelPhysicalExam.Name = "panelPhysicalExam";
+            this.panelPhysicalExam.Size = new System.Drawing.Size(1351, 746);
+            this.panelPhysicalExam.TabIndex = 0;
+            // 
             // btnContinue
             // 
             this.btnContinue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
@@ -139,18 +151,6 @@
             this.btnContinue.UseVisualStyleBackColor = false;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             // 
-            // panelPhysicalExam
-            // 
-            this.panelPhysicalExam.BackgroundImage = global::PIMS.Properties.Resources.PanelWhite1;
-            this.panelPhysicalExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelPhysicalExam.Controls.Add(this.btnContinue);
-            this.panelPhysicalExam.Controls.Add(this.panel15);
-            this.panelPhysicalExam.Controls.Add(this.label1);
-            this.panelPhysicalExam.Location = new System.Drawing.Point(0, 0);
-            this.panelPhysicalExam.Name = "panelPhysicalExam";
-            this.panelPhysicalExam.Size = new System.Drawing.Size(1351, 746);
-            this.panelPhysicalExam.TabIndex = 0;
-            // 
             // panel15
             // 
             this.panel15.BackgroundImage = global::PIMS.Properties.Resources.EvaluationPanelPink;
@@ -170,6 +170,7 @@
             // 
             // comboBoxAfter
             // 
+            this.comboBoxAfter.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAfter.FormattingEnabled = true;
             this.comboBoxAfter.Items.AddRange(new object[] {
             "Another Consultation",
@@ -177,7 +178,7 @@
             "None"});
             this.comboBoxAfter.Location = new System.Drawing.Point(53, 466);
             this.comboBoxAfter.Name = "comboBoxAfter";
-            this.comboBoxAfter.Size = new System.Drawing.Size(158, 23);
+            this.comboBoxAfter.Size = new System.Drawing.Size(158, 30);
             this.comboBoxAfter.TabIndex = 44;
             // 
             // label4
@@ -241,23 +242,26 @@
             // 
             // txtPrice
             // 
+            this.txtPrice.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice.Location = new System.Drawing.Point(725, 33);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(276, 21);
+            this.txtPrice.Size = new System.Drawing.Size(276, 25);
             this.txtPrice.TabIndex = 46;
             // 
             // txtMedName
             // 
+            this.txtMedName.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMedName.Location = new System.Drawing.Point(3, 33);
             this.txtMedName.Name = "txtMedName";
-            this.txtMedName.Size = new System.Drawing.Size(282, 21);
+            this.txtMedName.Size = new System.Drawing.Size(282, 25);
             this.txtMedName.TabIndex = 44;
             // 
             // txtDosage
             // 
+            this.txtDosage.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDosage.Location = new System.Drawing.Point(367, 33);
             this.txtDosage.Name = "txtDosage";
-            this.txtDosage.Size = new System.Drawing.Size(282, 21);
+            this.txtDosage.Size = new System.Drawing.Size(282, 25);
             this.txtDosage.TabIndex = 45;
             // 
             // label3
@@ -280,9 +284,9 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label7.Location = new System.Drawing.Point(363, 16);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 22);
+            this.label7.Size = new System.Drawing.Size(91, 22);
             this.label7.TabIndex = 42;
-            this.label7.Text = "Dosage:";
+            this.label7.Text = "Dosage (ml):";
             // 
             // label8
             // 
@@ -298,6 +302,7 @@
             // 
             // txtComplaint
             // 
+            this.txtComplaint.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComplaint.Location = new System.Drawing.Point(48, 60);
             this.txtComplaint.Multiline = true;
             this.txtComplaint.Name = "txtComplaint";

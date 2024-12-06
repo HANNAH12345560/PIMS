@@ -128,7 +128,6 @@ namespace PIMS
                     InsertMedicalHistoryData(connection);
                     physicianEvalId = InsertPhysicianEvaluation(consultationId, connection);
 
-                    MessageBox.Show("Data inserted successfully.");
                 }
                 this.Hide();
                 AddRecordEvaluation pl = new AddRecordEvaluation(consultationId, physicianEvalId, patientId);

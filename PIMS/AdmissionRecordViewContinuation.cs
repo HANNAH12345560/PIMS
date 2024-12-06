@@ -47,11 +47,12 @@ namespace PIMS
 
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
-            txtMedTreatment.Text = medTreat;
-            txtAdmissionFee.Text = addFee.ToString();
-            txtMedFee.Text = medFee.ToString();
-            txtDiscount.Text = discount.ToString();
-            txtTotalBill.Text = totalBill.ToString();
+            txtMedTreatment.Text = medTreat.ToString();
+         
+            txtAdmissionFee.Text = "₱ " + addFee.ToString();
+            txtMedFee.Text = "₱ " + medFee.ToString();
+            txtDiscount.Text = "₱ " + discount.ToString();
+            txtTotalBill.Text = "₱ " + totalBill.ToString();
             txtRemarks.Text = remarks;
         }
 

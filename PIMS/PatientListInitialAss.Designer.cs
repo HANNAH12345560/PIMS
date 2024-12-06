@@ -35,8 +35,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelScroll = new System.Windows.Forms.Panel();
-            this.btnContinue = new CustomControls.Controls.RJButton();
             this.panelPhysicalExam = new System.Windows.Forms.Panel();
+            this.btnContinue = new CustomControls.Controls.RJButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbkBloodType = new System.Windows.Forms.ComboBox();
             this.txtComplaint = new System.Windows.Forms.TextBox();
@@ -120,6 +120,18 @@
             this.panelScroll.Size = new System.Drawing.Size(1346, 647);
             this.panelScroll.TabIndex = 2;
             // 
+            // panelPhysicalExam
+            // 
+            this.panelPhysicalExam.BackgroundImage = global::PIMS.Properties.Resources.PanelWhite1;
+            this.panelPhysicalExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelPhysicalExam.Controls.Add(this.btnContinue);
+            this.panelPhysicalExam.Controls.Add(this.panel1);
+            this.panelPhysicalExam.Controls.Add(this.label1);
+            this.panelPhysicalExam.Location = new System.Drawing.Point(0, 0);
+            this.panelPhysicalExam.Name = "panelPhysicalExam";
+            this.panelPhysicalExam.Size = new System.Drawing.Size(1350, 636);
+            this.panelPhysicalExam.TabIndex = 0;
+            // 
             // btnContinue
             // 
             this.btnContinue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
@@ -139,18 +151,6 @@
             this.btnContinue.TextColor = System.Drawing.Color.White;
             this.btnContinue.UseVisualStyleBackColor = false;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
-            // 
-            // panelPhysicalExam
-            // 
-            this.panelPhysicalExam.BackgroundImage = global::PIMS.Properties.Resources.PanelWhite1;
-            this.panelPhysicalExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelPhysicalExam.Controls.Add(this.btnContinue);
-            this.panelPhysicalExam.Controls.Add(this.panel1);
-            this.panelPhysicalExam.Controls.Add(this.label1);
-            this.panelPhysicalExam.Location = new System.Drawing.Point(0, 0);
-            this.panelPhysicalExam.Name = "panelPhysicalExam";
-            this.panelPhysicalExam.Size = new System.Drawing.Size(1350, 636);
-            this.panelPhysicalExam.TabIndex = 0;
             // 
             // panel1
             // 
@@ -261,9 +261,9 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label4.Location = new System.Drawing.Point(766, 110);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 22);
+            this.label4.Size = new System.Drawing.Size(88, 22);
             this.label4.TabIndex = 30;
-            this.label4.Text = "Height:";
+            this.label4.Text = "Height (cm):";
             // 
             // label5
             // 
@@ -273,9 +273,9 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label5.Location = new System.Drawing.Point(408, 110);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 22);
+            this.label5.Size = new System.Drawing.Size(86, 22);
             this.label5.TabIndex = 29;
-            this.label5.Text = "Weight";
+            this.label5.Text = "Weight (kg):";
             // 
             // label9
             // 
@@ -285,9 +285,9 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label9.Location = new System.Drawing.Point(44, 110);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(93, 22);
+            this.label9.Size = new System.Drawing.Size(122, 22);
             this.label9.TabIndex = 28;
-            this.label9.Text = "Temperature:";
+            this.label9.Text = "Temperature (C°):";
             // 
             // txtPR
             // 
@@ -321,9 +321,9 @@
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label8.Location = new System.Drawing.Point(766, 55);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 22);
+            this.label8.Size = new System.Drawing.Size(120, 22);
             this.label8.TabIndex = 23;
-            this.label8.Text = "Pulse Rate:";
+            this.label8.Text = "Pulse Rate (bpm):";
             // 
             // label7
             // 
@@ -333,9 +333,9 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label7.Location = new System.Drawing.Point(408, 55);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 22);
+            this.label7.Size = new System.Drawing.Size(159, 22);
             this.label7.TabIndex = 22;
-            this.label7.Text = "Respiratory Rate:";
+            this.label7.Text = "Respiratory Rate (bpm):";
             // 
             // label3
             // 
@@ -345,9 +345,9 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label3.Location = new System.Drawing.Point(44, 55);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 22);
+            this.label3.Size = new System.Drawing.Size(165, 22);
             this.label3.TabIndex = 21;
-            this.label3.Text = "Blood Pressure";
+            this.label3.Text = "Blood Pressure (mm Hg:)";
             // 
             // label2
             // 

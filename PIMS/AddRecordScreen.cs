@@ -24,10 +24,8 @@ namespace PIMS
 
         private void DashboardScreen_Load(object sender, EventArgs e)
         {
-            
-        }
 
-        
+        }
 
         public void HoverBtn(Button btn)
         {
@@ -36,10 +34,10 @@ namespace PIMS
                 btn.BackColor = Color.FromArgb(255, 240, 245);
                 btn.ForeColor = Color.FromArgb(255, 92, 141);
             }
-            
+
         }
 
-        public void HoverbtnReset (Button btn)
+        public void HoverbtnReset(Button btn)
         {
             btn.BackColor = Color.FromArgb(255, 192, 211);
             btn.ForeColor = Color.FromArgb(82, 74, 78);
@@ -54,7 +52,6 @@ namespace PIMS
         {
             HoverbtnReset(btnDashboard);
         }
-
 
         private void btnMedRec_MouseHover(object sender, EventArgs e)
         {
@@ -163,13 +160,9 @@ namespace PIMS
 
         }
 
-        
-        
-
         private void btnLogout_Click(object sender, EventArgs e)
         {
             Application.Exit();
-
         }
 
         private void panel13_Paint(object sender, PaintEventArgs e)
@@ -260,23 +253,29 @@ namespace PIMS
                             {
                                 if (read.Read())
                                 {
-                                    patientId = Convert.ToInt32(read["id"]);
-                                    lblStatus.Text = read["status"].ToString();
-                                    txtPhilHealthNo.Text = read["philhealthno"].ToString();
-                                    txtFirstName.Text = read["first_name"].ToString();
-                                    txtLastName.Text = read["last_name"].ToString();
-                                    txtMiddleName.Text = read["middle_name"].ToString();
-                                    txtAddress.Text = read["home_add"].ToString();
-                                    txtAge.Text = read["age"].ToString();
-                                    txtBday.Text = read["birthday"].ToString();
-                                    txtBirthPlace.Text = read["birthplace"].ToString();
-                                    txtCivilStatus.Text = read["civilstat"].ToString();
-                                    txtGender.Text = read["gender"].ToString();
-                                    txtTelNo.Text = read["mobiletelno"].ToString();
-                                    txtReligion.Text = read["religion"].ToString();
-                                    txtOccupation.Text = read["occupation"].ToString();
-
-                                    
+                                    if (read["status"].ToString() == "Inactive")
+                                    {
+                                        MessageBox.Show("This patient has been marked as inactive. You cannot add a record for this patient. Please enter a different name to continue.", "Add Record Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        patientId = Convert.ToInt32(read["id"]);
+                                        lblStatus.Text = read["status"].ToString();
+                                        txtPhilHealthNo.Text = read["philhealthno"].ToString();
+                                        txtFirstName.Text = read["first_name"].ToString();
+                                        txtLastName.Text = read["last_name"].ToString();
+                                        txtMiddleName.Text = read["middle_name"].ToString();
+                                        txtAddress.Text = read["home_add"].ToString();
+                                        txtAge.Text = read["age"].ToString();
+                                        txtBday.Text = read["birthday"].ToString();
+                                        txtBirthPlace.Text = read["birthplace"].ToString();
+                                        txtCivilStatus.Text = read["civilstat"].ToString();
+                                        txtGender.Text = read["gender"].ToString();
+                                        txtTelNo.Text = read["mobiletelno"].ToString();
+                                        txtReligion.Text = read["religion"].ToString();
+                                        txtOccupation.Text = read["occupation"].ToString();
+                                    }
                                 }
                                 else
                                 {
@@ -293,9 +292,6 @@ namespace PIMS
             }
         }
 
-      
-
-       
         private void btnClear_Click(object sender, EventArgs e)
         {
         }

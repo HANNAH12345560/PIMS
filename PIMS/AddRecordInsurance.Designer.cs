@@ -35,8 +35,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelScroll = new System.Windows.Forms.Panel();
-            this.btnContinue = new CustomControls.Controls.RJButton();
             this.panelPhysicalExam = new System.Windows.Forms.Panel();
+            this.btnContinue = new CustomControls.Controls.RJButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtFName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,6 +47,7 @@
             this.txtInsurComp = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panelScroll.SuspendLayout();
@@ -114,6 +115,21 @@
             this.panelScroll.Size = new System.Drawing.Size(1346, 700);
             this.panelScroll.TabIndex = 2;
             // 
+            // panelPhysicalExam
+            // 
+            this.panelPhysicalExam.BackgroundImage = global::PIMS.Properties.Resources.PanelWhite1;
+            this.panelPhysicalExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelPhysicalExam.Controls.Add(this.label2);
+            this.panelPhysicalExam.Controls.Add(this.btnContinue);
+            this.panelPhysicalExam.Controls.Add(this.panel1);
+            this.panelPhysicalExam.Controls.Add(this.label1);
+            this.panelPhysicalExam.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelPhysicalExam.Location = new System.Drawing.Point(0, 0);
+            this.panelPhysicalExam.Name = "panelPhysicalExam";
+            this.panelPhysicalExam.Size = new System.Drawing.Size(1350, 390);
+            this.panelPhysicalExam.TabIndex = 0;
+            this.panelPhysicalExam.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPhysicalExam_Paint);
+            // 
             // btnContinue
             // 
             this.btnContinue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(92)))), ((int)(((byte)(141)))));
@@ -125,7 +141,7 @@
             this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinue.ForeColor = System.Drawing.Color.White;
-            this.btnContinue.Location = new System.Drawing.Point(480, 308);
+            this.btnContinue.Location = new System.Drawing.Point(505, 308);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(246, 40);
             this.btnContinue.TabIndex = 39;
@@ -133,20 +149,6 @@
             this.btnContinue.TextColor = System.Drawing.Color.White;
             this.btnContinue.UseVisualStyleBackColor = false;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
-            // 
-            // panelPhysicalExam
-            // 
-            this.panelPhysicalExam.BackgroundImage = global::PIMS.Properties.Resources.PanelWhite1;
-            this.panelPhysicalExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelPhysicalExam.Controls.Add(this.btnContinue);
-            this.panelPhysicalExam.Controls.Add(this.panel1);
-            this.panelPhysicalExam.Controls.Add(this.label1);
-            this.panelPhysicalExam.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelPhysicalExam.Location = new System.Drawing.Point(0, 0);
-            this.panelPhysicalExam.Name = "panelPhysicalExam";
-            this.panelPhysicalExam.Size = new System.Drawing.Size(1350, 390);
-            this.panelPhysicalExam.TabIndex = 0;
-            this.panelPhysicalExam.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPhysicalExam_Paint);
             // 
             // panel1
             // 
@@ -167,6 +169,7 @@
             // 
             // txtFName
             // 
+            this.txtFName.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFName.Location = new System.Drawing.Point(632, 93);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(522, 25);
@@ -187,6 +190,7 @@
             // 
             // txtInsurID
             // 
+            this.txtInsurID.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInsurID.Location = new System.Drawing.Point(632, 39);
             this.txtInsurID.Name = "txtInsurID";
             this.txtInsurID.Size = new System.Drawing.Size(522, 25);
@@ -206,6 +210,7 @@
             // 
             // txtLName
             // 
+            this.txtLName.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLName.Location = new System.Drawing.Point(48, 93);
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(522, 25);
@@ -227,6 +232,7 @@
             // 
             // txtInsurComp
             // 
+            this.txtInsurComp.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInsurComp.Location = new System.Drawing.Point(48, 39);
             this.txtInsurComp.Name = "txtInsurComp";
             this.txtInsurComp.Size = new System.Drawing.Size(522, 25);
@@ -257,6 +263,18 @@
             this.label1.Size = new System.Drawing.Size(254, 37);
             this.label1.TabIndex = 19;
             this.label1.Text = "Insurance Information";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Poppins SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
+            this.label2.Location = new System.Drawing.Point(265, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(181, 22);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "(Type N\\A if not applicable)";
             // 
             // AddRecordInsurance
             // 
@@ -301,5 +319,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtInsurID;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label2;
     }
 }
