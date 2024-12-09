@@ -268,7 +268,7 @@ namespace PIMS
                                         txtMiddleName.Text = read["middle_name"].ToString();
                                         txtAddress.Text = read["home_add"].ToString();
                                         txtAge.Text = read["age"].ToString();
-                                        txtBday.Text = read["birthday"].ToString();
+                                        txtBday.Text = Convert.ToDateTime(read["birthday"]).ToString("yyyy-MM-dd");
                                         txtBirthPlace.Text = read["birthplace"].ToString();
                                         txtCivilStatus.Text = read["civilstat"].ToString();
                                         txtGender.Text = read["gender"].ToString();
