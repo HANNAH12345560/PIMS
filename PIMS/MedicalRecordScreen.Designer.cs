@@ -68,7 +68,6 @@
             this.btnPatientInfo = new CustomControls.Controls.RJButton();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnSearch = new CustomControls.Controls.RJButton();
-            this.txtSearchName = new CustomControls.RJControls.RJTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lblDashboard = new System.Windows.Forms.Label();
@@ -83,6 +82,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtSearchName = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel6.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -539,8 +539,8 @@
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.btnSearch);
             this.panel10.Controls.Add(this.txtSearchName);
+            this.panel10.Controls.Add(this.btnSearch);
             this.panel10.Controls.Add(this.label1);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 0);
@@ -566,30 +566,6 @@
             this.btnSearch.TextColor = System.Drawing.Color.White;
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtSearchName
-            // 
-            this.txtSearchName.BackColor = System.Drawing.SystemColors.Window;
-            this.txtSearchName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.txtSearchName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(158)))), ((int)(((byte)(170)))));
-            this.txtSearchName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(158)))), ((int)(((byte)(170)))));
-            this.txtSearchName.BorderRadius = 7;
-            this.txtSearchName.BorderSize = 2;
-            this.txtSearchName.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSearchName.Location = new System.Drawing.Point(112, 28);
-            this.txtSearchName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSearchName.Multiline = false;
-            this.txtSearchName.Name = "txtSearchName";
-            this.txtSearchName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtSearchName.PasswordChar = false;
-            this.txtSearchName.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtSearchName.PlaceholderText = "Search by typing the patient\'s first name";
-            this.txtSearchName.Size = new System.Drawing.Size(846, 38);
-            this.txtSearchName.TabIndex = 2;
-            this.txtSearchName.Texts = "";
-            this.txtSearchName.UnderlinedStyle = false;
-            this.txtSearchName._TextChanged += new System.EventHandler(this.txtSearchName__TextChanged);
             // 
             // label1
             // 
@@ -814,6 +790,31 @@
             this.panel4.Size = new System.Drawing.Size(199, 105);
             this.panel4.TabIndex = 1;
             // 
+            // txtSearchName
+            // 
+            this.txtSearchName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(158)))), ((int)(((byte)(170)))));
+            this.txtSearchName.BorderRadius = 7;
+            this.txtSearchName.BorderThickness = 2;
+            this.txtSearchName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearchName.DefaultText = "";
+            this.txtSearchName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearchName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearchName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearchName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearchName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(158)))), ((int)(((byte)(170)))));
+            this.txtSearchName.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchName.ForeColor = System.Drawing.Color.Black;
+            this.txtSearchName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(158)))), ((int)(((byte)(170)))));
+            this.txtSearchName.Location = new System.Drawing.Point(111, 28);
+            this.txtSearchName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearchName.Name = "txtSearchName";
+            this.txtSearchName.PasswordChar = '\0';
+            this.txtSearchName.PlaceholderText = "Search by typing the patient\'s first name";
+            this.txtSearchName.SelectedText = "";
+            this.txtSearchName.Size = new System.Drawing.Size(848, 37);
+            this.txtSearchName.TabIndex = 4;
+            this.txtSearchName.TextChanged += new System.EventHandler(this.txtSearchName_TextChanged);
+            // 
             // MedicalRecordScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -864,7 +865,6 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
-        private CustomControls.RJControls.RJTextBox txtSearchName;
         private System.Windows.Forms.Label label1;
         private CustomControls.Controls.RJButton btnSearch;
         private CustomControls.Controls.RJButton btnPatientInfo;
@@ -902,5 +902,6 @@
         private System.Windows.Forms.TextBox txtOccup;
         private System.Windows.Forms.Label txtOccupation;
         private System.Windows.Forms.TextBox txtBirthdate;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearchName;
     }
 }

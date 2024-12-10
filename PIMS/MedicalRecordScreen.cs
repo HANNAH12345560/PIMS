@@ -215,7 +215,7 @@ namespace PIMS
             Application.Exit();
         }
 
-        private void txtSearchName__TextChanged(object sender, EventArgs e)
+        private void txtSearchName_TextChanged(object sender, EventArgs e)
         {
             querySearch = "SELECT * FROM patientinfo";
 
@@ -329,6 +329,8 @@ namespace PIMS
         {
 
         }
+
+       
     }
 }
 

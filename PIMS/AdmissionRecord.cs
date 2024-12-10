@@ -253,37 +253,37 @@ namespace PIMS
         }
 
 
-        private void txtSearchName__TextChanged(object sender, EventArgs e)
-        {
-            string query = "SELECT id, nurse, TO_CHAR(admit_date, 'YYYY-MM-DD') AS admit_date, " +
-                           "TO_CHAR(discharge_date, 'YYYY-MM-DD') AS discharge_date " +
-                           "FROM hospitaladmission WHERE patient_id = @patientId";
+        //private void txtSearchName_TextChanged(object sender, EventArgs e)
+        //{
+        //    string query = "SELECT id, nurse, TO_CHAR(admit_date, 'YYYY-MM-DD') AS admit_date, " +
+        //                   "TO_CHAR(discharge_date, 'YYYY-MM-DD') AS discharge_date " +
+        //                   "FROM hospitaladmission WHERE patient_id = @patientId";
 
-            using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
-            {
-                conn.Open();
+        //    using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+        //    {
+        //        conn.Open();
 
-                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
-                {
+        //        using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+        //        {
 
-                    cmd.Parameters.AddWithValue("@patientId", patientId);
-                    var source = new AutoCompleteStringCollection();
+        //            cmd.Parameters.AddWithValue("@patientId", patientId);
+        //            var source = new AutoCompleteStringCollection();
 
-                    using (NpgsqlDataReader read = cmd.ExecuteReader())
-                    {
-                        while (read.Read())
-                        {
-                            source.Add(read["nurse"].ToString());
-                        }
-                    }
+        //            using (NpgsqlDataReader read = cmd.ExecuteReader())
+        //            {
+        //                while (read.Read())
+        //                {
+        //                    source.Add(read["nurse"].ToString());
+        //                }
+        //            }
 
-                    TextBox innerTextBox = (TextBox)txtSearchName.Controls[0];
-                    innerTextBox.AutoCompleteCustomSource = source;
-                    innerTextBox.AutoCompleteMode = AutoCompleteMode.Suggest;
-                    innerTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                }
-            }
-        }
+        //            TextBox innerTextBox = (TextBox)txtSearchName.Controls[0];
+        //            innerTextBox.AutoCompleteCustomSource = source;
+        //            innerTextBox.AutoCompleteMode = AutoCompleteMode.Suggest;
+        //            innerTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        //        }
+        //    }
+        //}
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -394,6 +394,39 @@ namespace PIMS
             }
         }
 
+        private void txtSearchName_TextChanged_1(object sender, EventArgs e)
+        {
+                string query = "SELECT id, nurse, TO_CHAR(admit_date, 'YYYY-MM-DD') AS admit_date, " +
+                               "TO_CHAR(discharge_date, 'YYYY-MM-DD') AS discharge_date " +
+                               "FROM hospitaladmission WHERE patient_id = @patientId";
 
+                using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+                {
+                    conn.Open();
+
+                    using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                    {
+
+                        cmd.Parameters.AddWithValue("@patientId", patientId);
+                        var source = new AutoCompleteStringCollection();
+
+                        using (NpgsqlDataReader read = cmd.ExecuteReader())
+                        {
+                            while (read.Read())
+                            {
+                                source.Add(read["nurse"].ToString());
+                            }
+                        }
+
+                        TextBox innerTextBox = (TextBox)txtSearchName.Controls[0];
+                        innerTextBox.AutoCompleteCustomSource = source;
+                        innerTextBox.AutoCompleteMode = AutoCompleteMode.Suggest;
+                        innerTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                    }
+                }
+            }
+
+        
     }
+
 }

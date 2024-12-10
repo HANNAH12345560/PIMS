@@ -217,7 +217,6 @@
             // 
             this.txtDiscount.Location = new System.Drawing.Point(724, 188);
             this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.ReadOnly = true;
             this.txtDiscount.Size = new System.Drawing.Size(282, 20);
             this.txtDiscount.TabIndex = 61;
             // 
@@ -229,9 +228,9 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(74)))), ((int)(((byte)(78)))));
             this.label3.Location = new System.Drawing.Point(720, 163);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 22);
+            this.label3.Size = new System.Drawing.Size(93, 22);
             this.label3.TabIndex = 60;
-            this.label3.Text = "Discount:";
+            this.label3.Text = "Discount (%):";
             // 
             // txtAdmissionFee
             // 
@@ -277,7 +276,6 @@
             // 
             this.txtMedFee.Location = new System.Drawing.Point(724, 64);
             this.txtMedFee.Name = "txtMedFee";
-            this.txtMedFee.ReadOnly = true;
             this.txtMedFee.Size = new System.Drawing.Size(282, 20);
             this.txtMedFee.TabIndex = 49;
             // 

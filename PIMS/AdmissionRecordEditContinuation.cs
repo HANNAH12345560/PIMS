@@ -102,7 +102,7 @@ namespace PIMS
             }
         }
 
-        
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -168,37 +168,38 @@ namespace PIMS
             DateTime dischargeDate = DateTime.Parse(this.dischargeDate);
 
             double medFee = double.Parse(txtMedFee.Text);
-                double admissionFee = double.Parse(txtAdmissionFee.Text);
-                double discount = double.Parse(txtDiscount.Text);
-                double totalBill = medFee + admissionFee - discount;
+            double admissionFee = string.IsNullOrEmpty(txtAdmissionFee.Text) ? 0 : double.Parse(txtAdmissionFee.Text);
+            double discountPercentage = double.Parse(txtDiscount.Text);
+            double discount = (medFee + admissionFee) * (discountPercentage / 100);
+            double totalBill = medFee + admissionFee - discount;
 
-                txtTotalBill.Text = totalBill.ToString();
+            txtTotalBill.Text = totalBill.ToString();
 
-                string updateQuery = "UPDATE hospitaladmission SET admission_fee = @admissionFee, total_bill = @totalBill, nurse = @nurse, guardian = @guardian, guardian_relation = @relation, discharge_date = @dischargeDate, complete_diagnosis = @completeDiagnosis, ward = @ward, physician = @physician, medical_treatment = @medicalTreatment, remarks = @remarks WHERE id = @admissionId;";
+            string updateQuery = "UPDATE hospitaladmission SET admission_fee = @admissionFee, total_bill = @totalBill, nurse = @nurse, guardian = @guardian, guardian_relation = @relation, discharge_date = @dischargeDate, complete_diagnosis = @completeDiagnosis, ward = @ward, physician = @physician, medical_treatment = @medicalTreatment, remarks = @remarks, med_fee = @medFee, discount = @discount WHERE id = @admissionId;";
 
-                using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+            using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+            {
+                conn.Open();
+                using (NpgsqlCommand cmd = new NpgsqlCommand(updateQuery, conn))
                 {
-                    conn.Open();
-                    using (NpgsqlCommand cmd = new NpgsqlCommand(updateQuery, conn))
-                    {
-                    
                     cmd.Parameters.AddWithValue("@admissionFee", admissionFee);
-                        cmd.Parameters.AddWithValue("@totalBill", totalBill);
-                        cmd.Parameters.AddWithValue("@admissionId", admissionId);
-                        cmd.Parameters.AddWithValue("@nurse", nurse);
-                        cmd.Parameters.AddWithValue("@guardian", guardian);
-                        cmd.Parameters.AddWithValue("@relation", relation);
-                        cmd.Parameters.AddWithValue("@dischargeDate", dischargeDate);
-                        cmd.Parameters.AddWithValue("@completeDiagnosis", completeDiagnosis);
-                        cmd.Parameters.AddWithValue("@ward", ward);
-                        cmd.Parameters.AddWithValue("@physician", physician);
-                        cmd.Parameters.AddWithValue("@medicalTreatment", txtMedTreatment.Text);
-                        cmd.Parameters.AddWithValue("@remarks", txtRemarks.Text);
-                        cmd.ExecuteNonQuery();
-                    }
+                    cmd.Parameters.AddWithValue("@totalBill", totalBill);
+                    cmd.Parameters.AddWithValue("@admissionId", admissionId);
+                    cmd.Parameters.AddWithValue("@nurse", nurse);
+                    cmd.Parameters.AddWithValue("@guardian", guardian);
+                    cmd.Parameters.AddWithValue("@relation", relation);
+                    cmd.Parameters.AddWithValue("@dischargeDate", dischargeDate);
+                    cmd.Parameters.AddWithValue("@completeDiagnosis", completeDiagnosis);
+                    cmd.Parameters.AddWithValue("@ward", ward);
+                    cmd.Parameters.AddWithValue("@physician", physician);
+                    cmd.Parameters.AddWithValue("@medicalTreatment", txtMedTreatment.Text);
+                    cmd.Parameters.AddWithValue("@remarks", txtRemarks.Text);
+                    cmd.Parameters.AddWithValue("@medFee", medFee);
+                    cmd.Parameters.AddWithValue("@discount", discount);
+                    cmd.ExecuteNonQuery();
                 }
+            }
 
-            
             MessageBox.Show("Patient Record has been Updated");
 
             this.Hide();

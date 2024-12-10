@@ -200,7 +200,7 @@ namespace PIMS
             this.Close();
         }
 
-        private void txtSearchName__TextChanged(object sender, EventArgs e)
+        private void txtSearchName_TextChanged(object sender, EventArgs e)
         {
             querySearch = "SELECT * FROM patientinfo";
 
@@ -295,6 +295,8 @@ namespace PIMS
         private void btnClear_Click(object sender, EventArgs e)
         {
         }
+
+       
     }
 }
 

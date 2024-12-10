@@ -231,7 +231,7 @@ namespace PIMS
 
         }
 
-        private void txtSearchName__TextChanged(object sender, EventArgs e)
+        private void txtSearchName_TextChanged(object sender, EventArgs e)
         {
             string query = "SELECT c.id, c.date, e.physician FROM patientinfo p JOIN consultationassesment c ON p.id = c.patient_id JOIN physicianevaluation e ON c.id = e.consultation_id WHERE p.id = @patientId;";
 
@@ -363,6 +363,6 @@ namespace PIMS
             }
         }
 
-
+       
     }
 }

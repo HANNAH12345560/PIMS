@@ -229,34 +229,34 @@ namespace PIMS
 
         }
 
-        private void txtSearchName__TextChanged(object sender, EventArgs e)
-        {
-            querySearch = "SELECT * FROM patientinfo";
+        //private void txtSearchName_TextChanged(object sender, EventArgs e)
+        //{
+        //    querySearch = "SELECT * FROM patientinfo";
 
-            using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
-            {
-                conn.Open();
+        //    using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+        //    {
+        //        conn.Open();
 
-                using (NpgsqlCommand cmd = new NpgsqlCommand(querySearch, conn))
-                {
-                    var source = new AutoCompleteStringCollection();
+        //        using (NpgsqlCommand cmd = new NpgsqlCommand(querySearch, conn))
+        //        {
+        //            var source = new AutoCompleteStringCollection();
 
-                    using (NpgsqlDataReader read = cmd.ExecuteReader())
-                    {
-                        while (read.Read())
-                        {
-                            string fullname = read["first_name"].ToString() + " " + read["middle_name"].ToString() + " " + read["last_name"].ToString();
-                            source.Add(fullname);
-                        }
-                    }
+        //            using (NpgsqlDataReader read = cmd.ExecuteReader())
+        //            {
+        //                while (read.Read())
+        //                {
+        //                    string fullname = read["first_name"].ToString() + " " + read["middle_name"].ToString() + " " + read["last_name"].ToString();
+        //                    source.Add(fullname);
+        //                }
+        //            }
 
-                    TextBox innerTextBox = (TextBox)txtSearchName.Controls[0];
-                    innerTextBox.AutoCompleteCustomSource = source;
-                    innerTextBox.AutoCompleteMode = AutoCompleteMode.Suggest;
-                    innerTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                }
-            }
-        }
+        //            TextBox innerTextBox = (TextBox)txtSearchName.Controls[0];
+        //            innerTextBox.AutoCompleteCustomSource = source;
+        //            innerTextBox.AutoCompleteMode = AutoCompleteMode.Suggest;
+        //            innerTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        //        }
+        //    }
+        //}
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -438,6 +438,35 @@ namespace PIMS
                 object temp = row1.Cells[i].Value;
                 row1.Cells[i].Value = row2.Cells[i].Value;
                 row2.Cells[i].Value = temp;
+            }
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            querySearch = "SELECT * FROM patientinfo";
+
+            using (NpgsqlConnection conn = new NpgsqlConnection(functions.connectDb))
+            {
+                conn.Open();
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand(querySearch, conn))
+                {
+                    var source = new AutoCompleteStringCollection();
+
+                    using (NpgsqlDataReader read = cmd.ExecuteReader())
+                    {
+                        while (read.Read())
+                        {
+                            string fullname = read["first_name"].ToString() + " " + read["middle_name"].ToString() + " " + read["last_name"].ToString();
+                            source.Add(fullname);
+                        }
+                    }
+
+                    TextBox innerTextBox = (TextBox)txtSearchName.Controls[0];
+                    innerTextBox.AutoCompleteCustomSource = source;
+                    innerTextBox.AutoCompleteMode = AutoCompleteMode.Suggest;
+                    innerTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                }
             }
         }
     }
