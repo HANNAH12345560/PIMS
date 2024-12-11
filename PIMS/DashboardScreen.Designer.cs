@@ -203,9 +203,9 @@
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label5.Location = new System.Drawing.Point(56, 12);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(175, 26);
+            this.label5.Size = new System.Drawing.Size(167, 26);
             this.label5.TabIndex = 0;
-            this.label5.Text = "    Total Appointments";
+            this.label5.Text = "    Total Consultation";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // panel13

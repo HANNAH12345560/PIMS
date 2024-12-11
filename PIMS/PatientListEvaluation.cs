@@ -48,7 +48,7 @@ namespace PIMS
                         comboBoxAfter.SelectedItem?.ToString()
                     );
 
-                    
+
                 }
             }
             catch (Exception ex)
@@ -71,9 +71,9 @@ namespace PIMS
             }
 
             string updateQuery = @"
-            UPDATE PhysicianEvaluation
-            SET diagnosis = @diagnosis, remark = @remark
-            WHERE id = @id";
+                UPDATE PhysicianEvaluation
+                SET diagnosis = @diagnosis, remark = @remark
+                WHERE id = @id";
 
             using (var updateCommand = new NpgsqlCommand(updateQuery, connection))
             {
@@ -113,12 +113,12 @@ namespace PIMS
                 }
 
                 string query = @"
-                INSERT INTO MedicalTreatment (
-                    physician_eval_id, name, dosage, price
-                )
-                VALUES (
-                    @physician_eval_id, @name, @dosage, @price
-                ) RETURNING id";
+                    INSERT INTO MedicalTreatment (
+                        physician_eval_id, name, dosage, price
+                    )
+                    VALUES (
+                        @physician_eval_id, @name, @dosage, @price
+                    ) RETURNING id";
 
                 using (var conn = new NpgsqlConnection(db.connectDb))
                 {
@@ -128,7 +128,7 @@ namespace PIMS
                     {
                         command.Parameters.AddWithValue("physician_eval_id", physicianEvaluationId);
                         command.Parameters.AddWithValue("name", txtMedName.Text);
-                        command.Parameters.AddWithValue("dosage", int.TryParse(txtDosage.Text, out int dosage) ? dosage : 0);
+                        command.Parameters.AddWithValue("dosage", double.TryParse(txtDosage.Text, out double dosage) ? dosage : 0.0);
                         command.Parameters.AddWithValue("price", double.TryParse(txtPrice.Text, out double price) ? price : 0.0);
                         int medicalTreatmentId = (int)command.ExecuteScalar();
 

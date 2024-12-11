@@ -35,8 +35,8 @@ namespace PIMS
 
         }
 
-       
-      
+
+
 
 
         private void label1_Click(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace PIMS
 
         }
 
-       
+
 
         private void panel7_Paint(object sender, PaintEventArgs e)
         {
@@ -61,7 +61,7 @@ namespace PIMS
 
         }
 
-        
+
 
         private void panel11_Paint(object sender, PaintEventArgs e)
         {
@@ -93,7 +93,7 @@ namespace PIMS
 
         }
 
-       
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -171,15 +171,15 @@ namespace PIMS
 
         private void btbAdd_Click(object sender, EventArgs e)
         {
-                try
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtMedName.Text) || string.IsNullOrWhiteSpace(txtDosage.Text) || string.IsNullOrWhiteSpace(txtPrice.Text))
                 {
-                    if (string.IsNullOrWhiteSpace(txtMedName.Text) || string.IsNullOrWhiteSpace(txtDosage.Text) || string.IsNullOrWhiteSpace(txtPrice.Text))
-                    {
-                        MessageBox.Show("Please fill in all required fields.");
-                        return;
-                    }
+                    MessageBox.Show("Please fill in all required fields.");
+                    return;
+                }
 
-                    string query = @"
+                string query = @"
                 INSERT INTO MedicalTreatment (
                     physician_eval_id, name, dosage, price
                 )
@@ -187,35 +187,35 @@ namespace PIMS
                     @physician_eval_id, @name, @dosage, @price
                 ) RETURNING id";
 
-                    using (var conn = new NpgsqlConnection(db.connectDb))
+                using (var conn = new NpgsqlConnection(db.connectDb))
+                {
+                    conn.Open();
+
+                    using (var command = new NpgsqlCommand(query, conn))
                     {
-                        conn.Open();
+                        command.Parameters.AddWithValue("physician_eval_id", physicianEvaluationId);
+                        command.Parameters.AddWithValue("name", txtMedName.Text);
+                        command.Parameters.AddWithValue("dosage", double.TryParse(txtDosage.Text, out double dosage) ? dosage : 0.0);
+                        command.Parameters.AddWithValue("price", double.TryParse(txtPrice.Text, out double price) ? price : 0.0);
+                        int medicalTreatmentId = (int)command.ExecuteScalar();
 
-                        using (var command = new NpgsqlCommand(query, conn))
-                        {
-                            command.Parameters.AddWithValue("physician_eval_id", physicianEvaluationId);
-                            command.Parameters.AddWithValue("name", txtMedName.Text);
-                            command.Parameters.AddWithValue("dosage", int.TryParse(txtDosage.Text, out int dosage) ? dosage : 0);
-                            command.Parameters.AddWithValue("price", double.TryParse(txtPrice.Text, out double price) ? price : 0.0);
-                            int medicalTreatmentId = (int)command.ExecuteScalar();
-
-                            totalPrice += price;
+                        totalPrice += price;
                         MessageBox.Show("Medical treatment added successfully");
 
 
                         txtMedName.Clear();
-                            txtDosage.Clear();
-                            txtPrice.Clear();
-                        }
+                        txtDosage.Clear();
+                        txtPrice.Clear();
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
 
-        
+
 
         //private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         //{
